@@ -1,0 +1,7 @@
+quantity,value
+n_model_variants,47
+dict_sizes,"8192, 16384"
+topk_values,"45, 90, 160"
+exclusive_pct_values,"0%, 3%, 5%, 10%"
+regimes,"CrossCoder + L1, CrossCoder no-L1, DFC free-exclusive, DFC penalized-exclusive"
+post_metrics,"format_accuracy_A_post, format_accuracy_B_post, overall_score_A_post, overall_score_B_post, tool_correctness_A_post, tool_correctness_B_post"

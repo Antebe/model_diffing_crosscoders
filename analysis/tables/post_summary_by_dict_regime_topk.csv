@@ -1,0 +1,145 @@
+dict_size,regime,topk,metric_family,model_side,mean,median,min,max,count
+8192,CrossCoder + L1,45,format_accuracy,A,58.0,58.0,58.0,58.0,1
+8192,CrossCoder + L1,45,format_accuracy,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder + L1,45,overall_score,A,0.76,0.76,0.76,0.76,1
+8192,CrossCoder + L1,45,overall_score,B,-0.76,-0.76,-0.76,-0.76,1
+8192,CrossCoder + L1,45,tool_correctness,A,59.0,59.0,59.0,59.0,1
+8192,CrossCoder + L1,45,tool_correctness,B,12.0,12.0,12.0,12.0,1
+8192,CrossCoder + L1,90,format_accuracy,A,50.0,50.0,50.0,50.0,1
+8192,CrossCoder + L1,90,format_accuracy,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder + L1,90,overall_score,A,0.5,0.5,0.5,0.5,1
+8192,CrossCoder + L1,90,overall_score,B,-0.94,-0.94,-0.94,-0.94,1
+8192,CrossCoder + L1,90,tool_correctness,A,50.0,50.0,50.0,50.0,1
+8192,CrossCoder + L1,90,tool_correctness,B,3.0,3.0,3.0,3.0,1
+8192,CrossCoder + L1,160,format_accuracy,A,49.0,49.0,49.0,49.0,1
+8192,CrossCoder + L1,160,format_accuracy,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder + L1,160,overall_score,A,0.47,0.47,0.47,0.47,1
+8192,CrossCoder + L1,160,overall_score,B,-0.92,-0.92,-0.92,-0.92,1
+8192,CrossCoder + L1,160,tool_correctness,A,49.0,49.0,49.0,49.0,1
+8192,CrossCoder + L1,160,tool_correctness,B,4.0,4.0,4.0,4.0,1
+8192,CrossCoder no-L1,45,format_accuracy,A,70.0,70.0,70.0,70.0,1
+8192,CrossCoder no-L1,45,format_accuracy,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder no-L1,45,overall_score,A,1.1,1.1,1.1,1.1,1
+8192,CrossCoder no-L1,45,overall_score,B,-0.66,-0.66,-0.66,-0.66,1
+8192,CrossCoder no-L1,45,tool_correctness,A,70.0,70.0,70.0,70.0,1
+8192,CrossCoder no-L1,45,tool_correctness,B,17.0,17.0,17.0,17.0,1
+8192,CrossCoder no-L1,90,format_accuracy,A,60.0,60.0,60.0,60.0,1
+8192,CrossCoder no-L1,90,format_accuracy,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder no-L1,90,overall_score,A,0.8,0.8,0.8,0.8,1
+8192,CrossCoder no-L1,90,overall_score,B,-1.0,-1.0,-1.0,-1.0,1
+8192,CrossCoder no-L1,90,tool_correctness,A,60.0,60.0,60.0,60.0,1
+8192,CrossCoder no-L1,90,tool_correctness,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder no-L1,160,format_accuracy,A,41.0,41.0,41.0,41.0,1
+8192,CrossCoder no-L1,160,format_accuracy,B,0.0,0.0,0.0,0.0,1
+8192,CrossCoder no-L1,160,overall_score,A,0.21,0.21,0.21,0.21,1
+8192,CrossCoder no-L1,160,overall_score,B,-0.84,-0.84,-0.84,-0.84,1
+8192,CrossCoder no-L1,160,tool_correctness,A,40.0,40.0,40.0,40.0,1
+8192,CrossCoder no-L1,160,tool_correctness,B,8.0,8.0,8.0,8.0,1
+8192,DFC free-exclusive,45,format_accuracy,A,49.0,49.0,41.0,57.0,3
+8192,DFC free-exclusive,45,format_accuracy,B,0.0,0.0,0.0,0.0,3
+8192,DFC free-exclusive,45,overall_score,A,0.48333333333333334,0.47,0.27,0.71,3
+8192,DFC free-exclusive,45,overall_score,B,-0.9066666666666666,-0.88,-0.96,-0.88,3
+8192,DFC free-exclusive,45,tool_correctness,A,49.666666666666664,49.0,43.0,57.0,3
+8192,DFC free-exclusive,45,tool_correctness,B,4.666666666666667,6.0,2.0,6.0,3
+8192,DFC free-exclusive,90,format_accuracy,A,50.666666666666664,52.0,36.0,64.0,3
+8192,DFC free-exclusive,90,format_accuracy,B,0.0,0.0,0.0,0.0,3
+8192,DFC free-exclusive,90,overall_score,A,0.5266666666666667,0.56,0.1,0.92,3
+8192,DFC free-exclusive,90,overall_score,B,-0.86,-0.82,-0.94,-0.82,3
+8192,DFC free-exclusive,90,tool_correctness,A,51.0,52.0,37.0,64.0,3
+8192,DFC free-exclusive,90,tool_correctness,B,7.0,9.0,3.0,9.0,3
+8192,DFC free-exclusive,160,format_accuracy,A,63.333333333333336,56.0,51.0,83.0,3
+8192,DFC free-exclusive,160,format_accuracy,B,0.0,0.0,0.0,0.0,3
+8192,DFC free-exclusive,160,overall_score,A,0.9,0.68,0.53,1.49,3
+8192,DFC free-exclusive,160,overall_score,B,-0.9333333333333333,-0.92,-1.0,-0.88,3
+8192,DFC free-exclusive,160,tool_correctness,A,63.333333333333336,56.0,51.0,83.0,3
+8192,DFC free-exclusive,160,tool_correctness,B,3.3333333333333335,4.0,0.0,6.0,3
+8192,DFC penalized-exclusive,45,format_accuracy,A,48.333333333333336,45.0,44.0,56.0,3
+8192,DFC penalized-exclusive,45,format_accuracy,B,0.0,0.0,0.0,0.0,3
+8192,DFC penalized-exclusive,45,overall_score,A,0.45666666666666667,0.35,0.32,0.7,3
+8192,DFC penalized-exclusive,45,overall_score,B,-0.84,-0.94,-0.98,-0.6,3
+8192,DFC penalized-exclusive,45,tool_correctness,A,48.666666666666664,45.0,44.0,57.0,3
+8192,DFC penalized-exclusive,45,tool_correctness,B,8.0,3.0,1.0,20.0,3
+8192,DFC penalized-exclusive,90,format_accuracy,A,49.666666666666664,51.0,44.0,54.0,3
+8192,DFC penalized-exclusive,90,format_accuracy,B,0.0,0.0,0.0,0.0,3
+8192,DFC penalized-exclusive,90,overall_score,A,0.49,0.55,0.32,0.6,3
+8192,DFC penalized-exclusive,90,overall_score,B,-0.86,-0.88,-0.96,-0.74,3
+8192,DFC penalized-exclusive,90,tool_correctness,A,49.666666666666664,52.0,44.0,53.0,3
+8192,DFC penalized-exclusive,90,tool_correctness,B,7.0,6.0,2.0,13.0,3
+8192,DFC penalized-exclusive,160,format_accuracy,A,40.0,44.0,26.0,50.0,3
+8192,DFC penalized-exclusive,160,format_accuracy,B,0.0,0.0,0.0,0.0,3
+8192,DFC penalized-exclusive,160,overall_score,A,0.2,0.32,-0.22,0.5,3
+8192,DFC penalized-exclusive,160,overall_score,B,-0.9,-0.9,-0.96,-0.84,3
+8192,DFC penalized-exclusive,160,tool_correctness,A,40.0,44.0,26.0,50.0,3
+8192,DFC penalized-exclusive,160,tool_correctness,B,5.0,5.0,2.0,8.0,3
+16384,CrossCoder + L1,45,format_accuracy,A,51.0,51.0,51.0,51.0,1
+16384,CrossCoder + L1,45,format_accuracy,B,0.0,0.0,0.0,0.0,1
+16384,CrossCoder + L1,45,overall_score,A,0.55,0.55,0.55,0.55,1
+16384,CrossCoder + L1,45,overall_score,B,-0.76,-0.76,-0.76,-0.76,1
+16384,CrossCoder + L1,45,tool_correctness,A,52.0,52.0,52.0,52.0,1
+16384,CrossCoder + L1,45,tool_correctness,B,12.0,12.0,12.0,12.0,1
+16384,CrossCoder + L1,90,format_accuracy,A,45.0,45.0,45.0,45.0,1
+16384,CrossCoder + L1,90,format_accuracy,B,0.0,0.0,0.0,0.0,1
+16384,CrossCoder + L1,90,overall_score,A,0.37,0.37,0.37,0.37,1
+16384,CrossCoder + L1,90,overall_score,B,-0.94,-0.94,-0.94,-0.94,1
+16384,CrossCoder + L1,90,tool_correctness,A,46.0,46.0,46.0,46.0,1
+16384,CrossCoder + L1,90,tool_correctness,B,3.0,3.0,3.0,3.0,1
+16384,CrossCoder + L1,160,format_accuracy,A,66.0,66.0,66.0,66.0,1
+16384,CrossCoder + L1,160,format_accuracy,B,0.0,0.0,0.0,0.0,1
+16384,CrossCoder + L1,160,overall_score,A,1.0,1.0,1.0,1.0,1
+16384,CrossCoder + L1,160,overall_score,B,-0.92,-0.92,-0.92,-0.92,1
+16384,CrossCoder + L1,160,tool_correctness,A,67.0,67.0,67.0,67.0,1
+16384,CrossCoder + L1,160,tool_correctness,B,4.0,4.0,4.0,4.0,1
+16384,CrossCoder no-L1,45,format_accuracy,A,53.0,53.0,53.0,53.0,1
+16384,CrossCoder no-L1,45,format_accuracy,B,0.0,0.0,0.0,0.0,1
+16384,CrossCoder no-L1,45,overall_score,A,0.59,0.59,0.59,0.59,1
+16384,CrossCoder no-L1,45,overall_score,B,-0.72,-0.72,-0.72,-0.72,1
+16384,CrossCoder no-L1,45,tool_correctness,A,53.0,53.0,53.0,53.0,1
+16384,CrossCoder no-L1,45,tool_correctness,B,14.0,14.0,14.0,14.0,1
+16384,CrossCoder no-L1,90,format_accuracy,A,35.0,35.0,35.0,35.0,1
+16384,CrossCoder no-L1,90,format_accuracy,B,0.0,0.0,0.0,0.0,1
+16384,CrossCoder no-L1,90,overall_score,A,0.05,0.05,0.05,0.05,1
+16384,CrossCoder no-L1,90,overall_score,B,-0.7,-0.7,-0.7,-0.7,1
+16384,CrossCoder no-L1,90,tool_correctness,A,35.0,35.0,35.0,35.0,1
+16384,CrossCoder no-L1,90,tool_correctness,B,15.0,15.0,15.0,15.0,1
+16384,CrossCoder no-L1,160,format_accuracy,A,42.0,42.0,42.0,42.0,1
+16384,CrossCoder no-L1,160,format_accuracy,B,0.0,0.0,0.0,0.0,1
+16384,CrossCoder no-L1,160,overall_score,A,0.26,0.26,0.26,0.26,1
+16384,CrossCoder no-L1,160,overall_score,B,-0.7,-0.7,-0.7,-0.7,1
+16384,CrossCoder no-L1,160,tool_correctness,A,42.0,42.0,42.0,42.0,1
+16384,CrossCoder no-L1,160,tool_correctness,B,15.0,15.0,15.0,15.0,1
+16384,DFC free-exclusive,45,format_accuracy,A,43.333333333333336,48.0,33.0,49.0,3
+16384,DFC free-exclusive,45,format_accuracy,B,0.0,0.0,0.0,0.0,3
+16384,DFC free-exclusive,45,overall_score,A,0.30666666666666664,0.44,-0.01,0.49,3
+16384,DFC free-exclusive,45,overall_score,B,-0.9133333333333333,-0.88,-0.98,-0.88,3
+16384,DFC free-exclusive,45,tool_correctness,A,43.666666666666664,48.0,33.0,50.0,3
+16384,DFC free-exclusive,45,tool_correctness,B,4.333333333333333,6.0,1.0,6.0,3
+16384,DFC free-exclusive,90,format_accuracy,A,47.0,43.0,41.0,57.0,3
+16384,DFC free-exclusive,90,format_accuracy,B,0.0,0.0,0.0,0.0,3
+16384,DFC free-exclusive,90,overall_score,A,0.41666666666666663,0.33,0.23,0.69,3
+16384,DFC free-exclusive,90,overall_score,B,-0.7666666666666666,-0.82,-0.86,-0.62,3
+16384,DFC free-exclusive,90,tool_correctness,A,47.333333333333336,45.0,41.0,56.0,3
+16384,DFC free-exclusive,90,tool_correctness,B,11.666666666666666,9.0,7.0,19.0,3
+16384,DFC free-exclusive,160,format_accuracy,A,55.333333333333336,58.0,49.0,59.0,3
+16384,DFC free-exclusive,160,format_accuracy,B,0.0,0.0,0.0,0.0,3
+16384,DFC free-exclusive,160,overall_score,A,0.66,0.74,0.49,0.75,3
+16384,DFC free-exclusive,160,overall_score,B,-0.9333333333333333,-0.94,-0.94,-0.92,3
+16384,DFC free-exclusive,160,tool_correctness,A,55.333333333333336,58.0,50.0,58.0,3
+16384,DFC free-exclusive,160,tool_correctness,B,3.3333333333333335,3.0,3.0,4.0,3
+16384,DFC penalized-exclusive,45,format_accuracy,A,45.666666666666664,45.0,42.0,50.0,3
+16384,DFC penalized-exclusive,45,format_accuracy,B,0.0,0.0,0.0,0.0,3
+16384,DFC penalized-exclusive,45,overall_score,A,0.39666666666666667,0.37,0.28,0.54,3
+16384,DFC penalized-exclusive,45,overall_score,B,-0.8933333333333333,-0.88,-0.94,-0.86,3
+16384,DFC penalized-exclusive,45,tool_correctness,A,47.0,46.0,43.0,52.0,3
+16384,DFC penalized-exclusive,45,tool_correctness,B,5.333333333333333,6.0,3.0,7.0,3
+16384,DFC penalized-exclusive,90,format_accuracy,A,45.5,45.5,42.0,49.0,2
+16384,DFC penalized-exclusive,90,format_accuracy,B,0.0,0.0,0.0,0.0,2
+16384,DFC penalized-exclusive,90,overall_score,A,0.375,0.375,0.26,0.49,2
+16384,DFC penalized-exclusive,90,overall_score,B,-0.8999999999999999,-0.8999999999999999,-0.94,-0.86,2
+16384,DFC penalized-exclusive,90,tool_correctness,A,46.0,46.0,42.0,50.0,2
+16384,DFC penalized-exclusive,90,tool_correctness,B,5.0,5.0,3.0,7.0,2
+16384,DFC penalized-exclusive,160,format_accuracy,A,51.0,52.0,49.0,52.0,3
+16384,DFC penalized-exclusive,160,format_accuracy,B,0.0,0.0,0.0,0.0,3
+16384,DFC penalized-exclusive,160,overall_score,A,0.55,0.56,0.49,0.6,3
+16384,DFC penalized-exclusive,160,overall_score,B,-0.8866666666666667,-0.9,-0.92,-0.84,3
+16384,DFC penalized-exclusive,160,tool_correctness,A,52.0,52.0,50.0,54.0,3
+16384,DFC penalized-exclusive,160,tool_correctness,B,5.666666666666667,5.0,4.0,8.0,3
