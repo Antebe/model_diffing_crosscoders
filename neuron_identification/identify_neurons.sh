@@ -20,9 +20,9 @@ export DEVICE="mps"
 
 # ─── Datasets ─────────────────────────────────────────────────────────────────
 # N_PER_DATASET: number of prompts sampled per corpus. 
-export N_PER_DATASET="100"
+export N_PER_DATASET="1000"
 export TOOL_DATASET="emrecanacikgoz/ToolRL"
-export TOOL_DATASET_SPLIT="test"
+export TOOL_DATASET_SPLIT="train"
 export NONTOOL_DATASET="HuggingFaceFW/fineweb"
 export NONTOOL_DATASET_CONFIG="default"
 

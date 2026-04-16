@@ -32,3 +32,4 @@ dist/
 
 # Experiment outputs
 neuron_identification/runs/
+steering/runs/
