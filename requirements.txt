@@ -1,0 +1,6 @@
+torch==2.2.2
+numpy<2
+transformers>=4.44,<4.46
+huggingface_hub<1.0
+datasets<4
+matplotlib
