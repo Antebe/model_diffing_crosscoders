@@ -52,6 +52,9 @@ NONTOOL_DATASET_CONFIG = _env("NONTOOL_DATASET_CONFIG", "default")
 MAX_LENGTH = _env("MAX_LENGTH", "512", int)
 TOP_K = _env("TOP_K", "15", int)
 CORR_VLIM = _env("CORR_VLIM", "0.5", float)
+FIRE_THRESHOLD = _env("FIRE_THRESHOLD", "0.1", float)
+CANDIDATE_MIN_FIRE_RATE = _env("CANDIDATE_MIN_FIRE_RATE", "0.3", float)
+CANDIDATE_MAX_FIRE_RATE = _env("CANDIDATE_MAX_FIRE_RATE", "0.1", float)
 OUTPUT_DIR = Path(_env("OUTPUT_DIR", str(REPO_ROOT / "neuron_identification/output")))
 SEED = _env("SEED", "42", int)
 CACHE_ACTIVATIONS = _env("CACHE_ACTIVATIONS", "0") == "1"
@@ -163,6 +166,7 @@ def write_prompt_activations_jsonl(
     diff_b,
     a_offset,
     b_offset,
+    fire_threshold=0.0,
 ):
     """One JSON object per line; each object = one prompt + its active neurons.
 
@@ -195,8 +199,8 @@ def write_prompt_activations_jsonl(
     with open(path, "w") as f:
         for dataset, texts, A, B in corpora:
             for i, text in enumerate(texts):
-                a_active = np.nonzero(A[i])[0]
-                b_active = np.nonzero(B[i])[0]
+                a_active = np.nonzero(A[i] > fire_threshold)[0]
+                b_active = np.nonzero(B[i] > fire_threshold)[0]
                 entries = []
                 for local_idx in a_active:
                     entries.append(
@@ -226,6 +230,53 @@ def write_prompt_activations_jsonl(
                     "activations": entries,
                 }
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def compute_feature_metrics(arr_tool, arr_nontool, fire_threshold=0.0):
+    """Per-feature discrimination metrics between tool and non-tool corpora.
+
+    fire_threshold: minimum activation value to count as "fired" when computing
+    fire_rate_*. Mean/variance/AUROC/diff use the raw activation values and
+    are not affected by this threshold.
+
+    Returns a dict of 1-D numpy arrays (length = number of features):
+      mean_tool, mean_nontool, diff, cohens_d, auroc,
+      fire_rate_tool, fire_rate_nontool.
+    """
+    mean_tool = arr_tool.mean(axis=0)
+    mean_nontool = arr_nontool.mean(axis=0)
+    diff = mean_tool - mean_nontool
+
+    # Cohen's d with pooled SD. ddof=1 for unbiased estimate. Features with
+    # zero variance in both corpora (always the same value) get d=0.
+    var_tool = arr_tool.var(axis=0, ddof=1) if arr_tool.shape[0] > 1 else np.zeros_like(mean_tool)
+    var_nontool = arr_nontool.var(axis=0, ddof=1) if arr_nontool.shape[0] > 1 else np.zeros_like(mean_nontool)
+    pooled_std = np.sqrt((var_tool + var_nontool) / 2.0)
+    cohens_d = np.where(pooled_std > 1e-12, (mean_tool - mean_nontool) / pooled_std, 0.0)
+
+    # AUROC per feature, vectorized via Mann-Whitney U. Treats the feature's
+    # activation as a scalar classifier of tool vs non-tool. AUROC=1 = feature
+    # always fires higher on tool; 0.5 = no separation; 0 = always lower.
+    n_t = arr_tool.shape[0]
+    n_n = arr_nontool.shape[0]
+    combined = np.concatenate([arr_tool, arr_nontool], axis=0)
+
+    ranks = np.argsort(np.argsort(combined, axis=0), axis=0) + 1
+    sum_ranks_tool = ranks[:n_t].sum(axis=0)
+    auroc = (sum_ranks_tool - n_t * (n_t + 1) / 2) / (n_t * n_n)
+
+    fire_rate_tool = (arr_tool > fire_threshold).mean(axis=0)
+    fire_rate_nontool = (arr_nontool > fire_threshold).mean(axis=0)
+
+    return {
+        "mean_tool": mean_tool,
+        "mean_nontool": mean_nontool,
+        "diff": diff,
+        "cohens_d": cohens_d,
+        "auroc": auroc,
+        "fire_rate_tool": fire_rate_tool,
+        "fire_rate_nontool": fire_rate_nontool,
+    }
 
 
 def collect_exclusive_activations(
@@ -258,34 +309,81 @@ def collect_exclusive_activations(
     return np.stack(a_list), np.stack(b_list)
 
 
-def write_ranking_csv(path, diff, mean_tool, mean_nontool, offset, k=None):
-    order = np.argsort(-np.abs(diff))
+RANKING_COLUMNS = (
+    "rank,feature_idx,cohens_d,auroc,fire_rate_tool,fire_rate_nontool,"
+    "diff,mean_tool,mean_nontool,sign\n"
+)
+
+
+def _format_ranking_row(rank, idx, offset, metrics):
+    d = metrics["cohens_d"][idx]
+    sign = "tool" if d > 0 else ("nontool" if d < 0 else "tie")
+    return (
+        f"{rank},{int(idx) + offset},"
+        f"{d:.6f},{metrics['auroc'][idx]:.6f},"
+        f"{metrics['fire_rate_tool'][idx]:.4f},"
+        f"{metrics['fire_rate_nontool'][idx]:.4f},"
+        f"{metrics['diff'][idx]:.6f},"
+        f"{metrics['mean_tool'][idx]:.6f},"
+        f"{metrics['mean_nontool'][idx]:.6f},"
+        f"{sign}\n"
+    )
+
+
+def write_ranking_csv(path, metrics, offset, k=None):
+    """Full ranking by |cohens_d|, including mean-diff + AUROC + firing rates."""
+    order = np.argsort(-np.abs(metrics["cohens_d"]))
     if k is not None:
         order = order[:k]
     with open(path, "w") as f:
-        f.write("rank,feature_idx,diff,mean_tool,mean_nontool,sign\n")
+        f.write(RANKING_COLUMNS)
         for rank, idx in enumerate(order):
-            sign = "tool" if diff[idx] > 0 else ("nontool" if diff[idx] < 0 else "tie")
-            f.write(
-                f"{rank},{int(idx) + offset},{diff[idx]:.6f},"
-                f"{mean_tool[idx]:.6f},{mean_nontool[idx]:.6f},{sign}\n"
-            )
+            f.write(_format_ranking_row(rank, idx, offset, metrics))
 
 
-def plot_discrimination_bars(diff_a, diff_b, a_offset, b_offset, k, out_path):
-    idx_a = np.argsort(-np.abs(diff_a))[:k]
-    idx_b = np.argsort(-np.abs(diff_b))[:k]
+def write_filtered_ranking_csv(
+    path, metrics, offset, fire_min, fire_max, direction
+):
+    """Candidate shortlist for a given direction.
+
+    direction="tool":    fire_rate_tool    >= fire_min AND fire_rate_nontool <= fire_max
+    direction="nontool": fire_rate_nontool >= fire_min AND fire_rate_tool    <= fire_max
+
+    Ranked by |cohens_d| among passing features. Written regardless of whether
+    any features pass (empty file with header if none do).
+    """
+    fr_t = metrics["fire_rate_tool"]
+    fr_n = metrics["fire_rate_nontool"]
+    if direction == "tool":
+        mask = (fr_t >= fire_min) & (fr_n <= fire_max)
+    elif direction == "nontool":
+        mask = (fr_n >= fire_min) & (fr_t <= fire_max)
+    else:
+        raise ValueError(f"direction must be 'tool' or 'nontool', got {direction!r}")
+    idxs = np.nonzero(mask)[0]
+    order = idxs[np.argsort(-np.abs(metrics["cohens_d"][idxs]))]
+    with open(path, "w") as f:
+        f.write(RANKING_COLUMNS)
+        for rank, idx in enumerate(order):
+            f.write(_format_ranking_row(rank, idx, offset, metrics))
+    return len(order)
+
+
+def plot_discrimination_bars(d_a, d_b, a_offset, b_offset, k, out_path):
+    """Top-K features per partition, ranked by |Cohen's d|."""
+    idx_a = np.argsort(-np.abs(d_a))[:k]
+    idx_b = np.argsort(-np.abs(d_b))[:k]
     fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-    axes[0].barh(range(k), diff_a[idx_a], color="steelblue", alpha=0.9)
+    axes[0].barh(range(k), d_a[idx_a], color="steelblue", alpha=0.9)
     axes[0].set_yticks(range(k))
     axes[0].set_yticklabels([f"A-{int(i) + a_offset}" for i in idx_a], fontsize=9)
-    axes[0].set_xlabel("Mean(tool) − Mean(non-tool)")
+    axes[0].set_xlabel("Cohen's d (tool vs non-tool)")
     axes[0].set_title("A-exclusive (ToolRL-specific)")
     axes[0].axvline(0, color="gray", linestyle="--")
-    axes[1].barh(range(k), diff_b[idx_b], color="coral", alpha=0.9)
+    axes[1].barh(range(k), d_b[idx_b], color="coral", alpha=0.9)
     axes[1].set_yticks(range(k))
     axes[1].set_yticklabels([f"B-{int(i) + b_offset}" for i in idx_b], fontsize=9)
-    axes[1].set_xlabel("Mean(tool) − Mean(non-tool)")
+    axes[1].set_xlabel("Cohen's d (tool vs non-tool)")
     axes[1].set_title("B-exclusive (Base-specific)")
     axes[1].axvline(0, color="gray", linestyle="--")
     fig.text(
@@ -295,7 +393,7 @@ def plot_discrimination_bars(diff_a, diff_b, a_offset, b_offset, k, out_path):
         ha="center",
         fontsize=9,
     )
-    plt.suptitle("Top discriminative exclusive neurons", y=1.02)
+    plt.suptitle("Top discriminative exclusive neurons (by |Cohen's d|)", y=1.02)
     plt.tight_layout(rect=[0, 0.04, 1, 0.98])
     plt.savefig(out_path, bbox_inches="tight")
     plt.close(fig)
@@ -366,6 +464,9 @@ def main():
         "MAX_LENGTH": MAX_LENGTH,
         "TOP_K": TOP_K,
         "CORR_VLIM": CORR_VLIM,
+        "FIRE_THRESHOLD": FIRE_THRESHOLD,
+        "CANDIDATE_MIN_FIRE_RATE": CANDIDATE_MIN_FIRE_RATE,
+        "CANDIDATE_MAX_FIRE_RATE": CANDIDATE_MAX_FIRE_RATE,
         "OUTPUT_DIR": str(OUTPUT_DIR),
         "SEED": SEED,
         "CACHE_ACTIVATIONS": CACHE_ACTIVATIONS,
@@ -420,12 +521,10 @@ def main():
         f"B_tool={B_tool.shape}  B_nontool={B_nontool.shape}"
     )
 
-    diff_a = A_tool.mean(axis=0) - A_nontool.mean(axis=0)
-    diff_b = B_tool.mean(axis=0) - B_nontool.mean(axis=0)
-    mean_a_tool = A_tool.mean(axis=0)
-    mean_a_nontool = A_nontool.mean(axis=0)
-    mean_b_tool = B_tool.mean(axis=0)
-    mean_b_nontool = B_nontool.mean(axis=0)
+    metrics_a = compute_feature_metrics(A_tool, A_nontool, FIRE_THRESHOLD)
+    metrics_b = compute_feature_metrics(B_tool, B_nontool, FIRE_THRESHOLD)
+    d_a = metrics_a["cohens_d"]
+    d_b = metrics_b["cohens_d"]
 
     a_offset = 0
     b_offset = crosscoder.a_end
@@ -439,69 +538,56 @@ def main():
         A_nontool,
         B_tool,
         B_nontool,
-        diff_a,
-        diff_b,
+        d_a,
+        d_b,
         a_offset,
         b_offset,
+        FIRE_THRESHOLD,
+    )
+    write_ranking_csv(OUTPUT_DIR / "tool_neurons_A_full.csv", metrics_a, a_offset)
+    write_ranking_csv(OUTPUT_DIR / "tool_neurons_B_full.csv", metrics_b, b_offset)
+    write_ranking_csv(
+        OUTPUT_DIR / f"tool_neurons_A_top{TOP_K}.csv", metrics_a, a_offset, k=TOP_K
     )
     write_ranking_csv(
-        OUTPUT_DIR / "tool_neurons_A_full.csv",
-        diff_a,
-        mean_a_tool,
-        mean_a_nontool,
-        a_offset,
+        OUTPUT_DIR / f"tool_neurons_B_top{TOP_K}.csv", metrics_b, b_offset, k=TOP_K
     )
-    write_ranking_csv(
-        OUTPUT_DIR / "tool_neurons_B_full.csv",
-        diff_b,
-        mean_b_tool,
-        mean_b_nontool,
-        b_offset,
+    candidate_counts = {}
+    for direction in ("tool", "nontool"):
+        n_a = write_filtered_ranking_csv(
+            OUTPUT_DIR / f"{direction}_neurons_A_candidates.csv",
+            metrics_a,
+            a_offset,
+            CANDIDATE_MIN_FIRE_RATE,
+            CANDIDATE_MAX_FIRE_RATE,
+            direction,
+        )
+        n_b = write_filtered_ranking_csv(
+            OUTPUT_DIR / f"{direction}_neurons_B_candidates.csv",
+            metrics_b,
+            b_offset,
+            CANDIDATE_MIN_FIRE_RATE,
+            CANDIDATE_MAX_FIRE_RATE,
+            direction,
+        )
+        candidate_counts[direction] = (n_a, n_b)
+    print(
+        f"  candidate filter (>= {CANDIDATE_MIN_FIRE_RATE} in specialty corpus, "
+        f"<= {CANDIDATE_MAX_FIRE_RATE} in other):"
     )
-    write_ranking_csv(
-        OUTPUT_DIR / f"tool_neurons_A_top{TOP_K}.csv",
-        diff_a,
-        mean_a_tool,
-        mean_a_nontool,
-        a_offset,
-        k=TOP_K,
-    )
-    write_ranking_csv(
-        OUTPUT_DIR / f"tool_neurons_B_top{TOP_K}.csv",
-        diff_b,
-        mean_b_tool,
-        mean_b_nontool,
-        b_offset,
-        k=TOP_K,
-    )
+    for direction, (n_a, n_b) in candidate_counts.items():
+        print(f"    {direction}:    A={n_a}  B={n_b}")
 
     print(f"Writing plots to {OUTPUT_DIR}")
     plot_discrimination_bars(
-        diff_a,
-        diff_b,
-        a_offset,
-        b_offset,
-        TOP_K,
-        OUTPUT_DIR / "discrimination_bars.svg",
+        d_a, d_b, a_offset, b_offset, TOP_K, OUTPUT_DIR / "discrimination_bars.svg"
     )
     plot_coactivation(
-        A_tool,
-        A_nontool,
-        diff_a,
-        a_offset,
-        TOP_K,
-        CORR_VLIM,
-        "A",
+        A_tool, A_nontool, d_a, a_offset, TOP_K, CORR_VLIM, "A",
         OUTPUT_DIR / "coactivation_A.svg",
     )
     plot_coactivation(
-        B_tool,
-        B_nontool,
-        diff_b,
-        b_offset,
-        TOP_K,
-        CORR_VLIM,
-        "B",
+        B_tool, B_nontool, d_b, b_offset, TOP_K, CORR_VLIM, "B",
         OUTPUT_DIR / "coactivation_B.svg",
     )
     plot_magnitude_boxplot(
@@ -515,24 +601,26 @@ def main():
             A_nontool=A_nontool,
             B_tool=B_tool,
             B_nontool=B_nontool,
-            diff_a=diff_a,
-            diff_b=diff_b,
+            cohens_d_a=d_a,
+            cohens_d_b=d_b,
+            auroc_a=metrics_a["auroc"],
+            auroc_b=metrics_b["auroc"],
         )
         print(f"Wrote raw activations to {OUTPUT_DIR / 'activations_cache.npz'}")
 
-    print("\nTop-10 A-exclusive (positive diff = tool-specific):")
-    for r, i in enumerate(np.argsort(-np.abs(diff_a))[:10]):
-        print(
-            f"  #{r} A-{int(i) + a_offset}: diff={diff_a[i]:+.4f}  "
-            f"tool={mean_a_tool[i]:.4f}  nontool={mean_a_nontool[i]:.4f}"
-        )
+    def _print_top(label, metrics, offset, n=10):
+        print(f"\nTop-{n} {label}-exclusive (by |Cohen's d|):")
+        for r, i in enumerate(np.argsort(-np.abs(metrics["cohens_d"]))[:n]):
+            print(
+                f"  #{r} {label}-{int(i) + offset}: "
+                f"d={metrics['cohens_d'][i]:+.3f}  auroc={metrics['auroc'][i]:.3f}  "
+                f"fire_t={metrics['fire_rate_tool'][i]:.2f}  "
+                f"fire_n={metrics['fire_rate_nontool'][i]:.2f}  "
+                f"Δmean={metrics['diff'][i]:+.3f}"
+            )
 
-    print("\nTop-10 B-exclusive:")
-    for r, i in enumerate(np.argsort(-np.abs(diff_b))[:10]):
-        print(
-            f"  #{r} B-{int(i) + b_offset}: diff={diff_b[i]:+.4f}  "
-            f"tool={mean_b_tool[i]:.4f}  nontool={mean_b_nontool[i]:.4f}"
-        )
+    _print_top("A", metrics_a, a_offset)
+    _print_top("B", metrics_b, b_offset)
 
     print(f"\nDone. Outputs in {OUTPUT_DIR}")
 

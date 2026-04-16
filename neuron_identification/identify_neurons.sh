@@ -20,7 +20,7 @@ export DEVICE="mps"
 
 # ─── Datasets ─────────────────────────────────────────────────────────────────
 # N_PER_DATASET: number of prompts sampled per corpus. 
-export N_PER_DATASET="1"
+export N_PER_DATASET="100"
 export TOOL_DATASET="emrecanacikgoz/ToolRL"
 export TOOL_DATASET_SPLIT="test"
 export NONTOOL_DATASET="HuggingFaceFW/fineweb"
@@ -31,14 +31,41 @@ export NONTOOL_DATASET_CONFIG="default"
 export TOP_K="15"
 export CORR_VLIM="0.5"
 
+# ─── What counts as "fired" ──────────────────────────────────────────────────
+# FIRE_THRESHOLD: a feature counts as fired on a prompt when its activation
+# exceeds this value. TopK encoding fills its budget even with tiny values, so
+# a literal ">0" treats trivial selections as firings. This threshold is used
+# for fire_rate_* in the rankings and for which features appear per prompt in
+# prompt_activations.jsonl. Raise to see only strong firings (e.g. 0.5, 1.0).
+export FIRE_THRESHOLD="0.1"
+
+# ─── Steering-candidate filter ───────────────────────────────────────────────
+# Applied symmetrically to produce both tool_* and nontool_* candidate CSVs.
+# A feature is a tool candidate when it fires on
+#   >= CANDIDATE_MIN_FIRE_RATE of tool prompts   (specialty corpus)
+#   <= CANDIDATE_MAX_FIRE_RATE of non-tool prompts (other corpus)
+# and vice versa for non-tool candidates. "Fires" here uses FIRE_THRESHOLD
+# above. Tighten (e.g. 0.5 / 0.05) for a stricter shortlist, or relax
+# (e.g. 0.2 / 0.2) if little passes at small N.
+export CANDIDATE_MIN_FIRE_RATE="0.3"
+export CANDIDATE_MAX_FIRE_RATE="0.1"
+
 # ─── Output ───────────────────────────────────────────────────────────────────
-# OUTPUT_DIR: where CSVs, SVG plots, prompts.csv, run_config.json, and
-# (optionally) the raw activations cache are written. Defaults to a per-run
-# folder named from the crosscoder variant + sample count, e.g.
-#   neuron_identification/runs/dfc-D8k-excl10-freeexcl-k160_n1000
-# Override by setting OUTPUT_DIR before invoking this script.
+# Always auto-computes OUTPUT_DIR from crosscoder name + sample count, with a
+# numeric suffix (_2, _3, …) if the folder already exists — so repeated runs
+# never overwrite each other. Any OUTPUT_DIR inherited from the calling shell
+# is deliberately ignored (common source of accidental overwrites). To pin a
+# specific path, edit the export line below directly.
+unset OUTPUT_DIR
 CROSSCODER_SHORT="${CROSSCODER_NAME##*/}"
-export OUTPUT_DIR="${OUTPUT_DIR:-neuron_identification/runs/${CROSSCODER_SHORT}_n${N_PER_DATASET}}"
+BASE="neuron_identification/runs/${CROSSCODER_SHORT}_n${N_PER_DATASET}"
+CANDIDATE="$BASE"
+idx=2
+while [[ -e "$CANDIDATE" ]]; do
+    CANDIDATE="${BASE}_${idx}"
+    idx=$((idx + 1))
+done
+export OUTPUT_DIR="$CANDIDATE"
 # SEED: seeds Python, numpy, and torch. Controls dataset sampling order.
 export SEED="42"
 # CACHE_ACTIVATIONS: "1" to save raw activations to a .npz file for faster re-running with the same prompts.
