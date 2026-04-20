@@ -31,5 +31,8 @@ dist/
 .ipynb_checkpoints/
 
 # Experiment outputs
-neuron_identification/runs/
 steering/runs/
+
+# Neuron identification runs: prompt dumps can contain secrets embedded in prompt text
+neuron_identification/runs/**/prompt_activations.jsonl
+neuron_identification/runs/dfc-D8k-excl10-freeexcl-k160_n1000/jsonl/

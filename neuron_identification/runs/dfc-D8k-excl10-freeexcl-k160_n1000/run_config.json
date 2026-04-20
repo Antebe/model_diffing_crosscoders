@@ -1,0 +1,22 @@
+{
+  "CROSSCODER_NAME": "antebe1/dfc-D8k-excl10-freeexcl-k160",
+  "MODELS_JSONL": "models.jsonl",
+  "MODEL_A_ID": "chengq9/ToolRL-Qwen2.5-3B",
+  "MODEL_B_ID": "Qwen/Qwen2.5-3B",
+  "HIDDEN_STATES_IDX": 14,
+  "DEVICE": "cuda",
+  "N_PER_DATASET": 1000,
+  "TOOL_DATASET": "emrecanacikgoz/ToolRL",
+  "TOOL_DATASET_SPLIT": "train",
+  "NONTOOL_DATASET": "HuggingFaceFW/fineweb",
+  "NONTOOL_DATASET_CONFIG": "default",
+  "MAX_LENGTH": 512,
+  "TOP_K": 15,
+  "CORR_VLIM": 0.5,
+  "FIRE_THRESHOLD": 0.1,
+  "CANDIDATE_MIN_FIRE_RATE": 0.3,
+  "CANDIDATE_MAX_FIRE_RATE": 0.1,
+  "OUTPUT_DIR": "neuron_identification/runs/dfc-D8k-excl10-freeexcl-k160_n1000",
+  "SEED": 42,
+  "CACHE_ACTIVATIONS": true
+}

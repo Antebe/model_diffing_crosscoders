@@ -1,0 +1,3 @@
+rank,feature_idx,cohens_d,auroc,fire_rate_tool,fire_rate_nontool,diff,mean_tool,mean_nontool,sign
+0,951,1.146222,0.994783,0.4170,0.0050,1.437187,1.455238,0.018051,tool
+1,1199,0.948060,0.953578,0.4090,0.0400,1.243495,1.399140,0.155645,tool
