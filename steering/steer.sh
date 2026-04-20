@@ -19,7 +19,7 @@ export MAX_NEW_TOKENS="512"
 # LAYER: transformer layer to patch during generation (0-indexed).
 export LAYER="13"
 # DEVICE: where to place LLMs + crosscoder. cuda | mps | cpu.
-export DEVICE="mps"
+export DEVICE="cuda"
 
 # ─── Steering mode ────────────────────────────────────────────────────────────
 # STEER_MODE: "scale" or "clamp"
