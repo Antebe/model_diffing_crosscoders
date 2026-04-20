@@ -16,7 +16,7 @@ export MODEL_B_ID="Qwen/Qwen2.5-3B"
 export HIDDEN_STATES_IDX="14"
 export MAX_LENGTH="512"
 # DEVICE: where to place LLMs + crosscoder. cuda | mps | cpu.
-export DEVICE="mps"
+export DEVICE="cuda"
 
 # ─── Datasets ─────────────────────────────────────────────────────────────────
 # N_PER_DATASET: number of prompts sampled per corpus. 
