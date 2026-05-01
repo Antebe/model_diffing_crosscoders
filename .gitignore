@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTorch 
+*.pth
+
+# Logs and outputs
+*.log
+wandb/
+wandb_runs/
+results/
+
+# Cache
+cache/
+*.cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gradio
+.gradio/
+
+# Temporary upload files
+hf_upload_temp/
+
+# Large model files (use Git LFS for these)
+*.bin
+*.safetensors
