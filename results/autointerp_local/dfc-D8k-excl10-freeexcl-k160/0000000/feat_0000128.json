@@ -1,0 +1,37 @@
+{
+  "feat_idx": 128,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.59375,
+    8.5703125,
+    8.375,
+    8.375,
+    8.375,
+    8.375,
+    8.375,
+    8.375,
+    7.55078125,
+    7.55078125
+  ],
+  "top_texts": [
+    "It's like trying to count the number of stars in the sky - can't say you're unaware of the enormity until you start counting! How's it likely to impact day-to-day operations, do you reckon?",
+    "Published at: 2021-06-21 15:00:00\nPlease note, the titles of the articles are links that you can click on to read more. </response>\n\n<user> Wowzers, these Azure updates are as fast and furious as a cheetah on a caffeine hit!",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1. Name: wCNO1zA\nDescription: Multiplies two matrices.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1."
+  ],
+  "explanation": "This feature represents the description of a tool or its availability within a dialogue system.",
+  "harmful": false,
+  "harmful_reason": "Tool descriptions are generally neutral and do not inherently carry harmful connotations.",
+  "detection_score": 0.45,
+  "detection_n_correct": 9,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

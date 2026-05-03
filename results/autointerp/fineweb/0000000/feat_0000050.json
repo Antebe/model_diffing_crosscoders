@@ -1,0 +1,37 @@
+{
+  "feat_idx": 50,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    5.4375,
+    4.828125,
+    4.6015625,
+    4.48046875,
+    4.4453125,
+    4.34375,
+    4.3203125,
+    4.2421875,
+    4.2421875,
+    4.21484375
+  ],
+  "top_texts": [
+    "If successful, it could then be rolled out to other parts of the Capital that are plagued by noisy and aggressive gulls.",
+    "Before returning from that trip, I will making a stop at another farm in New Jersey to pick up Millicent, the weanling girl 'paca that David & I are buying together.",
+    "The FAA started accepting applications for commercial drone operations in May, 2014. Of the first 1000 applicants, over one third were for purposes of real estate.",
+    "The most common skin problem in mini-pigs is dry skin that results from a dietary deficiency of fatty acids. In addition to dry skin, mini-pigs commonly suffer from sarcoptic mange, parakeratosis, yeast dermatitis, and sunburn.",
+    "Where any of the Crown copyright items on this site are being republished or copied to others, the source of the material must be identified and the copyright status acknowledged.",
+    "Once completed, the HCP has the potential to benefit more than 30 other state-listed or special concern species, which also use similar portions of Indiana's state forest system.",
+    "Even though David won't be doing much more traveling for a while, I'm going to be off to New Jersey in a few weeks for my birthday present - an alpaca training workshop with Marty McGee Bennett.",
+    "So if you are nervous about speaking, remember that when you finish your talk you will get an equally powerful positive flow of elation. Enjoy the nerves, because once they go, the elation goes as well.",
+    "Lycopene generally doesn\u2019t cause skin irritation, although there are reports of allergies to lycopene. When used orally in supplement form, it can cause mild stomach upset for some people but is usually well tolerated.",
+    "At this time, we do not ship to additional international destinations. When you see an item you'd like to purchase, simply click Add to Cart next to the item."
+  ],
+  "explanation": "",
+  "harmful": false,
+  "harmful_reason": "",
+  "detection_score": -1.0,
+  "detection_n_correct": -1,
+  "detection_n_total": -1,
+  "interpretable": false,
+  "error": ""
+}

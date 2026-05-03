@@ -1,0 +1,37 @@
+{
+  "feat_idx": 546,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    10.78125,
+    10.5234375,
+    10.515625,
+    10.453125,
+    10.25,
+    10.2421875,
+    10.1796875,
+    9.9609375,
+    9.9296875,
+    9.7734375
+  ],
+  "top_texts": [
+    "</think>\n<tool_call>\n{\"name\": \"get_user_tagged_media_by_user_id\", \"parameters\": {\"is_id\": 1234567890, \"count\": 50}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"createBlockchain\", \"parameters\": {\"name\": \"ProjectAlpha\", \"version\": \"1.0\", \"consensus\": \"Proof of Work\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"draw_cards\", \"parameters\": {\"num_draw\": 3}}\n{\"name\": \"draw_cards\", \"parameters\": {\"num_draw\": 5}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"predict_forest_area\", \"parameters\": {\"location\": \"Siberian Taiga\", \"num_years\": 20, \"include_humans\": false}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"DeFiLiquidityTracker.trackPoolChanges\", \"parameters\": {\"poolIdentifiers\": \"[{\\\"poolID\\\": \\\"0x397ff1542f962076d0bfe58ea045ffa2d347aca0\\\"\"}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"get_2_year_historical_quarterly_prices\", \"parameters\": {\"ticker\": \"TSLA\"}}\n</tool_call>",
+    "Could you provide me with the demographic details for 2019? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"getCommunityDemographics\", \"parameters\": {\"location\": \"Austin\", \"year\": \"2019\"}}\n</tool_call>",
+    "Parameters: {\"is_id\": {\"description\": \"The IP address (IPv4 and IPv6 are supported) to look up.\", \"type\": \"str\", \"default\": \"200.194.51.97\"}, \"language\": {\"description\": \"Specifies the language (ISO 639-1) to get the\", \"type\": \"str, optional\", \"default\": \"\"}}\n2.",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"vivanews_detail\", \"parameters\": {\"is_id\": 24680}}\n</tool_call>",
+    "Defaults to 200.\", \"type\": \"int\", \"default\": 200}, \"offset\": {\"description\": \"The number of playlists to omit before returning the results. Defaults to 0.\", \"type\": \"int\", \"default\": 0}}\n5."
+  ],
+  "explanation": "This feature represents the structure and syntax of tool calls within a text context.",
+  "harmful": false,
+  "harmful_reason": "The feature simply describes the way tools are invoked, not the content of the tools themselves.",
+  "detection_score": 0.6,
+  "detection_n_correct": 12,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

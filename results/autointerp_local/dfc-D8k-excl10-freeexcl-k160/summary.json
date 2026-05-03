@@ -1,0 +1,25 @@
+{
+  "total_processed": 45,
+  "dead": 0,
+  "interpretable": 8,
+  "harmful": 0,
+  "pct_interpretable": 17.8,
+  "pct_harmful": 0.0,
+  "by_partition": {
+    "a_excl": {
+      "total": 45,
+      "interpretable": 8,
+      "harmful": 0
+    },
+    "b_excl": {
+      "total": 0,
+      "interpretable": 0,
+      "harmful": 0
+    },
+    "shared": {
+      "total": 0,
+      "interpretable": 0,
+      "harmful": 0
+    }
+  }
+}

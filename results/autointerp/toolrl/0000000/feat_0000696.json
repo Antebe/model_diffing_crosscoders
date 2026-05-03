@@ -1,0 +1,37 @@
+{
+  "feat_idx": 696,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625,
+    7.7265625
+  ],
+  "top_texts": [
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n..."
+  ],
+  "explanation": "This feature represents structured output format templates that combine XML-like thinking tags with JSON-formatted tool/function calls.",
+  "harmful": false,
+  "harmful_reason": "The content describes neutral technical formatting instructions for AI tool usage without any harmful, offensive, or dangerous elements.",
+  "detection_score": 0.9,
+  "detection_n_correct": 18,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

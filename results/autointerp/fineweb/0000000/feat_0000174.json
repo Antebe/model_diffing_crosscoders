@@ -1,0 +1,37 @@
+{
+  "feat_idx": 174,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    9.875,
+    7.53125,
+    6.953125,
+    5.8046875,
+    5.78515625,
+    5.5625,
+    5.1015625,
+    4.78515625,
+    4.40625,
+    4.33984375
+  ],
+  "top_texts": [
+    "|Bulgaria - Sofia Neighboring Countries:\nSerbia - Montenegro 1.5\u00a2 \u00bb Macedonia 1.0\u00a2 \u00bb Greece 0.1\u00a2 \u00bb Turkey 0.3\u00a2 \u00bb Ukraine 1.7\u00a2 \u00bb Romania 0.2\u00a2\nUsing this phone card to call Bulgaria - Sofia will save you money!",
+    "Our auto dialer is typically a software-based outbound contact center solution, which helps agents by automatically dialing customers\u2019 phone numbers from a database of leads. Our auto dialing software is scalable, customizable, and easy to use.",
+    "His owner's ID card to possess them had been revoked, according to police, who came to Golota's Northwest Side home Wednesday after two women had left there and called 911.",
+    "In fact, it\u2019s a useful way to weed out sales calls, since the caller will often ask for me by my husband\u2019s name or the reverse.",
+    "This securing has permitted any client pursuing the VPN administration to use three additional items \u2013 the 1Password secret key chief, the Identity Guard fraud insurance administration (US-just), just as the Robo Shield robocall and spam blocker (US-as it were).",
+    "- Email \u2013 If you have a large number of customers in this spend-it-or-lose-it category, craft an email and send it out. Offer special end-of-year discounts to motivate them. Follow up with a phone call.",
+    "But these easy actions just might improve your wellbeing:\n- When possible, use a land line rather than your cell phone. - Use a hands free device or speaker phone function if using a cell phone.",
+    "Square rooms promote eye contact, but may not readily accommodate the peanut gallery and similar support functions, particularly if they are small. Most teleconferencing facilities tend to put a high priority on eye contact.",
+    "He feels that had he taken off his coat he might have been able to make it. Meanwhile a passerby had witnessed the two men in trouble and called the RCMP.",
+    "For instance, to get the brass sound on 'Mellow Mellow' I used 'Hard Brass' on the DX100, another sound from the D50, vet another sound from a TX802 and one from a TX81Z, and then there was a low tone from the Juno 106 which gave a bit of body in the background.\"\nCall it the democratisation of technology, call it the relentless drive of market forces."
+  ],
+  "explanation": "The feature represents text about phone calls, calling, or telecommunications activities.",
+  "harmful": false,
+  "harmful_reason": "The content relates to neutral telecommunications topics and emergency services, with no indication of harmful or malicious use.",
+  "detection_score": 0.95,
+  "detection_n_correct": 19,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

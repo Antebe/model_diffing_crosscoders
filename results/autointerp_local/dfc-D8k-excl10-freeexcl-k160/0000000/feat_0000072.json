@@ -1,0 +1,37 @@
+{
+  "feat_idx": 72,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    9.375,
+    9.2109375,
+    9.03125,
+    8.7890625,
+    8.0859375,
+    7.17578125,
+    7.15234375,
+    7.0546875,
+    6.81640625,
+    6.7578125
+  ],
+  "top_texts": [
+    "</think>\n<tool_call>\n{\"name\": \"decryptDataWithAudit\", \"parameters\": {\"decryptionDetails\": \"{\\\"key\\\": \\\"VGhlU2VjcmV0S2V5\\\"\", \"\\\"encryptedData\\\": \\\"UGljbGVvZWZ0Q3lwaGVyRGF0YQ\": \"=\\\"\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"clustering.dbscan\", \"parameters\": {\"dataset\": \"(\\\\\"}}\n{\"name\": \"\", \"parameters\": {}}\n{\"name\": \"\", \"parameters\": {}}\n{\"name\": \"\", \"parameters\": {}}\n{\"name\": \"\", \"parameters\": {\"\\\\\\\"5.5\\\\\\\", \\\\\\\"6.6\\\\\\\")\\\", eps\": \"0.5\", \"min_samples\": \"10\"}}\n</tool_call>",
+    "Parameters: {\"page\": {\"description\": \"The page number for paginated results.\", \"type\": \"int\", \"default\": \"0\"}, \"state\": {\"description\": \"The two-letter state code for which to fetch KFC locations.\", \"type\": \"str\", \"default\": \"AZ\"}}\n2.",
+    "Default is 48.\", \"type\": \"int, optional\", \"default\": \"48\"}, \"f.qtUw_L\": {\"description\": \"The field by which to sort the results. Default is 0.\", \"type\": \"int, optional\", \"default\": \"0\"}}\n\n**Steps for Each Turn**\n1.",
+    "**Dialogue Records History**\n<user> I want to run Deep Q-Learning on an environment with a discount factor of 0.9 and a learning rate of 0.01. </user>\n\n<think> I should directly respond to the user's need.",
+    "Preparing for time zone changes minimizes the effects of jet lag, making your travel experience more enjoyable. 2. **Scheduling and Planning**: For international travel involving appointments, meetings, or social engagements, knowing time zones is crucial to schedule them appropriately.",
+    "Name: Get Stock Key Stats Growth Table\nDescription: Retrieve the key stats growth table for a given stock performance ID in the Valuation tab. Parameters: {\"performanceId\": {\"description\": \"The unique identifier of the stock performance.\", \"type\": \"string\", \"default\": \"0P0000OQN8\"}}\n4.",
+    "</think>\n<tool_call>\n{\"name\": \"cgi.modeling.list\", \"parameters\": {\"start_time\": \"09:00:00\", \"end_time\": \"17:00:00\"}}\n</tool_call>",
+    "Name: 1 Hour / Minutely Forecast (Nowcast)\nDescription: Retrieve a 60 minute 'Nowcast' for precipitation, and snowfall, providing hourly and minutely forecasts for the next hour.",
+    "**Rest Well Before Driving**: Fatigue can significantly impair your driving. Ensure you have a good night\u2019s sleep before embarking on a long drive. 3."
+  ],
+  "explanation": "This feature represents the concept of structured data or code-like input, likely involving parameters and function calls.",
+  "harmful": false,
+  "harmful_reason": "While code can be misused, the feature itself is descriptive and doesn't inherently carry harmful connotations.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

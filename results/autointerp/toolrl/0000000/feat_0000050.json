@@ -1,0 +1,37 @@
+{
+  "feat_idx": 50,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    4.796875,
+    4.796875,
+    4.796875,
+    4.796875,
+    4.796875,
+    4.75390625,
+    4.73828125,
+    4.73046875,
+    4.73046875,
+    4.703125
+  ],
+  "top_texts": [
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "Defaults to \\\"run\\\".\", \"type\": \"str, optional\", \"default\": \"run\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Parameters: {\"category\": {\"description\": \"The category of posts to fetch.\", \"type\": \"str\", \"default\": \"sports\"}, \"counter\": {\"description\": \"Leave blank for the first request. For subsequent requests, provide the counter received from the previous request.",
+    "Defaults to 'en'.\", \"type\": \"str, optional\", \"default\": \"en\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Defaults to 'en'.\", \"type\": \"str, optional\", \"default\": \"en\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Defaults to 'hCCp9'.\", \"type\": \"str\", \"default\": \"hCCp9\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3."
+  ],
+  "explanation": "This feature represents structured technical documentation or instructions that describe how to use tools, APIs, or functions, particularly focusing on parameter specifications and step-by-step usage guidelines.",
+  "harmful": false,
+  "harmful_reason": "This feature activates on neutral technical documentation and instructional content about tool usage and parameters, which is standard programming or API documentation material.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

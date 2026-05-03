@@ -1,0 +1,37 @@
+{
+  "feat_idx": 665,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    5.62109375,
+    5.62109375,
+    5.62109375,
+    5.62109375,
+    5.62109375,
+    5.62109375,
+    5.62109375,
+    5.375,
+    4.44140625,
+    4.44140625
+  ],
+  "top_texts": [
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> How many grams are in 2 cups of flour?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Could you please verify this email address for me: john.doe@example.com?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you monitor our data pipeline with ID DP-4321?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Find the city for ZIP code 77002.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Role definition:\n Inquirer: A user who raises an inquiry.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Could you update me on the current financial market?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you check the fuel level for the spacecraft NASA1234?",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I'm analysing sports data for an article I'm writing.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What is the tree equivalent for 1500 pounds of paper?"
+  ],
+  "explanation": "This feature represents instructions for AI systems to reference previous dialogue history and tool interactions, specifically using a structured format with tags like `<tool_call>`, `<response>`, and `<obs>`.",
+  "harmful": false,
+  "harmful_reason": "The feature relates to technical instructions for AI dialogue management and tool usage, with no harmful content present in the examples.",
+  "detection_score": 0.9,
+  "detection_n_correct": 18,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

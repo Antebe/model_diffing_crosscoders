@@ -1,0 +1,37 @@
+{
+  "feat_idx": 353,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    9.296875,
+    9.15625,
+    8.75,
+    8.5,
+    8.2578125,
+    8.2578125,
+    8.2578125,
+    8.2578125,
+    8.2578125,
+    8.2578125
+  ],
+  "top_texts": [
+    "</think>\n<tool_call>\n{\"name\": \"get_city_from_zipcode\", \"parameters\": {\"zipcode\": \"92101\"}}\n{\"name\": \"get_holidays_by_year\", \"parameters\": {\"year\": 2023, \"country_code\": \"GB\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"getProductSku\", \"parameters\": {\"product_sku\": \"SKU1234\"}}\n{\"name\": \"getProductSku\", \"parameters\": {\"product_sku\": \"SKU5678\"}}\n{\"name\": \"getProductSku\", \"parameters\": {\"product_sku\": \"SKU9012\"}}\n{\"name\": \"getProductSku\", \"parameters\": {\"product_sku\": \"SKU3456\"}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"Get Future Election Events by Topic\", \"parameters\": {\"page\": \"1\", \"topic\": \"democratic rights\"}}\n{\"name\": \"getBookCoverImage\", \"parameters\": {\"isbn\": \"9781984801258\", \"languageCode\": \"en\"}}\n</tool_call>",
+    "Name: Get Vehicle Trim\nDescription: Returns detailed information about a specific vehicle trim, including its features, specifications, and other relevant details. Parameters: {\"id\": {\"description\": \"Unique identifier of the vehicle trim\", \"type\": \"float\", \"default\": \"\"}}\n8.",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n..."
+  ],
+  "explanation": "This feature represents the structure of a tool invocation within a text-based dialogue system.",
+  "harmful": false,
+  "harmful_reason": "The feature describes a common pattern in how AI systems interact with tools, not inherently harmful content.",
+  "detection_score": 0.6,
+  "detection_n_correct": 12,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

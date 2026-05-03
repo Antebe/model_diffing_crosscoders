@@ -1,0 +1,37 @@
+{
+  "feat_idx": 52,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    10.359375,
+    9.0703125,
+    8.125,
+    7.83203125,
+    7.6953125,
+    7.64453125,
+    7.5390625,
+    7.421875,
+    7.2890625,
+    7.18359375
+  ],
+  "top_texts": [
+    "Name: Get Earning Summaries by Symbol\nDescription: Retrieve earning summaries for a specific stock symbol\nParameters: {\"ticker_slug\": {\"description\": \"Ticker slug of the stock symbol\", \"type\": \"string\", \"default\": \"\"}}\n5.",
+    "Team ID is available in the Team Info endpoint.\", \"type\": \"string\", \"default\": \"\"}}\n2. Name: Baseball League Next Matches\nDescription: Retrieve the next matches of a baseball league for a specific season and tournament.",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"getmatchbywinner\", \"parameters\": {\"winner\": \"Royal Challengers Bangalore\"}}\n{\"name\": \"players_photo\", \"parameters\": {\"player_id\": 12345}}\n</tool_call>",
+    "Parameters: {\"seasonId\": {\"description\": \"The unique identifier of the season.\", \"type\": \"float\", \"default\": \"\"}, \"tournamentId\": {\"description\": \"The unique identifier of the tournament.\", \"type\": \"float\", \"default\": \"\"}}\n3.",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I need to evaluate the risk for my insurance policy. My customer age is 34, and I've had 3 previous claims.",
+    "Your role is the Response assistant. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"Get Team Stats Filters\", \"parameters\": {\"teamId\": \"27.0\"}}\n</tool_call>",
+    "Name: get_search_user\nDescription: Fetches the search result for a specific username from the TikTok User API. Parameters: {\"is_id\": {\"description\": \"The username or ID to search for.\", \"type\": \"str\", \"default\": \"therock\"}}\n3.",
+    "Name: Heroes List API\nDescription: This API provides a list of heroes from the Dota2 game, including their IDs, names, images, complexity levels, and attributes. Parameters: {}\n\n**Steps for Each Turn**\n1.",
+    "Name: Movie Suggestions\nDescription: Returns a list of related movies as suggestions for the user\nParameters: {\"movie_id\": {\"description\": \"The ID of the movie\", \"type\": \"float\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "Default is 'ethereum'.\", \"type\": \"str, optional\", \"default\": \"ethereum\"}, \"page\": {\"description\": \"The page number to start from. Default is 10.\", \"type\": \"int, optional\", \"default\": 10}, \"slug\": {\"description\": \"Search all platform slugs."
+  ],
+  "explanation": "This feature represents the concept of API endpoints and their parameters.",
+  "harmful": false,
+  "harmful_reason": "API endpoints and parameters are fundamental to software development and data access, not inherently harmful.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

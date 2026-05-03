@@ -1,0 +1,37 @@
+{
+  "feat_idx": 665,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.9921875,
+    3.443359375,
+    3.123046875,
+    2.78125,
+    2.529296875,
+    2.525390625,
+    2.486328125,
+    2.451171875,
+    1.8046875,
+    1.69140625
+  ],
+  "top_texts": [
+    "Cheers! - 13 Quivira Viognier-Sauvignon Blanc (Dry Creek Valley): Potential for a mad-scientist match-up that becomes more art than creation.",
+    "This 2.56 Petaflop super was also the largest hybrid system in the world, using 14,336 Xeon processors combined with 7,168 NVIDIA M2050 Tesla GPUs. NUDT\u201a?\u00b6 participated in the SC11 Student Cluster Competition in Seattle last fall.",
+    "It was recommended to us by a fellow camper, and it was a great recommendation. There is also a Save-A-Lot right across the street which we popped into for some groceries.",
+    "Over 12 million applications were received, which represented a 17% increase on the 2008 finals, and an all-time record for the UEFA European Championship. Owing to this over-subscription for the matches, lotteries were carried out to allocate tickets.",
+    "The printer 212 is connected to serve both the server 202 and the first workstation 208. Printer 213 serves the second workstation 210. If desired, a separate printer can be provided for each data entry station.",
+    "As defending champions, Spain were also automatically assigned to Pot 1, though their UEFA ranking at the time of the draw was coincidentally also the best.",
+    "Tons of people, both inside and outside of Microsoft, have been talking with me about where we're going now. I've met in the past week with the Avalon and WinFS teams (yes, they both still exist).",
+    "do u have any type of fish that enjoy re-arranging things or stirring up dirt? if its sticking that much to no prevail it could be related to water quality, try observing any changes after a 15% water change.",
+    "- price on a base of 1-4 persons: euros 400 (total price)\n- price on a base of 5-8 persons: euros 500 (total price)\n- for more people or groups, please contact us for a precise quotation.",
+    "All microwaves are different so be cautious and if possible do a test first to see how your microwave behaves. Be careful - if the bag pops open, it will make a mess."
+  ],
+  "explanation": "This feature activates on text containing specific numerical data, measurements, or statistics integrated within descriptive contexts.",
+  "harmful": false,
+  "harmful_reason": "The examples show benign factual content about wine, computers, sports statistics, and everyday topics with no harmful material present.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

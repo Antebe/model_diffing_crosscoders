@@ -1,0 +1,37 @@
+{
+  "feat_idx": 550,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    10.4453125,
+    9.5390625,
+    9.515625,
+    9.4453125,
+    9.296875,
+    9.28125,
+    9.2578125,
+    9.125,
+    9.0859375,
+    9.0625
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> I am planning to ship a package to Ankara, Turkey, and I need to know the postal codes for that region. Additionally, can you help me decode this GS1 barcode: \"019001234567890531220401212041712\"?",
+    "Parameters: {\"username\": {\"description\": \"The screen name of the user to retrieve.\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "The stats retrieved here are what are normally shown in box scores or used in fantasy games. Parameters: {\"gameID\": {\"description\": \"The unique identifier of the game, in the format '8 digit string_awayTeamAbbreviation@homeTeamAbbreviation'\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Parameters: {\"encryptionDetails\": {\"description\": \"Details about the encryption process including the algorithm and key.\", \"type\": \"dict\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"3jZxXOI\": {\"description\": \"The number of products to return.\", \"type\": \"int\", \"default\": \"\"}, \"tgoGf.q\": {\"description\": \"The number of products to skip in the response.\", \"type\": \"int\", \"default\": \"\"}}\n4.",
+    "Name: Get Title Seasons\nDescription: Retrieve all seasons of a title from the online movie database. Parameters: {\"tconst\": {\"description\": \"The title ID, extracted from the id field returned from /title/auto-complete or /title/find endpoint. Ex: tt0944947\", \"type\": \"string\", \"default\": \"\"}}\n3.",
+    "Default is 48.\", \"type\": \"int, optional\", \"default\": \"48\"}, \"OB4se\": {\"description\": \"The field by which to sort the results. Default is 0.\", \"type\": \"int, optional\", \"default\": \"0\"}}\n\n**Steps for Each Turn**\n1.",
+    "Default is '6016'.\", \"type\": \"str\", \"default\": \"6016\"}, \"0eyqUmUe\": {\"description\": \"The number of top-grossing apps to retrieve. Default is 100.\", \"type\": \"int\", \"default\": \"100\"}}\n4. Name: knrhZl\nDescription: Fetch detailed information about a country using its 2-letter country code.",
+    "Parameters: {\"id\": {\"description\": \"The unique identifier of the season.\", \"type\": \"int\", \"default\": \"\"}, \"page\": {\"description\": \"The page number for pagination.\", \"type\": \"int\", \"default\": 1}}\n5.",
+    "Name: Get User Feed by Username\nDescription: Retrieve a user's feed from TikTok by their username. Parameters: {\"username\": {\"description\": \"The username of the user whose feed to retrieve.\", \"type\": \"string\", \"default\": \"\"}}\n2."
+  ],
+  "explanation": "This feature represents the structure and syntax of API parameter definitions.",
+  "harmful": false,
+  "harmful_reason": "API parameter definitions are a standard part of software development and do not inherently carry harmful connotations.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

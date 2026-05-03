@@ -1,0 +1,37 @@
+{
+  "feat_idx": 468,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.3515625,
+    7.80859375,
+    7.3125,
+    6.765625,
+    6.75390625,
+    6.21484375,
+    6.203125,
+    6.16015625,
+    6.06640625,
+    6.0234375
+  ],
+  "top_texts": [
+    "Name: C4suksljSXY0TTP\nDescription: Calculates the arithmetic mean of a list of numbers. Parameters: {\"p1uj0Bktlm\": {\"description\": \"The list of numbers.\", \"type\": \"List[float]\", \"default\": \"\"}}\n3.",
+    "Parameters: {\"lang\": {\"description\": \"Language code of the article to be rewritten.\", \"type\": \"str\", \"default\": \"en\"}, \"article\": {\"description\": \"The article text to be rewritten.\", \"type\": \"str\", \"default\": \"Dedicated servers or bare metal servers are a server in itself with no server resources sharing with  other hosting account users.",
+    "Possible values are: 1, 3, 5, 15, 30, 60, 120, 240, 360, 720, \\\"D\\\" (day), \\\"M\\\" (month), \\\"W\\\" (week).\", \"type\": \"str\", \"default\": \"D\"}, \"OIa5D1OuH\": {\"description\": \"Start timestamp point for the result, in milliseconds.\", \"type\": \"int\", \"default\": \"1652112000000\"}, \"ZGXhzz7MC\": {\"description\": \"Derivatives products category.",
+    "Name: i.7khqSO1Ly\nDescription: Fetches auto-complete suggestions for a given search term using the Zoopla API. Parameters: {\"HMw3f\": {\"description\": \"The term or phrase for which to fetch auto-complete suggestions.\", \"type\": \"str\", \"default\": \"greenwich\"}, \"lhD8Ni\": {\"description\": \"The type of search to perform.",
+    "Name: gs_MuPVP\nDescription: Generates a specified amount of Lorem Ipsum paragraphs using the RapidAPI Lorem Ipsum API. Parameters: {\"m6yEBd\": {\"description\": \"The number of Lorem Ipsum paragraphs to generate.",
+    "For example, 'x^3'\", \"type\": \"str\", \"default\": \"trapezoid\"}, \"IFh5Tya0\": {\"description\": \"The starting x-value to integrate over.\", \"type\": \"int\", \"default\": \"trapezoid\"}, \"G9qZ69\": {\"description\": \"The ending x-value to integrate over.\", \"type\": \"int\", \"default\": \"\"}, \"o9XLF\": {\"description\": \"The method of numerical integration to use.",
+    "Name: 9KAk.jjLL25L80e\nDescription: Fetch supported options metadata for filtering hotel reviews. Parameters: {\"FWHxvK\": {\"description\": \"The unique identifier of the hotel from the properties list API.\", \"type\": \"int\", \"default\": \"1790664\"}, \"iWRQ7NHj\": {\"description\": \"The language code for the response.",
+    "Name: P94go5hN\nDescription: Fetches the facilities of a property given its hotel ID. Parameters: {\"TU7t\": {\"description\": \"The value of the hotel_id field from the properties/list API.\", \"type\": \"int\", \"default\": \"1528418\"}, \"_bEkxoGiW_\": {\"description\": \"The language code for the response.",
+    "In order to return XML instead of the default JSON format, simply add the `Accept: application/xml` header to your request. Parameters: {\"string\": {\"description\": \"The string for which the gas price data is required. Format: YYYY-MM-DD\", \"type\": \"string\", \"default\": \"\"}}\n4.",
+    "</think>\n<tool_call>\n{\"name\": \"_OjAVvHai8\", \"parameters\": {\"PzztGg\": \"#healthylifestyle\"}}\n{\"name\": \"l13FtxvEoTjYd\", \"parameters\": {\"doDFA\": \"fitness_fanatic\"}}\n</tool_call>"
+  ],
+  "explanation": "This feature represents descriptions of API parameters and their functionalities.",
+  "harmful": false,
+  "harmful_reason": "API descriptions are generally neutral and informative.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

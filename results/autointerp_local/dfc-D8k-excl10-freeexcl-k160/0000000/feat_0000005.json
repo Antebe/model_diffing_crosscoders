@@ -1,0 +1,37 @@
+{
+  "feat_idx": 5,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625,
+    18.15625
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> Is the Desert Oasis Hotel in Las Vegas available from 2023-11-10 to 2023-11-15? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> How many set bits are there in the binary representation of the number 13? Also, calculate the average of the numbers 5, 10, and 15.",
+    "**Dialogue Records History**\n<user> Assess the risk of developing type 2 diabetes for a person who weighs 150 lbs, is 65 inches tall, and has a sedentary lifestyle. Also, find the location of the IP address 8.8.8.8.",
+    "**Dialogue Records History**\n<user> If an object has an initial velocity of 20 m/s and an acceleration of 5 m/s^2, what will its velocity be after 3 seconds?",
+    "**Dialogue Records History**\n<user> Please provide photos for the hotel identified by the number 54321 and inform me about detours on bus route 15.",
+    "**Dialogue Records History**\n<user> I need to check the estimated material flow for two conveyors in our system. The first one has an ID of \u2018conveyor_001\u2019 and the second is \u2018conveyor_002\u2019.",
+    "**Dialogue Records History**\n<user> Find the equilibrium index of the array [10, 5, 2, 7, 3, 6] and what is the angle at 9:45 AM?",
+    "**Dialogue Records History**\n<user> Hey, I just got these emails, can you check if they're valid: first@example.com, second@example.net. And by the way, is third@example.org a valid email?",
+    "**Dialogue Records History**\n<user> I have a confusing list that contains a mix of integers, lists, and strings. How can I flatten it using the 'flatten_list' function?",
+    "**Dialogue Records History**\n<user> Find the option expiration dates for Apple Inc. (AAPL) and Microsoft Corporation (MSFT). Also, fetch the historical stock data for Amazon Inc. (AMZN) from 2023-01-01."
+  ],
+  "explanation": "This feature is activated by text examples that pose questions requiring factual answers or involve calculations.",
+  "harmful": false,
+  "harmful_reason": "The examples are seeking information or performing calculations, not expressing harmful intent.",
+  "detection_score": 1.0,
+  "detection_n_correct": 20,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

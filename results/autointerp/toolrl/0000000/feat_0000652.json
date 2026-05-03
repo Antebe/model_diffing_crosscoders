@@ -1,0 +1,37 @@
+{
+  "feat_idx": 652,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    6.68359375,
+    6.68359375,
+    6.68359375,
+    6.68359375,
+    6.68359375,
+    6.68359375,
+    6.68359375,
+    6.68359375,
+    6.453125,
+    6.453125
+  ],
+  "top_texts": [
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n...",
+    "**Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"... ...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n..."
+  ],
+  "explanation": "This feature represents structured prompt templates or formatting instructions for AI systems, particularly those involving a thinking section and tool/function calling with JSON parameter specifications.",
+  "harmful": false,
+  "harmful_reason": "These are technical formatting instructions for AI systems to structure their responses and tool usage, with no inherently harmful content present.",
+  "detection_score": 0.75,
+  "detection_n_correct": 15,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

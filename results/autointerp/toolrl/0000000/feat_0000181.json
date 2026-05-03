@@ -1,0 +1,37 @@
+{
+  "feat_idx": 181,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.734375,
+    7.796875,
+    6.26171875,
+    6.1328125,
+    6.05859375,
+    5.52734375,
+    5.52734375,
+    4.94140625,
+    4.64453125,
+    4.45703125
+  ],
+  "top_texts": [
+    "Could you suggest some unique recipes that I might try? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"Search Recipes\", \"parameters\": {\"q\": \"adventurous, unique\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"search\", \"parameters\": {\"q\": \"Park\", \"limit\": 3}}\n{\"name\": \"search\", \"parameters\": {\"q\": \"SW1\", \"limit\": 3}}\n</tool_call>",
+    "**Dialogue Records History**\n<user> Search blogs for keywords 'technology trends' and 'travel tips'. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"main_endpoint\", \"parameters\": {\"asin\": \"B07B4R43ZV\", \"domain\": \"com\"}}\n{\"name\": \"auto_complete\", \"parameters\": {\"word\": \"tablet\", \"currency\": \"USD\", \"country\": \"US\", \"language\": \"en\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"states_list\", \"parameters\": {\"country_code\": \"BR\"}}\n{\"name\": \"search\", \"parameters\": {\"pageno\": 1, \"country\": \"IT\", \"lang\": \"en\", \"search\": \"art galleries in Rome\"}}\n</tool_call>",
+    "Parameters: {\"url\": {\"description\": \"The URL of the page to be analyzed.\", \"type\": \"str\", \"default\": \"https://google.com\"}, \"strategy\": {\"description\": \"The strategy to use, either 'desktop' or 'mobile'.",
+    "Parameters: {\"url\": {\"description\": \"The URL of the page to be analyzed.\", \"type\": \"str\", \"default\": \"https://google.com\"}, \"strategy\": {\"description\": \"The strategy to use, either 'desktop' or 'mobile'.",
+    "Parameters: {\"3p_7\": {\"description\": \"The search terms or phrases to find relevant products.\", \"type\": \"str\", \"default\": \"Computer Bags For Women\"}, \"pWVAR1k\": {\"description\": \"The maximum number of items to return per response for pagination.",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"i18nregions\", \"parameters\": {\"part\": \"snippet\", \"hl\": \"el_GR\"}}\n{\"name\": \"i18nregions\", \"parameters\": {\"part\": \"snippet\", \"hl\": \"hu_HU\"}}\n</tool_call>",
+    "If not provided acts as cursor is placed in the end of query (Google's *cp* parameter).\", \"type\": \"string\", \"default\": \"\"}, \"user_agent\": {\"description\": \"Device type to use for the search.\", \"type\": \"string\", \"default\": \"\"}, \"region\": {\"description\": \"The country / region from which to make the query.\", \"type\": \"string\", \"default\": \"\"}, \"language\": {\"description\": \"Set the language of the results.\", \"type\": \"string\", \"default\": \"\"}}\n4."
+  ],
+  "explanation": "This feature activates on JSON-formatted API calls, tool invocations, and parameter specifications in structured formats.",
+  "harmful": false,
+  "harmful_reason": "The feature simply detects technical API/tool call syntax and parameter structures, which are neutral programming/interface elements.",
+  "detection_score": 0.65,
+  "detection_n_correct": 13,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

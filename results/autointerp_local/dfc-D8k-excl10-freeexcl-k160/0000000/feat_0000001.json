@@ -1,0 +1,37 @@
+{
+  "feat_idx": 1,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    19.734375,
+    19.3125,
+    19.25,
+    19.25,
+    19.046875,
+    18.984375,
+    18.9375,
+    18.609375,
+    18.609375,
+    18.59375
+  ],
+  "top_texts": [
+    "Name: get_videos_by_channel\nDescription: Fetches the last 30 videos from a specified YouTube channel using the Toolbench RapidAPI. Parameters: {\"cid\": {\"description\": \"The channel ID of the YouTube channel.\", \"type\": \"str\", \"default\": \"\"}}\n2.",
+    "Name: get_liquidity_value\nDescription: Retrieves the liquidity value of a specified cryptocurrency in US Dollars. Parameters: {\"symbol\": {\"description\": \"The ticker symbol of the cryptocurrency.\", \"type\": \"str\", \"default\": \"BTC\"}}\n3.",
+    "Name: get_car_specs\nDescription: Fetches detailed specifications for a car based on the given trim ID. Parameters: {\"trimid\": {\"description\": \"The trim ID of the car for which to retrieve specifications.\", \"type\": \"int\", \"default\": \"\"}}\n3.",
+    "Name: get_car_specs\nDescription: Fetches detailed specifications for a car based on the given trim ID. Parameters: {\"trimid\": {\"description\": \"The trim ID of the car for which to retrieve specifications.\", \"type\": \"int\", \"default\": \"\"}}\n3.",
+    "Name: get_all_app_keys\nDescription: Fetch all keys for a specified application using the RapidAPI service. Parameters: {\"appid\": {\"description\": \"The unique identifier for the specific application. Obtainable through the \\\"Get All Apps\\\" endpoint.\", \"type\": \"str\", \"default\": \"\"}}\n6.",
+    "Name: get_all_details\nDescription: Fetches all details of a YouTube video, stream, or shorts including captions, audio-only files, video-only files, and stream URL if available. Parameters: {\"is_id\": {\"description\": \"The unique ID of the YouTube video/stream/shorts.\", \"type\": \"str\", \"default\": \"ppCIVJE3my4\"}}\n2.",
+    "Name: Retrieve User Objectives\nDescription: Retrieves the learning objectives defined for the calling user. Parameters: {\"user_id\": {\"description\": \"Unique identifier of the user\", \"type\": \"string\", \"default\": \"\"}}\n3.",
+    "Name: GetNetworks\nDescription: Return a list of electric charging stations that belong to the given network(s). Parameters: {\"networks\": {\"description\": \"A single network or a comma-separated list of multiple networks.\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Name: GET Vehicle Information\nDescription: Retrieve detailed information about a Mexican vehicle. Parameters: {\"plates\": {\"description\": \"The license plate number of the vehicle.\", \"type\": \"string\", \"default\": \"\"}}\n4.",
+    "Name: musicVideoScheduler.scheduleShoot\nDescription: Schedules the music video shoot based on the availability of the artist and the location. Parameters: {\"artistAvailability\": {\"description\": \"The dates and times when the artist is available for the shoot."
+  ],
+  "explanation": "This feature represents API function descriptions and parameters.",
+  "harmful": false,
+  "harmful_reason": "API descriptions are inherently neutral and do not inherently contain harmful content.",
+  "detection_score": 0.85,
+  "detection_n_correct": 17,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

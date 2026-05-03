@@ -30,7 +30,7 @@ wheels/
 *.log
 wandb/
 wandb_runs/
-results/
+#results/
 
 # Cache
 cache/

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 583,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    7.33203125,
+    7.265625,
+    7.23046875,
+    7.1796875,
+    7.1796875,
+    7.1796875,
+    7.1640625,
+    7.15234375,
+    7.0625,
+    7.0390625
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> I'm planning a promotional campaign for some luxury cars on our YouTube channel. I need details and images for the following VINs: JS1GT78A7G2105965, JS1GT78A7G2105966, JS1GT78A7G2105967.",
+    "</think>\n<tool_call>\n{\"name\": \"getuserbyname\", \"parameters\": {\"username\": \"homer_simpson\"}}\n{\"name\": \"getuserbyname\", \"parameters\": {\"username\": \"ned_flanders\"}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"nuH6TuMwO\", \"parameters\": {\"T7ykS.Y\": \"Chef Jane\", \"hILzj6_yn\": \"vegan dishes\"}}\n</tool_call>",
+    "Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both. 2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields.",
+    "Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both. 2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields.",
+    "Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both. 2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields.",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"free_access\", \"parameters\": {\"get_dash_url\": \"https://dashboard3.com\"}}\n{\"name\": \"free_access\", \"parameters\": {\"get_dash_url\": \"https://dashboard4.com\"}}\n</tool_call>",
+    "**Dialogue Records History**\n<user> I need to schedule three different therapy sessions for my patients with specific notification preferences. Can you handle that? </user>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"license_plate_lookup\", \"parameters\": {\"license_plate\": \"GHI789\", \"state_code\": \"FL\"}}\n{\"name\": \"similar\", \"parameters\": {\"image_id\": \"IMG345\", \"number\": 12}}\n</tool_call>",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters."
+  ],
+  "explanation": "This feature represents the structure and syntax of tool calls within a dialogue system.",
+  "harmful": false,
+  "harmful_reason": "The feature describes how a system interacts with tools, not inherently harmful content.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

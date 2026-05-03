@@ -1,0 +1,37 @@
+{
+  "feat_idx": 55,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    337.5,
+    337.5,
+    337.5,
+    323.5,
+    315.25,
+    314.25,
+    314.25,
+    314.25,
+    314.25,
+    314.25
+  ],
+  "top_texts": [
+    "The transition from standard definition to now ultra-high definition and even 4K resolution has significantly enhanced how viewers experience content.",
+    "The breakdown includes state, county, city, and any additional special sales taxes, represented in decimal form (e.g., 0.1 means 10% tax). You must specify either a ZIP code or a combination of city and state.",
+    "The function is limited to a maximum range of 365 days and can query only one symbol per request.",
+    "This search is case insensitive and requires an exact match.\", \"type\": \"str\", \"default\": \"North America\"}, \"5wN_Kt571\": {\"description\": \"The zero-indexed page number from which the search should continue.",
+    "Additionally, you'll find that air quality is generally better in the spring and fall, and accommodation rates are more favorable before and after the summer tourist rush. </response>",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1."
+  ],
+  "explanation": "This feature represents the concept of instructions or guidelines for a language model.",
+  "harmful": false,
+  "harmful_reason": "Instructions for a language model are generally not harmful in themselves.",
+  "detection_score": 0.3,
+  "detection_n_correct": 6,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

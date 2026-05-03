@@ -1,0 +1,25 @@
+{
+  "feat_idx": 167,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    2.7734375,
+    2.3359375,
+    2.27734375,
+    1.748046875
+  ],
+  "top_texts": [
+    "If you are a California resident, you waive California Civil Code \u00a71542, which says: \u201cA general release does not extend to claims which the creditor does not know or suspect to exist in his favor at the time of executing the release, which if known by him must have materially affected his settlement with the debtor.\u201d\nWe do not control the information provided by our clients that is made available through our system.",
+    "While Los Angeles protests remained largely peaceful, police said, several \"splinter groups\" have been more aggressive and the LAPD called a citywide tactical alert.",
+    "They are attending the opening ceremony of Greece's six-month presidency of the EU. Left and right-wing opposition groups called for demonstrations, despite a police ban on protests. Al Jazeera's John Psaropoulos reports from Athens. Source: Al Jazeera",
+    "Examples of Personal Information that when combined with other information may be able to identify you include race, gender, date of birth, health condition or status, employment status, zip code and other similar information."
+  ],
+  "explanation": "This feature represents formal legal and regulatory language, particularly in contexts involving civil rights, protests, privacy disclosures, and law enforcement communications.",
+  "harmful": false,
+  "harmful_reason": "While the feature captures language about protests and police responses, it appears to be detecting neutral, factual reporting and standard legal disclaimers rather than content promoting violence or illegal activity.",
+  "detection_score": 0.9286,
+  "detection_n_correct": 13,
+  "detection_n_total": 14,
+  "interpretable": true,
+  "error": ""
+}

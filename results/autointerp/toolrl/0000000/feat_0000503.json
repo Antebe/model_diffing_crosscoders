@@ -1,0 +1,37 @@
+{
+  "feat_idx": 503,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    5.79296875,
+    5.79296875,
+    5.79296875,
+    5.79296875,
+    5.79296875,
+    5.79296875,
+    5.7109375,
+    5.7109375,
+    5.7109375,
+    5.7109375
+  ],
+  "top_texts": [
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1. Name: wCNO1zA\nDescription: Multiplies two matrices.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both."
+  ],
+  "explanation": "This feature represents system prompts or instructions for AI assistants that specify how to use tools and structure responses with XML-like formatting tags.",
+  "harmful": false,
+  "harmful_reason": "These are standard technical instructions for AI systems to properly format responses and use tools, with no harmful content present.",
+  "detection_score": 0.85,
+  "detection_n_correct": 17,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

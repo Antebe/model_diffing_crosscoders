@@ -1,0 +1,48 @@
+{
+  "0": {
+    "name": "Tool Interaction",
+    "summary": "These features describe the interaction between a language model and external tools, including API calls, parameter usage, and structured data exchange.",
+    "n_members": 28,
+    "raw_response": "[CLUSTER_NAME]: Tool Interaction\n[CLUSTER_SUMMARY]: These features describe the interaction between a language model and external tools, including API calls, parameter usage, and structured data exchange. \n",
+    "members": [
+      1,
+      4,
+      10,
+      15,
+      17,
+      22,
+      38,
+      52,
+      55,
+      56,
+      63,
+      72,
+      75,
+      128,
+      243,
+      253,
+      353,
+      431,
+      444,
+      468,
+      521,
+      536,
+      546,
+      611,
+      642,
+      708,
+      786,
+      789
+    ]
+  },
+  "1": {
+    "name": "Tool Interaction",
+    "summary": "These features capture aspects of how tools are used and interacted with.",
+    "n_members": 2,
+    "raw_response": "[CLUSTER_NAME]: Tool Interaction\n[CLUSTER_SUMMARY]: These features capture aspects of how tools are used and interacted with. \n",
+    "members": [
+      101,
+      583
+    ]
+  }
+}

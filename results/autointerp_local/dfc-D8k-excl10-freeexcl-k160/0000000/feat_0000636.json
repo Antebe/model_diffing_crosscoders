@@ -1,0 +1,37 @@
+{
+  "feat_idx": 636,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    5.53515625,
+    5.203125,
+    5.19140625,
+    5.19140625,
+    5.19140625,
+    5.0625,
+    4.92578125,
+    4.8671875,
+    4.8515625,
+    4.80078125
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> Hey there, genius assistant! I'm diving into the wild world of real estate and need some practice questions for my upcoming exam. Can you fetch me a batch of brain-busting questions for the state-specific exam?",
+    "</think>\n<response> NFTs, or non-fungible tokens, have indeed been a hot topic recently. They've gained a lot of popularity due to their unique proposition of digitizing ownership of assets and have seen significant investment.",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "Name: getTerroristThreatLevel\nDescription: Retrieve the current terrorist threat level for a specific location\nParameters: {\"location\": {\"description\": \"The location for which you want to get the terrorist threat level (e.g., New York City, Washington D.C., London)\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "**Dialogue Records History**\n<user> Can you generate a set of passwords with a length of 15, and then calculate the KDA ratio for a player with 5 kills, 3 deaths, and 7 assists?",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"In Radius\", \"parameters\": {\"postcode\": \"90210\", \"radius\": \"5\"}}\n</tool_call>",
+    "Could you please pull up the 3rd page of business data for me? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"ev\", \"parameters\": {\"page\": \"3\"}}\n</tool_call>",
+    "</think>\n<response> To proceed with retrieving the technology usage data for 'apple.com' and 'bmw.com', an API key is required for authentication purposes. Unfortunately, I don't have the capability to generate or access such keys."
+  ],
+  "explanation": "This feature represents the concept of a language model interacting with tools and external APIs to perform tasks.",
+  "harmful": false,
+  "harmful_reason": "The examples show the model requesting information or performing actions using tools, which is a common and generally beneficial capability.",
+  "detection_score": 0.55,
+  "detection_n_correct": 11,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

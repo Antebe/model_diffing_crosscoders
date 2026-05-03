@@ -1,0 +1,37 @@
+{
+  "feat_idx": 6218,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875,
+    11.1796875
+  ],
+  "top_texts": [
+    "In an April letter posted on www.rapidrecallexchange.org, Kroger asked all of its suppliers to subscribe to the exchange by July 1.",
+    "ORLANDO, Fla.",
+    "Take what\u2019s left to Goodwill or a comparable donation spot.",
+    "2009 Oncology Conference Coverage View up-to-date coverage of the 2009 Oncology Conference here.",
+    "A novel two-step immunotherapy approach has shown clinically beneficial responses in patients with advanced ovarian cancer.",
+    "and he didnt share it with anyone... and its subsequently disappeared from the Internet... But that simply isnt what Ive been told.",
+    "This would have been a funny joke to those of us involved in dealing with you people, but it would have been a PR non-issue for you.",
+    "Two months, on your own terms, you could have written a similar post to yesterdays.",
+    "Look, D, you had two months to say to Harvard in private emails, \"Im sorry, I shouldnt have been using that animation in my paid presentations. I wont use it again.",
+    "*sigh* Fundamentalist community, let me pass on some advice to you I learned from the atheistic community:\nIf you have set yourself on fire, do not run. Okay? Okay?? Please?"
+  ],
+  "explanation": "This feature activates on text fragments that appear to be from the middle or end of longer documents, containing contextual references and assumptions of prior information.",
+  "harmful": false,
+  "harmful_reason": "The content spans various neutral topics like retail, conferences, donations, and personal communications without any consistent harmful themes.",
+  "detection_score": 0.45,
+  "detection_n_correct": 9,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

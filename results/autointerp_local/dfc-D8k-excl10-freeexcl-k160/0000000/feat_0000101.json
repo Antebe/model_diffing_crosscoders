@@ -1,0 +1,37 @@
+{
+  "feat_idx": 101,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    14.5625,
+    13.7890625,
+    13.2421875,
+    12.9296875,
+    12.609375,
+    12.09375,
+    11.921875,
+    11.875,
+    11.2109375,
+    11.0390625
+  ],
+  "top_texts": [
+    "Parameters: {\"gGBzfd1\": {\"description\": \"The ASIN number of a product from Amazon, formatted as a string (e.g., 'B08QB93S6R').\", \"type\": \"str\", \"default\": \"\"}, \"iUFkr53p50\": {\"description\": \"The locale code to specify the Amazon region. Defaults to '3XmgB'.",
+    "Name: NOhbXGQpScgIO\nDescription: Fetches the Billboard Hot 100 chart for a specified week. Parameters: {\"6W4hPNI5\": {\"description\": \"The specific week for which to fetch the Billboard Hot 100 chart. Defaults to 'SFX9T'.",
+    "Default is None.\", \"type\": \"int, optional\", \"default\": \"\"}, \"JnLFIn4Ph\": {\"description\": \"Keyword to filter cities, default is 'Jakarta'.\", \"type\": \"str, optional\", \"default\": \"Jakarta\"}}\n3.",
+    "**Dialogue Records History**\n<user> Can you get me the direct routes for Frankfurt Airport and the different versions of the Audi A4? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> I am planning to ship a package to Ankara, Turkey, and I need to know the postal codes for that region. Additionally, can you help me decode this GS1 barcode: \"019001234567890531220401212041712\"?",
+    "Additionally, I need the same analysis for adult smokers. Can you provide this information? Response assistant: Could you please specify the prevalence percentages for air pollution and high-fat diets in both population groups?",
+    "Possible values include 'US', 'FR'.\", \"type\": \"str\", \"default\": \"US\"}, \"offset\": {\"description\": \"Number of records to skip. Optional, default is 0.\", \"type\": \"int\", \"default\": \"0\"}, \"sort\": {\"description\": \"Method to sort the records. Optional, default is 'popularity'.",
+    "If not provided, all laptop brands will be considered.\", \"type\": \"str, optional\", \"default\": \"\"}}\n4. Name: whois\nDescription: Fetches WhoIS lookup data for a given domain using the RapidAPI service.",
+    "Name: Get Future Election Events by Topic\nDescription: Retrieve a list of future election events related to a specific topic\nParameters: {\"page\": {\"description\": \"The page number of the events to retrieve\", \"type\": \"int\", \"default\": \"\"}, \"topic\": {\"description\": \"The topic of the election events to retrieve (e.g., democratic-voice)\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "Parameters: {\"ip\": {\"description\": \"The IP address (IPv4 or IPv6) to look up.\", \"type\": \"str\", \"default\": \"1.1.1.1\"}}\n2. Name: getmentions\nDescription: Fetches Twitter mentions for a given query using the specified parameters."
+  ],
+  "explanation": "This feature represents the concept of API calls and their parameters.",
+  "harmful": false,
+  "harmful_reason": "API calls themselves are not inherently harmful; they are a common way to access data and functionality.",
+  "detection_score": 0.4,
+  "detection_n_correct": 8,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

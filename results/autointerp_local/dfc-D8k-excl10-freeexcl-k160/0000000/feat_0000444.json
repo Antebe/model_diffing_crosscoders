@@ -1,0 +1,37 @@
+{
+  "feat_idx": 444,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    5.90625,
+    5.19140625,
+    5.12109375,
+    5.10546875,
+    5.10546875,
+    5.10546875,
+    5.10546875,
+    5.10546875,
+    5.10546875,
+    5.10546875
+  ],
+  "top_texts": [
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Fetch real-time stock quotes for Apple and Tesla.",
+    "**Dialogue Records History**\n<user> Could you find me the nearby electric vehicle charging stations that are affiliated with the Tesla and ChargePoint networks? I'm planning a road trip and need to ensure I have enough options for stops.",
+    "Name: getUserByName\nDescription: Retrieves user information by username. Parameters: {\"username\": {\"description\": \"The name of the user to retrieve.\", \"type\": \"string\", \"default\": \"\"}}\n2. Name: Phone Validator API\nDescription: Valistrings whether a given phone number is fixed or not.",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"..."
+  ],
+  "explanation": "This feature represents the structure and formatting guidelines for a dialogue system, particularly those involving tool interactions.",
+  "harmful": false,
+  "harmful_reason": "These guidelines are designed to ensure consistent and coherent interactions within a helpful AI system.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

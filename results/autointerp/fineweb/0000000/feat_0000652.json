@@ -1,0 +1,37 @@
+{
+  "feat_idx": 652,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.51171875,
+    2.970703125,
+    2.716796875,
+    2.38671875,
+    2.32421875,
+    2.181640625,
+    2.103515625,
+    2.060546875,
+    1.9765625,
+    1.7822265625
+  ],
+  "top_texts": [
+    "\u201cMy aunt always gives the first month free so her customers\ncan try them and see what they think.\u201d Her eyes darted around nervously. He\ncould see the worry on her face. He laughed to himself.",
+    "Most painters of the time painted light and shade as they saw it. C\u00e9zanne saw all the objects he painted as three-dimensional shapes and he liked to use his brushstrokes to make them clear.",
+    "And the Halifax Courier, which averaged 14,272 in the January \u2013 June 2012 period, is now up 31.7pc .at 18,801.",
+    "State of the nation\nStrictly speaking I ain\u2019t gonna talk about the \u2018nation\u2019 of the US of A, but just about New York City. I love this town in so may ways.",
+    "Disrupting Shout is an AoE interrupt that hits everything in 10 yards and locks out any casting in the same school for 4 seconds. I like to call it what every PvP warrior has ever wanted.",
+    "During that year, these factors are gathered for each title requested:\nRequesters name, department affiliation and date requestedA sample journal issue is obtained from the publisher, in order to check the editorial boards as well as the subject content.",
+    "ABV: 5.9% IBU: 20\nMead Honey Lager - Farm fresh local honey lingers on your tongue in this refreshing well-balanced lager.",
+    "Many more smaller funds, particularly in the first and second quarter of this year, liquidated after certain strategies (such as convertible-bond arbitrage) stopped working, says Peter Rajsingh, executive vice-president at vFinance Investments, which operates several portfolios made up of hedge funds.",
+    "Another\npolitical movement, the Liberal\nparty, was launched today by for\nmer members of the Committee\nof Forty-eight, who bolted from\n1 hiii organisation. JudKf Arthur\nO Wray. mayor of York. Neb.,\nand Allen McFurdy.",
+    "The Tolkien\nSarcasm Page, one of the oldest bastions of Tolkien humor on the Web,\nis here to help Middle-earth historians everywhere take a\nbreak from those heated arguments about Glorfindel's bloodline and\nwhether or not Thingol was a wise King."
+  ],
+  "explanation": "This feature appears to detect informal, conversational, or colloquial language patterns in text.",
+  "harmful": false,
+  "harmful_reason": "The feature simply identifies casual or informal writing style, which is a neutral linguistic characteristic with no inherent harmful content.",
+  "detection_score": 0.45,
+  "detection_n_correct": 9,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

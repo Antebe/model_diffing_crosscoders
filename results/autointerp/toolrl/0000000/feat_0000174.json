@@ -1,0 +1,25 @@
+{
+  "feat_idx": 174,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.72265625,
+    3.232421875,
+    3.19140625,
+    2.76171875
+  ],
+  "top_texts": [
+    "Therefore, it lacks the argument required to call the functions successfully. **Explanation**:\n- For `VideoStreamer.getVideoDetails` on both Netflix and Disney+, we need the `videoId`. - For `VideoStreamer.streamVideo` on Amazon Prime, we need the `videoId`.",
+    "After finishing the steps, you should have the cookie that we need for calling this tool. Please provide it, so I can extract the trending social challenges for your brand's visibility online.",
+    "The team consists of Anna from America with a direct communication style, Bob from Brazil with an expressive style, and Chen from China with a reserved style. We plan to adapt for 6 months.",
+    "Name: Spam Number Checker\nDescription: Check if a given phone number is a spam number or not. Parameters: {\"number\": {\"description\": \"The phone number to check for spam\", \"type\": \"string\", \"default\": \"\"}}\n2."
+  ],
+  "explanation": "This feature represents descriptions of function parameters, tool requirements, or API specifications - particularly text that explains what inputs or arguments are needed for various operations or services.",
+  "harmful": false,
+  "harmful_reason": "The feature appears to capture technical documentation and parameter descriptions for legitimate services and tools, with no indication of harmful content.",
+  "detection_score": 0.5714,
+  "detection_n_correct": 8,
+  "detection_n_total": 14,
+  "interpretable": false,
+  "error": ""
+}

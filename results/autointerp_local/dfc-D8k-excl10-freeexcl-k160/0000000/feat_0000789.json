@@ -1,0 +1,37 @@
+{
+  "feat_idx": 789,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    11.9375,
+    10.5,
+    10.5,
+    10.375,
+    10.3515625,
+    10.3359375,
+    10.3359375,
+    10.3359375,
+    10.3359375,
+    10.3046875
+  ],
+  "top_texts": [
+    "Name: J0NaMC.pd_GU4z\nDescription: Removes profanity from the provided text using the PurgoMalum web service. Optionally, custom words can be added to the profanity list, and specific fill text or characters can be used to replace profanity.",
+    "Can you find the composition of borosilicate glass for me? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"calculateGlassComposition\", \"parameters\": {\"glass_type\": \"borosilicate\"}}\n</tool_call>",
+    "</think>\n<response> The function \"shopping.compare_products\" can help compare prices for the new smartphone model, but it requires more details. Please provide the categories that the product belongs to, such as 'electronics', 'mobile phones', etc. </response>",
+    "Parameters: {\"verseLines\": {\"description\": \"Array of strings, each representing a line of the verse.\", \"type\": \"array\", \"default\": \"\"}, \"detailedAnalysis\": {\"description\": \"Whether to perform a detailed metrical analysis.\", \"type\": \"boolean\", \"default\": \"\"}, \"submissionTime\": {\"description\": \"The time of verse submission, formatted as '%H:%M'.",
+    "Can you track the recent changes for the SushiSwap pool with ID '0x397ff1542f962076d0bfe58ea045ffa2d347aca0' and the Curve pool with ID '0x93054188d876f558f4a66b2ef1d97d16edf0895b'? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "**Dialogue Records History**\n<user> Fetch the information of a Token with ID '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' using the Uniswap V2 API. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need."
+  ],
+  "explanation": "This feature represents requests for information or actions involving technical specifications, APIs, or code.",
+  "harmful": false,
+  "harmful_reason": "The examples demonstrate requests for data or functionality, not inherently harmful content.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

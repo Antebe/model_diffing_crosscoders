@@ -1,0 +1,31 @@
+{
+  "feat_idx": 507,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.423828125,
+    2.8984375,
+    2.462890625,
+    2.408203125,
+    2.275390625,
+    2.1328125,
+    2.02734375
+  ],
+  "top_texts": [
+    "She was a member of the Indianapolis Board of School Commissioners from 1966 to 1970, serving as president in 1969 and 1970. In 1984, she was the first recipient of the Purdue Alumni Association Citizenship Award.",
+    "Key - also called the \u201cfree-throw lane\u201d or \u201clane;\u201d the area measuring 12 feet in width and extending from the free-throw line to the end line.",
+    "*In case you missed it, my colleague at Indians.com \u2013Jordan Bastian\u2013 did a nice job chronicling the interesting winter of Russ Canzler, who was claimed by the Orioles (his fourth team this winter) earlier this week.",
+    "UD was unable to make a comeback against No. 2 Kentucky as the Hens ended their run with a 69-62 loss to the Wildcats in Bridgeport, Conn.",
+    "|Table 2: Bova and FAST scoring systems for estimation of risk of pulmonary embolism-related complications within 30 days of acute symptomatic pulmonary embolism diagnosis|\nClick here to view\nBova score includes two clinical variables - heart rate and SBP.",
+    "It\u2019s been years since I\u2019ve seen him in person, but I\u2019ve enjoyed keeping tabs on him and his beautiful family via Facebook.",
+    "\u201cI was in desperate need to see if there was anything available to be able to grocery shop with my son,\u201d she said. Her desperation prompted her to do some research on the Internet."
+  ],
+  "explanation": "This feature activates on text containing dashes or hyphens used as punctuation or in compound words.",
+  "harmful": false,
+  "harmful_reason": "The examples contain only neutral informational content about school boards, sports, medical terminology, and everyday activities with no harmful themes.",
+  "detection_score": 0.6471,
+  "detection_n_correct": 11,
+  "detection_n_total": 17,
+  "interpretable": false,
+  "error": ""
+}

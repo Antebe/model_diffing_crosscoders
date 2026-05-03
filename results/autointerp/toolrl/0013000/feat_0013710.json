@@ -1,0 +1,37 @@
+{
+  "feat_idx": 13710,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375,
+    9.84375
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> Could you get the current levels of nitrous oxide in the atmosphere for me? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both. 2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Name: M4.5+ Earthquakes, Past 7 Days\nDescription: Retrieve a list of earthquakes with a magnitude of 4.5 or greater that have occurred in the past 7 days.",
+    "Name: Country Information API\nDescription: Retrieve information about countries, including their capitals, currencies, and flags. Parameters: {}\n3.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1."
+  ],
+  "explanation": "This feature represents instructions and documentation for AI systems that can make structured tool/function calls, including formatting requirements and usage guidelines.",
+  "harmful": false,
+  "harmful_reason": "This content is about technical documentation for AI tool usage and contains no harmful, offensive, or dangerous material.",
+  "detection_score": 0.65,
+  "detection_n_correct": 13,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

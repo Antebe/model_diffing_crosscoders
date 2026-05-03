@@ -1,0 +1,37 @@
+{
+  "feat_idx": 4,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    17.421875,
+    17.421875,
+    17.421875,
+    17.421875,
+    17.421875,
+    17.421875,
+    17.421875,
+    17.421875,
+    17.0,
+    17.0
+  ],
+  "top_texts": [
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`."
+  ],
+  "explanation": "This feature represents the structure of code, specifically code blocks enclosed in backticks and containing key-value pairs within curly braces.",
+  "harmful": false,
+  "harmful_reason": "While code can be used for malicious purposes, this feature alone does not indicate harmful intent.",
+  "detection_score": 0.65,
+  "detection_n_correct": 13,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

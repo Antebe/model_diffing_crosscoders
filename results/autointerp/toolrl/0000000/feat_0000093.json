@@ -1,0 +1,37 @@
+{
+  "feat_idx": 93,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125,
+    7.17578125
+  ],
+  "top_texts": [
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters."
+  ],
+  "explanation": "This feature activates on technical documentation describing how to format multiple tool calls in JSON with \"name\" and \"parameters\" fields.",
+  "harmful": false,
+  "harmful_reason": "This is neutral technical documentation about API usage and JSON formatting, with no harmful content present.",
+  "detection_score": 0.95,
+  "detection_n_correct": 19,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

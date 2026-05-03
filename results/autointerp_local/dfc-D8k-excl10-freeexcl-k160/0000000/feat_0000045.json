@@ -1,0 +1,37 @@
+{
+  "feat_idx": 45,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    15.203125,
+    14.5625,
+    14.4453125,
+    14.140625,
+    14.0390625,
+    14.03125,
+    13.875,
+    13.765625,
+    13.7109375,
+    13.703125
+  ],
+  "top_texts": [
+    "At the same time, I want to search for agencies in Dubai that match the search term 'premium' using the agencies_list function. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> Solve the equation x^2 - 4x + 4 = 0 for its roots. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> Find pairs in the list [1, 2, 3, 4, 5] that sum to 7 and also to 9. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> Get the system names used by the Central Public Library, City College Library, and State University Library. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> What is the potential energy of a charge of 2.5 microCoulombs at a voltage of 2000 volts? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Also, once I reach Boston, I'll need to drive to the nearest gas station. After refueling, I'll continue my journey to Salem. I would appreciate it if you can provide the transportation logistics for these routes.",
+    "**Dialogue Records History**\n<user> Log in users 'MikeJohnson' and 'EmilyDavis' with passwords 'mypassword' and 'emily123' respectively. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> Can you provide information on matches 33333 and 44444? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> Retrieve the list of public holidays in 'FR' for the year '2023'. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Dialogue Records History**\n<user> Fetch a summary of property records for the address 999 Park Avenue in the default zipcode. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need."
+  ],
+  "explanation": "This feature represents the concept of a user requesting information or a task to be performed using a specific tool or system.",
+  "harmful": false,
+  "harmful_reason": "The examples provided demonstrate requests for information or tasks, not inherently harmful actions.",
+  "detection_score": 0.75,
+  "detection_n_correct": 15,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

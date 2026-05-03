@@ -1,0 +1,37 @@
+{
+  "feat_idx": 167,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    10.09375,
+    9.890625,
+    9.8828125,
+    9.7578125,
+    9.734375,
+    9.703125,
+    9.6015625,
+    9.5,
+    9.4140625,
+    9.3828125
+  ],
+  "top_texts": [
+    "Name: get_all_restaurant_locations\nDescription: Fetches a list of restaurant locations from the RapidAPI service. Parameters: {\"page\": {\"description\": \"The page number to retrieve data from.\", \"type\": \"int\", \"default\": \"0\"}}\n2.",
+    "Parameters: {\"q\": {\"description\": \"Keyword used for searching patents.\", \"type\": \"str\", \"default\": \"kettle\"}, \"ds\": {\"description\": \"Data source to search for patents.\", \"type\": \"str\", \"default\": \"all\"}}\n3.",
+    "Parameters: {\"func\": {\"description\": \"The function to debounce.\", \"type\": \"string\", \"default\": \"\"}, \"wait\": {\"description\": \"The number of milliseconds to delay.\", \"type\": \"int\", \"default\": \"\"}, \"options\": {\"description\": \"The options object.\", \"type\": \"dict\", \"default\": \"\"}}\n2.",
+    "Name: getlearningresources\nDescription: Fetches artificial intelligence learning resources from the specified page using the given RapidAPI key. Parameters: {\"page\": {\"description\": \"The page number of learning resources to fetch.\", \"type\": \"int\", \"default\": \"1\"}}\n4.",
+    "Parameters: {\"club_ids\": {\"description\": \"A comma-separated list of club IDs.\", \"type\": \"string\", \"default\": \"\"}, \"locale\": {\"description\": \"The language code for the desired output.\", \"type\": \"string\", \"default\": \"\"}}\n7.",
+    "Name: RandomColorSet\nDescription: Get a random set of colors\nParameters: {\"count\": {\"description\": \"The number of colors to generate\", \"type\": \"int\", \"default\": \"\"}, \"format\": {\"description\": \"The color format (HEX, RGB, etc.)\", \"type\": \"string\", \"default\": \"\"}, \"palette\": {\"description\": \"The color palette (optional)\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Parameters: {\"arr\": {\"description\": \"The input list of integers.\", \"type\": \"List[int]\", \"default\": \"\"}}\n4. Name: independent_samples_t_test\nDescription: Conducts a two-sample independent t-test and returns the t-statistic, p-value, and conclusion.",
+    "Parameters: {\"q\": {\"description\": \"The query to search for topics by\", \"type\": \"string\", \"default\": \"\"}, \"limit\": {\"description\": \"The number of results to return\", \"type\": \"int\", \"default\": 10}, \"page\": {\"description\": \"The page offset\", \"type\": \"int\", \"default\": 0}}\n7.",
+    "Parameters: {\"wallet_id\": {\"description\": \"The ID of the Litecoin wallet\", \"type\": \"string\", \"default\": \"\"}, \"start_block\": {\"description\": \"The starting block number for the mempool transactions\", \"type\": \"int\", \"default\": \"\"}, \"end_block\": {\"description\": \"The ending block number for the mempool transactions\", \"type\": \"int\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "Parameters: {\"season\": {\"description\": \"The season for which to retrieve players (e.g., 2020-2021)\", \"type\": \"string\", \"default\": \"\"}, \"league\": {\"description\": \"The league for which to retrieve players (e.g., NBA, NFL)\", \"type\": \"string\", \"default\": \"\"}}\n2."
+  ],
+  "explanation": "This feature represents API function documentation, specifically the \"Parameters\" section that describes input parameters with their descriptions, data types, and default values.",
+  "harmful": false,
+  "harmful_reason": "This feature captures technical API documentation format, which is neutral technical content used for software development and has no inherently harmful purpose.",
+  "detection_score": 0.9,
+  "detection_n_correct": 18,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

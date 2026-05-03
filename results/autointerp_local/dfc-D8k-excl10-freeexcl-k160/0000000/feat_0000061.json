@@ -1,0 +1,37 @@
+{
+  "feat_idx": 61,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    11.03125,
+    9.8203125,
+    8.375,
+    7.40234375,
+    6.12109375,
+    6.12109375,
+    6.12109375,
+    6.12109375,
+    6.12109375,
+    6.12109375
+  ],
+  "top_texts": [
+    "</think>\n<response> NFTs, or non-fungible tokens, have indeed been a hot topic recently. They've gained a lot of popularity due to their unique proposition of digitizing ownership of assets and have seen significant investment.",
+    "I've received mixed feedback from 5 playtesters; 3 rated it excellent, 1 rated it as fair, and 1 rated it poor. I am considering suggestions for improvement.",
+    "**Dialogue Records History**\n<user> I've been experiencing persistent headaches and nausea, which worsen in the mornings. I have a history of hypertension for the last 5 years and have been treated with Amlodipine (5mg per day) for that.",
+    "**Dialogue Records History**\n<user> I have two sorted lists: [1, 3, 5, 7] and [2, 4, 6, 8]. Can you merge them into one sorted list?",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1."
+  ],
+  "explanation": "This feature represents the introduction of a structured prompt or context, often outlining the role and capabilities of a language model.",
+  "harmful": false,
+  "harmful_reason": "Structured prompts are a common and beneficial way to guide language model responses and do not inherently relate to harmful content.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

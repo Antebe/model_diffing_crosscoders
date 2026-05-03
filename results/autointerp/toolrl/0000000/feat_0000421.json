@@ -1,0 +1,37 @@
+{
+  "feat_idx": 421,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    6.859375,
+    6.85546875,
+    6.85546875,
+    6.84765625,
+    6.84765625,
+    6.84765625,
+    6.84765625,
+    6.84765625,
+    6.84765625,
+    6.84765625
+  ],
+  "top_texts": [
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"least_common_multiple\", \"parameters\": {\"a\": 84, \"b\": 180}}\n{\"name\": \"calculate_median\", \"parameters\": {\"numbers\": [3, 6, 9, 12, 15]}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"search_pins\", \"parameters\": {\"keyword\": \"vegan recipes\"}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"v3_auto_complete\", \"parameters\": {\"q\": \"F\"}}\n</tool_call>",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters."
+  ],
+  "explanation": "This feature represents instructions and examples for making structured tool/function calls in AI systems, particularly using JSON format with name and parameters fields.",
+  "harmful": false,
+  "harmful_reason": "This relates to technical documentation and examples for AI tool usage protocols, which is standard functionality for AI assistants and contains no harmful content.",
+  "detection_score": 0.85,
+  "detection_n_correct": 17,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

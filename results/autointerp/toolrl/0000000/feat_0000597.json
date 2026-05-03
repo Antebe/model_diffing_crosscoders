@@ -1,0 +1,37 @@
+{
+  "feat_idx": 597,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.109375,
+    8.0703125,
+    8.0625,
+    8.0625,
+    7.89453125,
+    7.89453125,
+    7.89453125,
+    7.89453125,
+    7.89453125,
+    7.89453125
+  ],
+  "top_texts": [
+    "Defaults to 'l4Hl6'.\", \"type\": \"str, optional\", \"default\": \"l4Hl6\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Defaults to None.\", \"type\": \"int, optional\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Defaults to 7.\", \"type\": \"int, optional\", \"default\": \"7\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Defaults to 7.\", \"type\": \"int, optional\", \"default\": \"7\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries."
+  ],
+  "explanation": "The feature represents numbered procedural instructions or step-by-step guides, especially those related to tool usage decisions and parameter specifications in technical documentation.",
+  "harmful": false,
+  "harmful_reason": "The content consists of neutral technical documentation and procedural instructions without any harmful, offensive, or dangerous material.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

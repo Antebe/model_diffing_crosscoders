@@ -1,0 +1,37 @@
+{
+  "feat_idx": 253,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.265625,
+    7.8515625,
+    7.80078125,
+    7.53125,
+    7.23046875,
+    7.08203125,
+    7.08203125,
+    7.08203125,
+    7.08203125,
+    7.08203125
+  ],
+  "top_texts": [
+    "Name: Recipe Detail\nDescription: Retrieve detailed information about a specific recipe\nParameters: {\"canonical_term\": {\"description\": \"Unique identifier for the recipe\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"profile_id\": {\"description\": \"The unique identifier of the profile for which the time series snapshots are to be fetched.\", \"type\": \"str\", \"default\": \"yjjslxnjng\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Name: di9GeL\nDescription: Fetches the details of a recipe by its slug using the Toolbench RapidAPI. Parameters: {\"OKVceHI\": {\"description\": \"The unique identifier for the recipe.\", \"type\": \"str\", \"default\": \"articulo-13-jugos-verdes-para-adelgazar-y-quemar-grasa-71482.html\"}}\n\n**Steps for Each Turn**\n1.",
+    "Parameters: {\"is_id\": {\"description\": \"The unique identifier of the user on the Steam Community platform.\", \"type\": \"str\", \"default\": \"sindex\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Name: fTt4J9G73g\nDescription: Fetches a specific item from an API using its id. Parameters: {\"742nx\": {\"description\": \"The unique identifier of the item to fetch.\", \"type\": \"str\", \"default\": \"99020\"}}\n\n**Steps for Each Turn**\n1.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Is 1996 a leap year?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Fetch autocomplete suggestions for the zip code '11221'.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Role definition:\n Inquirer: A user who raises an inquiry.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I am eager to find the current price of Amazon, Inc."
+  ],
+  "explanation": "This feature represents the concept of referencing or accessing information from a previous turn or dialogue history.",
+  "harmful": false,
+  "harmful_reason": "Accessing past dialogue is generally a helpful function for maintaining context in a conversation.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 10,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    19.125,
+    18.078125,
+    18.078125,
+    18.078125,
+    18.078125,
+    18.078125,
+    18.078125,
+    17.046875,
+    16.890625,
+    16.890625
+  ],
+  "top_texts": [
+    "The stats retrieved here are what are normally shown in box scores or used in fantasy games. The API returns a detailed box score for the specified game, including player statistics, team statistics, and other relevant information.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1. Name: wCNO1zA\nDescription: Multiplies two matrices.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "Since the provided tools don't include a direct way to access items within a specific collection, I would typically offer to help by other means\u2014perhaps by guiding you on where and how to access such information, or by providing general advice on navigating collections of historical documents.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Retrieve detailed information about the product with ID 123456789 from 1688.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Find details about the postal code 10001 in the United States."
+  ],
+  "explanation": "This feature represents the concept of a dialogue system interacting with tools and referencing past interactions.",
+  "harmful": false,
+  "harmful_reason": "The examples demonstrate a system designed to be helpful and informative, using tools to provide answers and referencing past context for better understanding.",
+  "detection_score": 0.9,
+  "detection_n_correct": 18,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

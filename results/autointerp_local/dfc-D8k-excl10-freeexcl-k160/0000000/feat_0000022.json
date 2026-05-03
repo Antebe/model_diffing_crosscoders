@@ -1,0 +1,37 @@
+{
+  "feat_idx": 22,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    26.828125,
+    25.78125,
+    25.78125,
+    25.78125,
+    25.78125,
+    25.78125,
+    25.78125,
+    25.78125,
+    25.640625,
+    24.859375
+  ],
+  "top_texts": [
+    "**Batter's Role:** The batter, or the offensive player, tries to hit the ball inside the field of play and then run as many bases as possible before the ball is returned. 7.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you show me the latest significant earthquakes around the world?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Could you please convert 100 USD to EUR for me?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Hey there!",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Generate PDF documents for the following texts: \n1.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Provide details about a user named 'testuser'.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What are the latest news articles for Tesla's stock?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I have two Instagram posts.",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Name: polygon_area_shoelace\nDescription: Calculates the area of a polygon using the shoelace formula. Parameters: {\"vertices\": {\"description\": \"A list of polygon vertices represented as tuples (x, y).\", \"type\": \"List[Tuple[float, float]]\", \"default\": \"\"}}\n4."
+  ],
+  "explanation": "This feature represents the concept of referring to and utilizing previous interactions in a dialogue.",
+  "harmful": false,
+  "harmful_reason": "Referring to past dialogue is a common and generally beneficial aspect of natural conversation and chatbot interactions.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

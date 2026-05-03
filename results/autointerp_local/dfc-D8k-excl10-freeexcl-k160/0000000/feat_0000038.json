@@ -1,0 +1,37 @@
+{
+  "feat_idx": 38,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    12.484375,
+    12.484375,
+    12.484375,
+    12.484375,
+    12.484375,
+    12.1328125,
+    12.0234375,
+    11.9921875,
+    11.8984375,
+    11.8984375
+  ],
+  "top_texts": [
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I am considering to develop and implement an ethical leadership development program for our senior management.",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I recently finished a leadership training program and I need the evaluation report for it. Can you retrieve that for me?",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I'm doing comprehensive research on various topics and need to compile some information.",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I'm hosting a cocktail party this Friday, and I need some ideas. I'd like two random classic cocktail recipes, please.",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I need to update my fingerprint data in the database. Can you assist me with this?",
+    "**Creating an Excel Workbook**:\n   - An Excel workbook is created, and the extracted data is organized into sheets. Each PDF page might correspond to a separate sheet, or related tables and data might be consolidated into fewer sheets. 5.",
+    "Parameters: {\"okKC\": {\"description\": \"The text to be analyzed for AI-generated content.\", \"type\": \"str\", \"default\": \"Christmas is one of the most widely celebrated holidays in the world.",
+    "It has a strong community aspect and is well-loved for its calming and creative gameplay. Additionally, another must-try game from Japan that is highly recommended is **The Legend of Zelda: Breath of the Wild**.",
+    "Default is None.\", \"type\": \"str, optional\", \"default\": \"\"}}\n3. Name: check_email_server\nDescription: Checks the status of an email server for a given domain using the Toolbench RapidAPI.",
+    "Default is 'en'.\", \"type\": \"str, optional\", \"default\": \"en\"}}\n4. Name: news_v2_list_by_symbol\nDescription: Fetches the latest news articles associated with a given stock symbol. Parameters: {\"symbol\": {\"description\": \"The stock symbol for which to retrieve news."
+  ],
+  "explanation": "This feature represents a system or agent that provides information and completes tasks based on user requests.",
+  "harmful": false,
+  "harmful_reason": "The examples describe helpful and benign interactions with a system designed to be informative and assistive.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 176,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    4.3046875,
+    3.630859375,
+    3.4296875,
+    3.30078125,
+    3.2265625,
+    3.19140625,
+    3.123046875,
+    2.78515625,
+    2.697265625,
+    2.638671875
+  ],
+  "top_texts": [
+    "Their main limitation remains detectability only for up to 72 h from index event and delayed release unlike in acute coronary syndromes. H-FABP is a protein mainly found in cytoplasm of myocardium, skeletal muscle, and distal renal tubular cells.",
+    "Galaxy Privacy Applock Android apps is the property & trademark from Viber Media S.\u00c3 r.l. and all rights reserved by Viber Media S.\u00c3 r.l.. You have provided direct downloadable link below to download the original free apk download package.",
+    "Thalgo Micronized Marine Algae is fine powder (125 \u00b5m), obtained by micronisation, 100% natural, pH 6.5. Algae allow regained fitness and general revitalization thanks to an infusion of trace elements and vitamins.",
+    "It\u2019s well-suited to protect skin cells since it works best in a lipid-rich environment like the skin. With so many people worried about ingredients in sunscreens, lycopene appears to have natural sun protective benefits.",
+    "This is the ingredient which is used in the keto supplements and works on setting the body in the state of the ketosis which is an ideal state to burn the fat instead of the carbs.",
+    "And I was like this is going to be good and all the sudden we segued into a more international flair \u2014 so in all my days I never knew that it would happen but the dream has finally come true \u2014 the Bret Michaels salad at the Hard Rock.\u201d\n\u201cIt was a perfect fit because it\u2019s high in fiber and high in protein and low in carbs so for what we are trying to accomplish it, it was a perfect salad to put together,\u201d he added.",
+    "Foods with high nutritive value will enhance your brain performance and provide you with enough energy to go through your workday without burning out. 4.",
+    "Liam, a high blood pressure symptoms in men dizziness young lawyer, Blood Pressure Medication Dosage Chart blood pressure adderall looked up at the black fountain in the sky, and said, This is a lot of effort A billionaire is estimated to be born.",
+    "Understanding Your Choices\nUsual care for pain from a broken hip\nYour doctor may give you medicines to treat the pain before or after an operation to repair the broken hip. Some of these include:\nAcetaminophen.",
+    "KING OF THE NERDS New Episode: \"Nerdy Dancing\" - Thursday, Feb. 21 at 10 p.m. (ET/PT)\nDuring this episode's Nerd War, Team Orange and Team Blue get nerdy with their bad selves in the world's first Nerd Anthem competition."
+  ],
+  "explanation": "This feature represents text discussing health, nutrition, and biomedical topics, particularly focusing on proteins, nutrients, supplements, and their physiological effects.",
+  "harmful": false,
+  "harmful_reason": "The content relates to legitimate health and nutritional information that could be educational or informative, with no apparent harmful intent or dangerous medical advice.",
+  "detection_score": 0.9,
+  "detection_n_correct": 18,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

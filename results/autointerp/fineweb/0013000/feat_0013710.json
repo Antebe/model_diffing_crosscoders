@@ -1,0 +1,37 @@
+{
+  "feat_idx": 13710,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375,
+    10.5859375
+  ],
+  "top_texts": [
+    "In an April letter posted on www.rapidrecallexchange.org, Kroger asked all of its suppliers to subscribe to the exchange by July 1.",
+    "ORLANDO, Fla.",
+    "Take what\u2019s left to Goodwill or a comparable donation spot.",
+    "2009 Oncology Conference Coverage View up-to-date coverage of the 2009 Oncology Conference here.",
+    "A novel two-step immunotherapy approach has shown clinically beneficial responses in patients with advanced ovarian cancer.",
+    "and he didnt share it with anyone... and its subsequently disappeared from the Internet... But that simply isnt what Ive been told.",
+    "This would have been a funny joke to those of us involved in dealing with you people, but it would have been a PR non-issue for you.",
+    "Two months, on your own terms, you could have written a similar post to yesterdays.",
+    "Look, D, you had two months to say to Harvard in private emails, \"Im sorry, I shouldnt have been using that animation in my paid presentations. I wont use it again.",
+    "*sigh* Fundamentalist community, let me pass on some advice to you I learned from the atheistic community:\nIf you have set yourself on fire, do not run. Okay? Okay?? Please?"
+  ],
+  "explanation": "This feature appears to detect complete, standalone sentences or independent clauses across various contexts and topics.",
+  "harmful": false,
+  "harmful_reason": "The examples contain neutral content like business communications, medical research, and general advice without promoting harmful behaviors or content.",
+  "detection_score": 0.4,
+  "detection_n_correct": 8,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

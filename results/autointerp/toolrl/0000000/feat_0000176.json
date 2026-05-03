@@ -1,0 +1,23 @@
+{
+  "feat_idx": 176,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    2.701171875,
+    2.35546875,
+    2.263671875
+  ],
+  "top_texts": [
+    "Name: actors_get_interesting_jobs\nDescription: Retrieves interesting jobs for a specified actor or actress using the RapidAPI service. Parameters: {\"nconst\": {\"description\": \"The unique identifier for the actor/actress, which should start with \\\"nm\\\" (e.g., \\\"nm0001667\\\").",
+    "Also, I want to track my nutrient intake for the past week starting from October 29, 2025. I have the meals I consumed with their nutrients detailed.",
+    "Name: XTHdGNi.rQs\nDescription: Fetches a list of all dogs sorted in descending order by a specified attribute. Parameters: {\"10B8F\": {\"description\": \"The attribute by which to order the list of dogs in descending order.\", \"type\": \"str\", \"default\": \"-breedName\"}}\n2."
+  ],
+  "explanation": "This feature activates on structured API/function documentation that includes parameter descriptions, types, and technical specifications.",
+  "harmful": false,
+  "harmful_reason": "This represents technical documentation patterns commonly found in programming contexts, which is standard educational/professional content.",
+  "detection_score": 0.6154,
+  "detection_n_correct": 8,
+  "detection_n_total": 13,
+  "interpretable": false,
+  "error": ""
+}

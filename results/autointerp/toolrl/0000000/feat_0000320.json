@@ -1,0 +1,37 @@
+{
+  "feat_idx": 320,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625,
+    8.265625
+  ],
+  "top_texts": [
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I need to write a report on climate change.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I'm looking for information on historical sites in London.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What is the capital of the district named Accra in Ghana?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Decode the VIN 'WVWZZZ1JZFW002211' using the standard decoder.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I have a patient scheduled for rehabilitation assessment yesterday.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What is the sales tax breakdown for Los Angeles, California?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you rewrite this article in French? It's about climate change.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I'm working on a research project analyzing customer feedback.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I'm interested in a car that costs $25,000.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Retrieve the press releases for Amazon on page 4."
+  ],
+  "explanation": "This feature activates on structured prompts that reference dialogue history with XML-style tags for tool interactions and user queries.",
+  "harmful": false,
+  "harmful_reason": "The examples show standard conversational prompts about benign topics like research, information requests, and general queries without harmful content.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 708,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.5703125,
+    8.4921875,
+    8.4609375,
+    8.4453125,
+    8.4296875,
+    8.4140625,
+    8.4140625,
+    8.40625,
+    8.3984375,
+    8.3828125
+  ],
+  "top_texts": [
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"zZY5iuBPxFiio\", \"parameters\": {\"yCofi\": \"08KPi\", \"kmWCCb\": 300000, \"LV9ks\": \"Boca Raton\", \"IOTRXX\": 50}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"bacterial_growth\", \"parameters\": {\"initial_population\": 500, \"growth_rate\": 0.02, \"time\": 1440, \"doubling_time\": 15}}\n</tool_call>",
+    "**Dialogue Records History**\n<user> Determine the range of ages from 30 to 45. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"ZZQDDC\", \"parameters\": {\"XB5K2_xFw\": 30, \"_O0G\": 45}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"XmEaF\", \"parameters\": {\"UFxl6c\": 1000, \"VKl3zvREvl\": 0.05, \"oJy_TgZGT\": 30, \"8m.bbZeF.\": 20}}\n</tool_call>",
+    "**Dialogue Records History**\n<user> Check if the number 407 is an Armstrong number </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"is_armstrong_number\", \"parameters\": {\"num\": 407}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"billboard_hot_100\", \"parameters\": {\"week\": \"2022-10-08\"}}\n{\"name\": \"search\", \"parameters\": {\"term\": \"Dynamite\", \"limit\": 5}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"GeneticSampleAnalyzer.analyzeDiversity\", \"parameters\": {\"species\": \"European Hare\", \"markers\": \"[\\\"COI\\\"\", \"\\\"D-loop\\\"], timePeriod\": \"2022-2023\", \"sampleDetails\": \"[{\\\"location\\\": \\\"Germany\\\"\"}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"podcast.analytics\", \"parameters\": {\"platform\": \"Podbean\", \"date_range\": \"{\\\"start_date\\\": \\\"2024-09-03\\\"\", \"\\\"end_date\\\": \\\"2024-09-09\\\"}, metrics\": \"[\\\"listens\\\"\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"I_YqPkYQfFav\", \"parameters\": {\"9wePF7\": \"BTC/USD\", \"gQmWiEo4\": \"5min\", \"_Er28K7xK\": 35}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"9eDYqXi\", \"parameters\": {\"XI9E0C\": 440, \"Q5bYtUK3ty\": 442, \"H73YQ6\": 100}}\n</tool_call>"
+  ],
+  "explanation": "This feature represents the concept of using a tool with specific parameters to perform a task.",
+  "harmful": false,
+  "harmful_reason": "The examples demonstrate a helpful process of task execution using tools, not inherently harmful behavior.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

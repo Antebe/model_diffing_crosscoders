@@ -1,0 +1,37 @@
+{
+  "feat_idx": 93,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.822265625,
+    3.7109375,
+    3.677734375,
+    3.603515625,
+    3.517578125,
+    3.498046875,
+    3.49609375,
+    3.46875,
+    3.373046875,
+    3.28515625
+  ],
+  "top_texts": [
+    "These double old fashion glasses offer heft and style, coordinate with both formal and casual dinnerware, and will make a handsome addition to any home bar. - Crafted of glass\n- Dishwasher safe\n- Capacity: 10 oz.",
+    "Graduates on a median salary would pay around $82,000 in repayments on the same starting debt. All of that is entirely true: simply because repayments are linked to earnings.",
+    "\u201cWhat is a Living and Learning Community (LLC)?\u201d\nAn LLC is a cohort of 25-30 students sharing majors, schedules and living space. Students attend the same sections of core classes and live in the same residence hall.",
+    "A powerful eco-friendly floor cleaner\nA powerful and effective zero waste floor cleaner. Our floor cleaner refill pod is designed for cleaning sensitive flooring. Effective on wooden, porous and treated or coated flooring.",
+    "Surely you can find great Christmas gifts and super Hanukkah gifts in our holiday catalog, the best Christmas gifts that your gift recipients will receive this year.",
+    "Tires should be inflated to recommended pressure levels, rotated every 6,000 miles to promote uniform tire wear and be replaced if worn or damaged.",
+    "Shopping for your husband or boyfriend? Give him the gift of perfect ice-cold martinis with our cubist cocktail set from our bar gifts collection.",
+    "Tiffany chose a career in dentistry because she\u2019s always noticed people\u2019s smiles first. She loves making sure her patients are comfortable during their dental visits making their needs a priority and that they leave the office loving their smile!",
+    "I\u2019ve had people come up to me all the time and say, \u2018When you wrote this song or that song, you said all the things that I\u2019ve been trying to say for a long time.\u2019 That\u2019s one of the greatest compliments as a songwriter you can ever possibly be paid.\u201d\nTritt has written many songs throughout his career but there\u2019s one song in particular that means more to him than the rest: his 1991 hit \u201cAnymore.\u201d\nWritten by Tritt and Jill Colucci in Nashville, \u201cAnymore\u201d was the second single from his triple-platinum album It\u2019s All About To Change and his second No.",
+    "The book was a success, and See followed up with three mystery novels set in China: Flower Net (1997), The Interior (1999) and Dragon Bones (2003)."
+  ],
+  "explanation": "",
+  "harmful": false,
+  "harmful_reason": "",
+  "detection_score": -1.0,
+  "detection_n_correct": -1,
+  "detection_n_total": -1,
+  "interpretable": false,
+  "error": ""
+}

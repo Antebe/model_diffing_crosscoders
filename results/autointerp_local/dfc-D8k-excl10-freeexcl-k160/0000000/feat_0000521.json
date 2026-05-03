@@ -1,0 +1,37 @@
+{
+  "feat_idx": 521,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    14.0234375,
+    13.609375,
+    13.609375,
+    13.609375,
+    13.609375,
+    13.609375,
+    13.609375,
+    12.984375,
+    12.90625,
+    12.8125
+  ],
+  "top_texts": [
+    "Also, what's the carbon footprint of using 2000 KWH of hydroelectric power in the USA? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1. Name: wCNO1zA\nDescription: Multiplies two matrices.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "**Dialogue Records History**\n<user> What is the cell coverage information for carriers in the zip code '67890'? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "The second campaign ran from 2025-05-01 to 2025-06-15 in Asia and Africa with a reach of 300,000, engagement of 30,000, and 3,000 conversions. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries."
+  ],
+  "explanation": "This feature represents the concept of a language model being instructed to use tools to fulfill user requests.",
+  "harmful": false,
+  "harmful_reason": "The examples show the model being instructed to use tools helpfully, not for malicious purposes.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

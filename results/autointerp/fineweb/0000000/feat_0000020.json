@@ -1,0 +1,37 @@
+{
+  "feat_idx": 20,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.5390625,
+    3.32421875,
+    2.8515625,
+    2.80078125,
+    2.79296875,
+    2.74609375,
+    2.7265625,
+    2.6953125,
+    2.66015625,
+    2.603515625
+  ],
+  "top_texts": [
+    "Nope, no tottering for you. Go have a cupcake and then we\u2019ll try again. This brings me to balance. Apparently this is a problem.",
+    "||Five years old|\n||New Jersey, USA|\nMelody is such a sweet horse. Everyone at the barn calls him\nJunior because of his personality. He is one of the sweetest horses\nI've ever met despite his cute face.",
+    "The cryopreserving of donor leukocytes in liquid nitrogen had no apparent effect on donor leukocyte functions, except for a small loss of cell number after revival from freezing.",
+    "Iron Tail Big Tree and Two Indian Viagra Medicine Names each movies games crafts and who posed for Fraser. Notify generic viagra free shipping if there year Lady Hope is for animals.",
+    "Foul lane - the painted area 19' x 16' (12' in college) bordered by the end line and the foul line, outside which players must stand during a free-throw; also the area an offensive player cannot spend more than 3-seconds at a time in.",
+    "Now. Scott had a great list. Here\u2019s mine which again, I developed separate from Scott:\nBack in January, the Associated Press (and the world) reported that two U.N. experts called for the U.S.",
+    "Doodle Earth Tourny viewtopic.php?f=90&t=108096 Coordinator: iamkoolerthanu This 64-player tournament on Doodle Earth will consist of 4-player games with the winner advancing to the next round. It\u2019s filling up fast, so go and claim your spot now.",
+    "My version of Shepherd\u2019s pie features mushrooms instead of meat, but it\u2019s just as satisfying and flavorful! Serve your Shepherd\u2019s Pie with some cabbage rolls as a side.",
+    "As prices for conventional silicon-based solar panels plummet, pressure has increased on Silicon Valley start-ups like Solyndra that make a type of photovoltaic cell called copper indium gallium selenide, or CIGS.",
+    "The Patriots have a chance to get back to the Super Bowl. They have a chance to win the championship they should have won back in the year that Rob Gronkowski was a freshman at Arizona."
+  ],
+  "explanation": "",
+  "harmful": false,
+  "harmful_reason": "",
+  "detection_score": -1.0,
+  "detection_n_correct": -1,
+  "detection_n_total": -1,
+  "interpretable": false,
+  "error": ""
+}

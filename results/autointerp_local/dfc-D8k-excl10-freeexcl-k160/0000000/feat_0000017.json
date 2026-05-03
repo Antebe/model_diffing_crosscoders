@@ -1,0 +1,37 @@
+{
+  "feat_idx": 17,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.9140625,
+    8.296875,
+    8.1796875,
+    8.046875,
+    7.62890625,
+    7.55859375,
+    7.15625,
+    7.0390625,
+    7.01953125,
+    6.8359375
+  ],
+  "top_texts": [
+    "Month, day, hour, minutes and seconds use leading zeros for single digit values.\", \"type\": \"string\", \"default\": \"\"}, \"limit\": {\"description\": \"Set how many release strings to return, default is 500.\", \"type\": \"int\", \"default\": \"\"}, \"end_string\": {\"description\": \"The end string to include releases from a specific string range, format is YYYYMMDD (eg 20210101 for January 1st, 2021), or for more granular results down to the second YYYYMMDDHHMMSS (eg 20210101123459 for January 1st, 2021 12:24pm and 59 seconds).",
+    "Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}, \"chain_id\": {\"description\": \"Chain identifier to filter the protocols. Supported chains: \\\"eth\\\", \\\"bsc\\\", \\\"matic\\\", \\\"avax\\\", \\\"okt\\\", \\\"hmy\\\", \\\"heco\\\", \\\"klay\\\", \\\"op\\\", \\\"arb\\\", \\\"ftm\\\", \\\"xdai\\\", \\\"cro\\\", \\\"mobm\\\", \\\"celo\\\", \\\"aurora\\\", \\\"fuse\\\", \\\"evmos\\\", \\\"cfx\\\", \\\"kava\\\".",
+    "Defaults to None.\", \"type\": \"int, optional\", \"default\": \"\"}, \"country\": {\"description\": \"Sets the marketplace country, language, and currency. Allowed values are 'US', 'AU', 'BR', 'CA', 'CN', 'FR', 'DE', 'IN', 'IT', 'MX', 'NL', 'SG', 'ES', 'TR', 'AE', 'GB', 'JP'.",
+    "Default is 0.\", \"type\": \"int, optional\", \"default\": \"\"}, \"muscle\": {\"description\": \"Muscle group targeted by the exercise. Possible values include: 'abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'.",
+    "**Dialogue Records History**\n<user> Multiply a 3x3 matrix with elements [1, 2, 3], [4, 5, 6], [7, 8, 9] by another 3x3 matrix with elements [10, 11, 12], [13, 14, 15], [16, 17, 18].",
+    "**Dialogue Records History**\n<user> I'm planning a promotional campaign for some luxury cars on our YouTube channel. I need details and images for the following VINs: JS1GT78A7G2105965, JS1GT78A7G2105966, JS1GT78A7G2105967.",
+    "Parameters: {\"hotel_ids\": {\"description\": \"Comma-separated string of PPN hotel IDs (Semi Opaque Only).\", \"type\": \"str\", \"default\": \"700000000,700000001,700000002,700000003\"}, \"image_size\": {\"description\": \"The size of the images to be returned. Valid options are 'small' (60px), 'medium' (300 to 312px), or 'large' (500 to 800px).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Search for 'pizza' near the coordinates 40.7128 N, 74.0060 W.",
+    "Parameters: {\"start_date\": {\"description\": \"The start date in the format 'YYYY-MM-DD'.\", \"type\": \"str\", \"default\": \"2013-12-31\"}, \"country_code\": {\"description\": \"The ISO country code (2 letters) specifying the country.\", \"type\": \"str\", \"default\": \"US\"}, \"start_time\": {\"description\": \"The start time in 24-hour format with leading zeros (e.g., '08:00').\", \"type\": \"str\", \"default\": \"08:15\"}, \"increment_time\": {\"description\": \"The amount of working time to add or remove from the start date and time in 'H:i' format (e.g., '1:00' for one hour, '30:15' for thirty hours and fifteen minutes, or '-0:45' for a negative increment).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists)."
+  ],
+  "explanation": "This feature represents the concept of structured data input and parameters within a dialogue system.",
+  "harmful": false,
+  "harmful_reason": "Structured data input is a common and generally safe way for users to interact with AI systems.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

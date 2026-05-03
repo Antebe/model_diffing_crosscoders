@@ -1,0 +1,37 @@
+{
+  "feat_idx": 536,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    11.0546875,
+    11.0546875,
+    11.0546875,
+    11.0546875,
+    11.0546875,
+    11.0546875,
+    8.6171875,
+    7.8984375,
+    7.78515625,
+    7.6953125
+  ],
+  "top_texts": [
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1. Name: wCNO1zA\nDescription: Multiplies two matrices.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "- Required Skills: The job requires proficiency in Java, C++, SQL, and Problem Solving. - Company Industry: The company operates in the Information Technology industry. - Company Size: Tech Innovations Inc. is a large company, employing around 1000 staff members.",
+    "It's like trying to count the number of stars in the sky - can't say you're unaware of the enormity until you start counting! How's it likely to impact day-to-day operations, do you reckon?",
+    "**Football (Soccer):** Undoubtedly the world's most popular sport, soccer has a massive global following with major audiences in Europe, South America, Africa, and Asia. It's celebrated globally due to the universally appealing nature of its gameplay and its rich history.",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists)."
+  ],
+  "explanation": "This feature represents the concept of structured information presentation, likely related to lists, descriptions, and tool specifications.",
+  "harmful": false,
+  "harmful_reason": "Structured information presentation is a common and generally benign way to organize and convey data.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

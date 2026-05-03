@@ -1,0 +1,37 @@
+{
+  "feat_idx": 786,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.2421875,
+    7.92578125,
+    7.875,
+    7.8515625,
+    7.83984375,
+    7.8359375,
+    7.83203125,
+    7.8046875,
+    7.78515625,
+    7.77734375
+  ],
+  "top_texts": [
+    "Since I'm particularly interested in Rugby Union, could you provide me with the upcoming match schedules and locations for this category? </user>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Send SMS OTP for 2-Factor Authentication in India\", \"parameters\": {\"phone_number\": \"9876543210\", \"template_name\": \"SecureAccess\", \"api_key\": \"ABC123XYZ\"}}\n</tool_call>\n<obs> [{\"name\": \"Send SMS OTP for 2-Factor Authentication in India\", \"results\": {\"otp\": \"456789\", \"status\": \"success\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</response>\n\n<user> Great explanation. Given that balancing competitiveness and profitability can be tricky, as a follow-up I'm curious, how are VAT rates set or determined on the government's end? </user>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"ConvertPdfToMobiXml\", \"parameters\": {\"name\": \"converted_invoice.xlsx\", \"folder\": \"invoices\", \"storage\": \"Google Drive\"}}\n{\"name\": \"GetPageStrikeOutAnnotations\", \"parameters\": {\"name\": \"invoice.pdf\", \"pageNumber\": \"1\", \"storage\": \"Google Drive\", \"folder\": \"invoices\"}}\n{\"name\": \"ConvertPageToJpeg\", \"parameters\": {\"pageNumber\": \"1\", \"name\": \"invoice.pdf\", \"folder\": \"invoices\", \"storage\": \"Google Drive\"}}\n</tool_call>\n<obs> [{\"name\": \"ConvertPdfToMobiXml\", \"results\": {\"mobi_xml\": \"MOBI_XML_STRING_RESULT\"}}, {\"name\": \"GetPageStrikeOutAnnotations\", \"results\": {\"strikeOutAnnotations\": [{\"text\": \"Strikethrough Text Example 1\", \"rectangle\": {\"x\": 50, \"y\": 150, \"width\": 200, \"height\": 15}}, {\"text\": \"Strikethrough Text Example 2\", \"rectangle\": {\"x\": 50, \"y\": 300, \"width\": 200, \"height\": 15}}]}}, {\"name\": \"ConvertPageToJpeg\", \"results\": {\"jpegImage\": \"BASE64_ENCODED_JPEG_BYTES\", \"status\": \"Conversion successful\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Get Challenge Videos\", \"parameters\": {\"hashtag\": \"bottlecapchallenge\"}}\n</tool_call>\n<obs> [{\"name\": \"Get Challenge Videos\", \"results\": {\"videos\": [{\"id\": \"video1\", \"title\": \"Amazing Bottle Cap Kick by John\", \"description\": \"Watch John's incredible precision kick to unscrew the bottle cap!\", \"url\": \"https://tiktok.com/video1\"}, {\"id\": \"video2\", \"title\": \"Sophie's Bottle Cap Challenge\", \"description\": \"Sophie nails the bottle cap challenge on her first try!\", \"url\": \"https://tiktok.com/video2\"}, {\"id\": \"video3\", \"title\": \"Epic Fail at Bottle Cap Challenge\", \"description\": \"This attempt at the bottle cap challenge didn't go as planned!\", \"url\": \"https://tiktok.com/video3\"}], \"cursor\": \"next_cursor_string\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"VAT Rates and Categories API\", \"parameters\": {\"country_code\": \"DE\"}}\n</tool_call>\n<obs> [{\"name\": \"VAT Rates and Categories API\", \"results\": {\"vat_rates\": [{\"rate\": 0.19, \"category\": \"Standard\"}, {\"rate\": 0.07, \"category\": \"Food\"}, {\"rate\": 0.07, \"category\": \"Books\"}]}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "**Dialogue Records History**\n<user> I have three Instagram PKs that I need the usernames for: \"6793827634\", \"9487563845\", and \"2938475639\". Can you retrieve them for me? </user>\n\n<think> I should directly respond to the user's need.",
+    "**Dialogue Records History**\n<user> Can you assist me with obtaining the geographical coordinates and information for the address \"10 Downing Street, London, U.K\"? </user>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Get All Advisories\", \"parameters\": {}}\n</tool_call>\n<obs> [{\"name\": \"Get All Advisories\", \"results\": {\"advisories\": [{\"id\": \"AA23-269A\", \"title\": \"Microsoft Exchange Server Vulnerability\", \"description\": \"Critical vulnerability in Microsoft Exchange Server allowing remote code execution.\", \"published_string\": \"2023-09-26\", \"severity\": \"Critical\"}, {\"id\": \"AA23-267B\", \"title\": \"Apple iOS Security Update\", \"description\": \"Security update for Apple iOS addressing multiple vulnerabilities.\", \"published_string\": \"2023-09-24\", \"severity\": \"High\"}]}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Chuck Norris Joke API\", \"parameters\": {}}\n</tool_call>\n<obs> [{\"name\": \"Chuck Norris Joke API\", \"results\": {\"joke\": \"Chuck Norris can divide by zero.\"}}] </obs>\n\n<think> I should directly respond to the user's need."
+  ],
+  "explanation": "This feature represents requests for information or actions that require external tools or knowledge bases.",
+  "harmful": false,
+  "harmful_reason": "These are general requests for information and do not inherently contain harmful content.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

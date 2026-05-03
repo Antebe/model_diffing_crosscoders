@@ -1,0 +1,37 @@
+{
+  "feat_idx": 651,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    9.0546875,
+    7.5234375,
+    7.359375,
+    7.14453125,
+    6.78125,
+    6.671875,
+    6.48828125,
+    6.03125,
+    5.84765625,
+    5.484375
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> I want to know what new games are available on the Epic Games Store. Search for 'adventure' games in the US locale, first page. Also, can you get the last videos from channel 'UCBR8-60-B28hp2BmDPdntcQ'?",
+    "Defaults to 25.\", \"type\": \"float\", \"default\": \"\"}, \"end_id\": {\"description\": \"The object ID to fetch the previous page of answers.\", \"type\": \"float\", \"default\": \"\"}, \"sort\": {\"description\": \"The field to sort the answers by.",
+    "Name: morning_star\nDescription: Fetches stocks that have the Morning Star signal from the RapidAPI service. Parameters: {\"page\": {\"description\": \"The page number of results to retrieve. Defaults to 1.\", \"type\": \"int, optional\", \"default\": \"1\"}}\n2.",
+    "Parameters: {\"movieid\": {\"description\": \"The ID of the movie for which to find similar movies.\", \"type\": \"string\", \"default\": \"\"}, \"page\": {\"description\": \"The page number of the results to return.\", \"type\": \"string\", \"default\": \"1\"}}\n4.",
+    "**Dialogue Records History**\n<user> Find all KFC locations in Texas and California on pages 1 and 2, respectively. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Defaults to 10.\", \"type\": \"int, optional\", \"default\": \"10\"}, \"page\": {\"description\": \"The number of posts to retrieve per page. Defaults to 10.\", \"type\": \"int, optional\", \"default\": \"1\"}}\n2. Name: get_by_id\nDescription: Retrieve certification details by ID using the Toolbench RapidAPI.",
+    "Default is 'ethereum'.\", \"type\": \"str, optional\", \"default\": \"ethereum\"}, \"page\": {\"description\": \"The page number to start from. Default is 10.\", \"type\": \"int, optional\", \"default\": 10}, \"slug\": {\"description\": \"Search all platform slugs.",
+    "Name: eFdE6M\nDescription: Retrieves a list of continents from the Geography API, optionally filtered by a specified name. Pagination can be controlled using `pagesize` and `page` parameters. Parameters: {\"6ZjUzjAVC\": {\"description\": \"Optional; Name of the continent to filter by.",
+    "Parameters: {\"id\": {\"description\": \"The unique identifier of the rugby manager.\", \"type\": \"float\", \"default\": \"\"}, \"page\": {\"description\": \"The page number of the matches to retrieve.\", \"type\": \"float\", \"default\": \"\"}}\n3.",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"zappos_search_product\", \"parameters\": {\"keyword\": \"women's fashion\", \"sort\": \"best_seller\", \"page\": 1}}\n</tool_call>"
+  ],
+  "explanation": "This feature activates on text containing API documentation or function calls with pagination parameters, particularly those specifying page numbers for retrieving results.",
+  "harmful": false,
+  "harmful_reason": "The content relates to technical API documentation and pagination functionality, which is standard programming/technical content with no harmful elements.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

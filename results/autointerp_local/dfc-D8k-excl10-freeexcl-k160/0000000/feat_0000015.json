@@ -1,0 +1,37 @@
+{
+  "feat_idx": 15,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    15.4296875,
+    15.125,
+    15.109375,
+    15.078125,
+    15.0703125,
+    15.0078125,
+    14.9765625,
+    14.8515625,
+    14.828125,
+    14.78125
+  ],
+  "top_texts": [
+    "Parameters: {\"EqXi0MP\": {\"description\": \"The IATA code for the airport.\", \"type\": \"str\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"EGWFdU\": {\"description\": \"The username for login.\", \"type\": \"str\", \"default\": \"\"}, \"L03v6iSG\": {\"description\": \"The password for login in plain text.\", \"type\": \"str\", \"default\": \"\"}}\n4.",
+    "Parameters: {\"page\": {\"description\": \"The page number of the results to return.\", \"type\": \"int\", \"default\": \"\"}, \"size\": {\"description\": \"The number of results to return per page.\", \"type\": \"int\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "Name: piercing_line\nDescription: Returns a list of stocks that have a Piercing Line signal from the BarPatterns API. Parameters: {\"page\": {\"description\": \"The page number for paginated results. Defaults to 1.\", \"type\": \"int\", \"default\": \"1\"}}\n3.",
+    "Name: retrieve_response\nDescription: Retrieve the response from the \"Rewriter\" endpoint using a given JOB ID. Parameters: {\"job_id\": {\"description\": \"The JOB ID generated on the \\\"Rewriter\\\" endpoint.\", \"type\": \"str\", \"default\": \"1124817\"}}\n2.",
+    "Name: Get E-Sports Team Near Matches\nDescription: Retrieve near matches for a specified E-Sports team. Parameters: {\"id\": {\"description\": \"The unique identifier of the E-Sports team for which to retrieve near matches.\", \"type\": \"float\", \"default\": \"\"}}\n4.",
+    "Parameters: {\"JFizHe\": {\"description\": \"The category of posts to fetch.\", \"type\": \"str\", \"default\": \"sports\"}, \"jU.kVpdT\": {\"description\": \"Leave blank for the first request. For subsequent requests, provide the counter received from the previous request.",
+    "Parameters: {\"n\": {\"description\": \"The total number of elements in the set.\", \"type\": \"int\", \"default\": \"\"}, \"k\": {\"description\": \"The number of elements to choose for the permutation.\", \"type\": \"int\", \"default\": \"\"}}\n3.",
+    "Name: AeEN5p7KiC9gRS\nDescription: Fetches the image of a soccer team using the given team ID and RapidAPI key. Parameters: {\"gnSnT\": {\"description\": \"The unique identifier of the soccer team whose image is to be fetched.\", \"type\": \"int\", \"default\": \"662\"}}\n3.",
+    "Name: Wzq5LqsNfZDsi\nDescription: Generate a QR code based on the provided data string using the QR Code Generator API. Parameters: {\"w_3tdeQ\": {\"description\": \"The input data to be converted into a QR code.\", \"type\": \"str\", \"default\": \"Hello World!\"}}\n3."
+  ],
+  "explanation": "This feature represents the concept of API function parameters and descriptions.",
+  "harmful": false,
+  "harmful_reason": "API parameters and descriptions are standard technical information and do not inherently relate to harmful content.",
+  "detection_score": 0.7,
+  "detection_n_correct": 14,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

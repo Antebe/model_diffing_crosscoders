@@ -1,0 +1,37 @@
+{
+  "feat_idx": 14,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    25.40625,
+    23.28125,
+    22.609375,
+    22.40625,
+    22.0,
+    21.625,
+    21.59375,
+    21.546875,
+    21.5,
+    21.46875
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> I would like to evaluate the effectiveness of two different strategies in a cooperative board game. The first strategy, \"Aggressive Expansion\", involves three phases: \n1. \"Early Game\" with actions \"Scout\" (medium), \"Expand\" (high). 2.",
+    "Can you gather the analytics data of the live stream with an ID 1234 for the last week? also, please grab an Obama image from the following URL: 'http://obamaImage.com/obama.png'.",
+    "Additionally, could you please specify the layers and effects (including intensities) for the other three tracks? Inquirer: The artist's name is 'John Doe'. The second track has 10 layers with only a distortion effect at intensity 6.",
+    "**Dialogue Records History**\n<user> What are the latest shorts from the YouTube channel with ID 'ABC123'? Also, can you get the profile information for the Instagram user with ID 'XYZ789'?",
+    "Could you help me find the top 5 Tiktok songs with the keyword 'workout'? Also, I found this TikTok video with a catchy tune, here is the link 'https://vt.tiktok.com/ZSJvJSnt6/' I\u2019d love to download it.",
+    "Name: coral.water_quality\nDescription: Analyzes water quality parameters critical for coral reefs health. Parameters: {\"water_samples\": {\"description\": \"List of water samples with their respective parameters.\", \"type\": \"array\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "**Dialogue Records History**\n<user> Generate a PDF report of the BBC News homepage with dimensions 1280x720, and find relevant videos using the Bing Video Search API, setting the 'mkt' parameter to 'en-US' and returning 20 results.",
+    "Then, I want to search for postcodes containing 'SW1' in the UK, also limit the results to 3. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Fetch details of the theme with ID 12345.",
+    "**Dialogue Records History**\n<user> Search for lyrics of 'Bohemian Rhapsody' on Genius with a page size of 5 and markdown format. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need."
+  ],
+  "explanation": "This feature represents requests for information retrieval or data extraction from various online sources.",
+  "harmful": false,
+  "harmful_reason": "While misuse is possible, the feature itself simply reflects a desire for information, not inherently harmful intent.",
+  "detection_score": 0.45,
+  "detection_n_correct": 9,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

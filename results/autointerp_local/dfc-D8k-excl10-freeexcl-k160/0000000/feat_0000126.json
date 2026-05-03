@@ -1,0 +1,37 @@
+{
+  "feat_idx": 126,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    5.72265625,
+    5.72265625,
+    5.72265625,
+    5.72265625,
+    5.72265625,
+    5.72265625,
+    5.71875,
+    5.4921875,
+    5.31640625,
+    5.3046875
+  ],
+  "top_texts": [
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you show me the latest significant earthquakes around the world?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Could you please convert 100 USD to EUR for me?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Hey there!",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Generate PDF documents for the following texts: \n1.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Provide details about a user named 'testuser'.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What are the latest news articles for Tesla's stock?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I have two Instagram posts.",
+    "Moreover, the advancement in streaming technologies and the exponential growth of platforms like YouTube, Netflix, and others have made it easier for viewers to access a diverse range of content globally.",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "How do you think recent fluctuations in cryptocurrency values are affecting these NFT sales? </user>\n\n<think> I should directly respond to the user's need. </think>\n<response> As an AI assistant, I don't have personal thoughts or opinions."
+  ],
+  "explanation": "This feature represents the concept of referencing or acknowledging previous interactions in a conversation.",
+  "harmful": false,
+  "harmful_reason": "Referring to past conversation history is a standard part of natural dialogue and is not inherently harmful.",
+  "detection_score": 0.75,
+  "detection_n_correct": 15,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

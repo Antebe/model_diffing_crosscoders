@@ -1,0 +1,37 @@
+{
+  "feat_idx": 95,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    6.6875,
+    5.2890625,
+    4.43359375,
+    3.546875,
+    3.4609375,
+    3.4375,
+    3.43359375,
+    3.427734375,
+    3.423828125,
+    3.416015625
+  ],
+  "top_texts": [
+    "Parameters: {\"text\": {\"description\": \"The input text.\", \"type\": \"str\", \"default\": \"\"}}\n3. Name: fibonacci\nDescription: Calculates the nth Fibonacci number. Parameters: {\"n\": {\"description\": \"The position of the Fibonacci number.\", \"type\": \"int\", \"default\": \"\"}}\n4.",
+    "Theater: Puppets Galore, Show: \"Adventures of Pinocchio\", Time: 13:00, Tickets: 3\n3. Theater: Puppet Playhouse, Show: \"The Little Prince\", Time: 15:45, Tickets: 5\n4.",
+    "**Historical Documents**\n   - **ID:** 2\n   - **Description:** A collection of significant historical documents and manuscripts. 3. **Scientific Journals**\n   - **ID:** 3\n   - **Description:** A collection of scientific journals and research papers. 4.",
+    "Parameters: {\"iVjwe\": {\"description\": \"The year for which to retrieve the holidays.\", \"type\": \"int\", \"default\": \"\"}, \"fReUDg\": {\"description\": \"The two-letter ISO 3166-1 alpha-2 country code.\", \"type\": \"str\", \"default\": \"\"}}\n5. Name: NmRcX8\nDescription: Order specified items from a Safeway location.",
+    "Parameters: {\"year\": {\"description\": \"The year for which to retrieve the holidays.\", \"type\": \"int\", \"default\": \"\"}, \"country_code\": {\"description\": \"The two-letter ISO 3166-1 alpha-2 country code.\", \"type\": \"str\", \"default\": \"\"}}\n5.",
+    "The terms should consist of one to three words separated by a dash. Example value: `election-campaign`.\", \"type\": \"str, optional\", \"default\": \"\"}}\n5. Name: nft_news\nDescription: Fetches up-to-date NFT news from the specified API.",
+    "Parameters: {\"state\": {\"description\": \"The two-letter state abbreviation.\", \"type\": \"string\", \"default\": \"\"}, \"cancer_type\": {\"description\": \"The type of cancer to filter by.\", \"type\": \"string\", \"default\": \"\"}, \"year\": {\"description\": \"The year to retrieve cancer rates for.\", \"type\": \"int\", \"default\": \"\"}, \"gender\": {\"description\": \"The gender to filter by.\", \"type\": \"string\", \"default\": \"\"}}\n5.",
+    "Parameters: {\"symbol\": {\"description\": \"The stock symbol to query for data.\", \"type\": \"string\", \"default\": \"\"}, \"fields\": {\"description\": \"A comma-separated list of sector metrics to retrieve.\", \"type\": \"string\", \"default\": \"gross_margin,ebit_margin,ebitda_margin,net_margin,levered_fcf_margin,rtn_on_common_equity,return_on_total_capital,return_on_avg_tot_assets,capex_to_sales,assets_turnover,cash_from_operations_as_reported,net_inc_per_employee\"}}\n5.",
+    "Parameters: {\"seasonId\": {\"description\": \"The unique season ID for which to retrieve the league's total team events.\", \"type\": \"float\", \"default\": \"\"}, \"tournamentId\": {\"description\": \"The unique tournament ID for which to retrieve the league's total team events.\", \"type\": \"float\", \"default\": \"\"}}\n5.",
+    "Parameters: {\"tournamentId\": {\"description\": \"The unique tournament id you want to retrieve the league's last matches.\", \"type\": \"float\", \"default\": \"\"}, \"page\": {\"description\": \"Zero-based page number.\", \"type\": \"float\", \"default\": \"\"}, \"seasonId\": {\"description\": \"The season id you want to retrieve the league's last matches.\", \"type\": \"float\", \"default\": \"\"}}\n5."
+  ],
+  "explanation": "This feature activates on structured documentation or API reference text that contains numbered lists with parameter descriptions and type specifications.",
+  "harmful": false,
+  "harmful_reason": "The content consists of technical documentation for APIs, functions, and data structures, which is neutral informational content without harmful elements.",
+  "detection_score": 0.55,
+  "detection_n_correct": 11,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

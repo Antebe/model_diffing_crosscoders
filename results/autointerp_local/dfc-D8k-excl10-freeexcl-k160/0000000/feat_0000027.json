@@ -1,0 +1,37 @@
+{
+  "feat_idx": 27,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    17.078125,
+    15.734375,
+    14.859375,
+    14.359375,
+    14.359375,
+    14.359375,
+    14.359375,
+    14.359375,
+    14.359375,
+    14.359375
+  ],
+  "top_texts": [
+    "**Seasonal Advertising**: Advertisers can adjust their campaigns based on the season or prevalent weather conditions of a particular location. This can be particularly useful for products that are season-dependent. 6.",
+    "Defaults to 'currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code'.\", \"type\": \"str, optional\", \"default\": \"currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code\"}, \"22_FEB\": {\"description\": \"Filter by the 2-letter ISO country code.\", \"type\": \"str, optional\", \"default\": \"\"}, \"pGtIgv7a\": {\"description\": \"Search string for the country name, can be partial.\", \"type\": \"str, optional\", \"default\": \"\"}, \"qksx\": {\"description\": \"Limit the number of results returned.",
+    "However, this could also result in higher monthly payments. 4. **Loan Type:** The type of loan can impact your mortgage rate. For instance, rates can vary between fixed-rate and adjustable-rate mortgages. 5.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "</think>\n<response> As an AI, I don't have insights into your team's specific work dynamics. However, the effectiveness of weekly meetings can depend largely on how they're organized and managed.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters.",
+    "2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields. Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters."
+  ],
+  "explanation": "This feature represents the concept of technical instructions or code snippets.",
+  "harmful": false,
+  "harmful_reason": "Technical instructions themselves are not inherently harmful.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

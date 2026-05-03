@@ -1,0 +1,37 @@
+{
+  "feat_idx": 181,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    4.5703125,
+    4.54296875,
+    4.20703125,
+    3.814453125,
+    3.341796875,
+    3.16015625,
+    2.98046875,
+    2.830078125,
+    2.71875,
+    2.64453125
+  ],
+  "top_texts": [
+    "How to Do Professional SEO\nWhen you feel hungry and search for \u2018pizza\u2019 on Google, it may look like a simple process to you as a user.",
+    "If you can\u2019t find what you\u2019re looking for you can always find it with our Search Box. So go ahead and give it a try. Simply type in any keyword then click the search button. Having trouble? Need any assistance?",
+    "With a quick Google search, the Manti Miracle Pageant was the first to pop up, and everything worked perfectly with the timing.",
+    "And here is the answer :) I love the cut and the colour! Mar 25 '12\nLook! It\u2019s a crappy screencap of @StineBramsen and some backup dancers on the Danish #XFactor on Saturday night!",
+    "Heather's package was cool. Jesse's thing fell totally flat. #sevensharp\"\nSome held their tongue a little longer than the first break such as @MahonriWilliams, who said\" Still trying to figure #SevenSharp out. Too many jokes for this time slot.",
+    "- You are here:\n- Auto News >\n- sonic pricing\nChevrolet has just released pricing on its 2013 Sonic RS sporty hatchback.",
+    "We must arm all our children against this new Martian Menace. martian or not; the kid running away appears to be wearing a jock strap on his head. I've always though google street view was really cool.",
+    "Now she says: \"I don't care what Lindsay Lohan does.\"\n\"I was fed up with the lack of actual news reporting, and more intense focus on silly, irrelevant things like women's fashion or the newest celebrity's recipe for a dinner I could never find the time or money to cook,\" said Zach Beale, a 23-year-old college student in Savannah, Ga.",
+    "A $50,000 House - But At What Cost? Can you still get a house for $50,000? The answer may surprise you. While, the average U.S.",
+    "Dove hunting is allowed\nthrough Sept. 30, at which time the site closes to establish a waterfowl\nrefuge. Goose hunting by permit commences at the opening of the central\nIllinois quota zone goose season."
+  ],
+  "explanation": "This feature activates on text that exhibits topic drift or conversational transitions, where content shifts from an initial subject to loosely related or tangential information.",
+  "harmful": false,
+  "harmful_reason": "The content consists of benign topics like search engines, TV shows, car pricing, housing costs, and hunting regulations with no harmful themes present.",
+  "detection_score": 0.75,
+  "detection_n_correct": 15,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

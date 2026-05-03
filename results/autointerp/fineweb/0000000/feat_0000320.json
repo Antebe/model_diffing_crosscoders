@@ -1,0 +1,31 @@
+{
+  "feat_idx": 320,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    2.39453125,
+    2.05078125,
+    2.029296875,
+    1.791015625,
+    1.7724609375,
+    1.7685546875,
+    1.7587890625
+  ],
+  "top_texts": [
+    "- Achieving 785,000 interpretive (nature) center visitors, one of the highest visitations ever. Interpreters presented 18,000 programs to 394,000 campers, school children, inn visitors and local residents.",
+    "I'm glad to have had the pleasure of watching Kristin blossom from a some-what shy girl who only wore vintage, into the dynamic fashion power house she is today.",
+    "New Listings in Texas - Friday, March 30th, 2012\nHomes.org gives you access to homes for sale listed on 03/30/2012 in Texas.",
+    "Vary the Fields You Use The records might not have everything in them that you've typed into the \"narrow by\" fields if you've used multiple boxes, so it might not come up even if it's there.",
+    "SNUG HUG presents 2 options which will warm your heart. *Always follow the information content on your care labels. Reversible bedspread 100% cotton. 410gr/m2. Garment dye. 200\u00d7250, 230\u00d7250, 280\u00d7260\nMachine wash. Warm wash (40\u00ba). Low tumble Dry.",
+    "* I received a copy from the author in exchange for an honest review\nOnly Human (Kirsten O'Shea Book 1)\nDate Added: 05/31/2015 by Eva Perez",
+    "Thursday, 14 June 2012\nMonday, 31 October 2011\nThe Cute Card Thursday Challenge this week is a sketch and here is my interpretation of it. The papers are by My Minds Eye."
+  ],
+  "explanation": "This feature appears to activate on informational text containing specific numbers, dates, and structured data presented in a formal or technical format.",
+  "harmful": false,
+  "harmful_reason": "The content consists of benign informational text about tourism statistics, fashion, real estate, product descriptions, and hobby crafts with no harmful elements present.",
+  "detection_score": 0.6471,
+  "detection_n_correct": 11,
+  "detection_n_total": 17,
+  "interpretable": false,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 57,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    17.921875,
+    17.75,
+    16.75,
+    15.8125,
+    15.2265625,
+    14.515625,
+    14.515625,
+    14.3125,
+    14.2890625,
+    14.078125
+  ],
+  "top_texts": [
+    "Music Info:\n    - Title: Dance Beats\n    - Artist: DJ Awesome\n5. Image Info:\n    - URL: https://www.tiktok.com/@exampleuser/image/7002634556977908485 \n    - Caption: Still from the dance routine video. Let me know if you need more information!",
+    "Name: Cpoa2NTfFxWPk\nDescription: Fetch the highlight item from Instagram using the toolbench RapidAPI. Parameters: {\"TWw6LlrdAF\": {\"description\": \"The Instagram ID for which to fetch the highlight items.\", \"type\": \"str\", \"default\": \"17934390836227915\"}}\n2.",
+    "Parameters: {\"comment_id\": {\"description\": \"The ID of the comment for which to retrieve replies.\", \"type\": \"str\", \"default\": \"7136269575881360155\"}, \"video_id\": {\"description\": \"The ID of the video containing the comment.\", \"type\": \"str\", \"default\": \"7136263711043374341\"}, \"cursor\": {\"description\": \"Cursor for pagination to fetch additional replies.",
+    "Name: E-Sports Team Details\nDescription: Retrieve detailed information about a specific e-sports team. Parameters: {\"id\": {\"description\": \"The unique identifier of the e-sports team.\", \"type\": \"float\", \"default\": 363904.0}}\n3.",
+    "Parameters: {\"JpQ6pSV\": {\"description\": \"The ID of the product for which to fetch offers.\", \"type\": \"str\", \"default\": \"11577822456427762145\"}, \"InlN4\": {\"description\": \"Country code of the region/country to return offers for. Default is 'us'.",
+    "Parameters: {\"tconst\": {\"description\": \"The identifier for the movie title, starting with 'tt'. This value can be obtained from the `/title/auto-complete` or `/title/find` endpoints.\", \"type\": \"str\", \"default\": \"tt0796366\"}}\n3.",
+    "Parameters: {\"tconst\": {\"description\": \"The identifier for the movie title, starting with 'tt'. This value can be obtained from the `/title/auto-complete` or `/title/find` endpoints.\", \"type\": \"str\", \"default\": \"tt0796366\"}}\n3.",
+    "Parameters: {\"7zqBh\": {\"description\": \"The CNPJ (Brazilian company identifier) for which the street view image is to be generated.\", \"type\": \"str\", \"default\": \"37335118000180\"}, \"09Xtfj0t7L\": {\"description\": \"The field of view for the street view image.",
+    "</think>\n<tool_call>\n{\"name\": \"user_aliases\", \"parameters\": {\"is_id\": \"76561198050892829\"}}\n{\"name\": \"user_aliases\", \"parameters\": {\"is_id\": \"76561198059928360\"}}\n</tool_call>",
+    "</think>\n<tool_call>\n{\"name\": \"nuWsbi3YD7Nn\", \"parameters\": {\"cTCdKFHyR\": 5678}}\n{\"name\": \"UML2_fe9oA7QAxS\", \"parameters\": {\"nCih\": \"tt0000005\"}}\n</tool_call>"
+  ],
+  "explanation": "This feature represents the structure and syntax of API calls and parameter definitions.",
+  "harmful": false,
+  "harmful_reason": "API calls and parameter definitions are fundamental to software development and are not inherently harmful.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

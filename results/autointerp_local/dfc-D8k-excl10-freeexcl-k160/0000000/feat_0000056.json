@@ -1,0 +1,37 @@
+{
+  "feat_idx": 56,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.875,
+    8.875,
+    8.875,
+    8.875,
+    8.875,
+    8.875,
+    8.875,
+    8.875,
+    8.875,
+    8.875
+  ],
+  "top_texts": [
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"..."
+  ],
+  "explanation": "This feature represents instructions or guidelines for generating text responses in a structured format.",
+  "harmful": false,
+  "harmful_reason": "These instructions promote helpful and consistent text generation, not harmful content.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

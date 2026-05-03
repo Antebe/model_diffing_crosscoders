@@ -1,0 +1,37 @@
+{
+  "feat_idx": 65,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    29.390625,
+    29.34375,
+    29.140625,
+    29.125,
+    29.125,
+    29.125,
+    29.109375,
+    29.109375,
+    29.078125,
+    29.046875
+  ],
+  "top_texts": [
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"9eDYqXi\", \"parameters\": {\"XI9E0C\": 440, \"Q5bYtUK3ty\": 442, \"H73YQ6\": 100}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"XmEaF\", \"parameters\": {\"UFxl6c\": 1000, \"VKl3zvREvl\": 0.05, \"oJy_TgZGT\": 30, \"8m.bbZeF.\": 20}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"4g.Fh2MSKhRUst\", \"parameters\": {\"SdA4luC\": 5000, \"9OxKhGA.B\": 3000, \"xNPTc\": 5}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"9XGv.\", \"parameters\": {\"3wME9aWF3\": 1000, \"K7XVcc\": 0.05, \"l3SNsUt\": 5, \"5fQMlXt\": 1}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"top_grossing_mac_apps\", \"parameters\": {\"category\": \"6016\", \"country\": \"de\", \"lang\": \"en\", \"num\": 15}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"_HgAmzOa6Y9Om63\", \"parameters\": {\"GrIyYeeam\": 2, \"Kz3_CXo8\": \"running shoes\"}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"3vcEc6KqN1sxLAo\", \"parameters\": {\"shEw8bGcX\": 1000, \"OmbPqxRd\": 0.05, \"NBNU8JnAa\": 10}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"zZY5iuBPxFiio\", \"parameters\": {\"yCofi\": \"08KPi\", \"kmWCCb\": 300000, \"LV9ks\": \"Boca Raton\", \"IOTRXX\": 50}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"billboard_hot_100\", \"parameters\": {\"week\": \"2022-10-08\"}}\n{\"name\": \"search\", \"parameters\": {\"term\": \"Dynamite\", \"limit\": 5}}\n</tool_call>",
+    "</user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"AreO.H6D8Qu\", \"parameters\": {\"_JuXqnO\": 10000, \"8crbg\": 0.04, \"MGiNHQ\": 5}}\n</tool_call>"
+  ],
+  "explanation": "This feature represents the concept of a language model selecting and utilizing a tool based on user need and specified parameters.",
+  "harmful": false,
+  "harmful_reason": "The examples demonstrate a helpful and functional AI behavior, not inherently harmful.",
+  "detection_score": 0.75,
+  "detection_n_correct": 15,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 435,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    2.46484375,
+    1.9365234375,
+    0.452392578125,
+    0.452392578125,
+    0.452392578125,
+    0.452392578125,
+    0.452392578125,
+    0.452392578125,
+    0.452392578125,
+    0.452392578125
+  ],
+  "top_texts": [
+    "Parameters: {\"location\": {\"description\": \"The location of the Safeway store, e.g., 'Palo Alto, CA'.\", \"type\": \"str\", \"default\": \"\"}, \"items\": {\"description\": \"List of items to order.\", \"type\": \"list\", \"default\": \"\"}, \"quantity\": {\"description\": \"Quantity of each item in the order list.\", \"type\": \"list\", \"default\": \"\"}}\n4.",
+    "I have the external temperature forecasts here: 6 degrees in the morning, 14 degrees in the afternoon, 10 degrees in the evening, and 4 degrees at night. Can you help set up the best operation plan?",
+    "**Dialogue Records History**\n<user> Could you get the current levels of nitrous oxide in the atmosphere for me? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both. 2. You can invoke multiple tool calls simultaneously in the `<tool_call>` fields.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "**Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries. **Output Format**\n```plaintext\n<think> Your thoughts and reasoning </think>\n<tool_call>\n{\"name\": \"Tool name\", \"parameters\": {\"Parameter name\": \"Parameter content\", \"... ...\": \"... ...\"}}\n{\"name\": \"...",
+    "**Think:** Recall relevant context and analyze the current user goal. 2. **Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3.",
+    "Name: M4.5+ Earthquakes, Past 7 Days\nDescription: Retrieve a list of earthquakes with a magnitude of 4.5 or greater that have occurred in the past 7 days."
+  ],
+  "explanation": "This feature represents structured API/tool calling formats, particularly JSON-style parameter specifications and instructions for invoking functions with proper parameter formatting.",
+  "harmful": false,
+  "harmful_reason": "The content relates to technical documentation and API usage patterns, with no indication of harmful, offensive, or dangerous material.",
+  "detection_score": 0.55,
+  "detection_n_correct": 11,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

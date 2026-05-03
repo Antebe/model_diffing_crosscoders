@@ -1,0 +1,37 @@
+{
+  "feat_idx": 730,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    7.171875,
+    7.171875,
+    6.765625,
+    6.59765625,
+    6.50390625,
+    6.44140625,
+    5.99609375,
+    5.85546875,
+    5.74609375,
+    5.734375
+  ],
+  "top_texts": [
+    "Name: Get H2H Stats\nDescription: Retrieve historical head-to-head (H2H) statistics for a specific event. Parameters: {\"event_id\": {\"description\": \"Unique identifier for the event\", \"type\": \"float\", \"default\": \"\"}}\n2.",
+    "Name: nNvUuRKO1uKPA0v\nDescription: Retrieve a fake cryptocurrency asset by its unique identifier. Parameters: {\"pM7NGwwv\": {\"description\": \"The unique identifier of the cryptocurrency asset to be retrieved.\", \"type\": \"int\", \"default\": \"1\"}}\n2.",
+    "Name: Get Substages by Stage ID (Motorsport)\nDescription: Retrieve substages for a given stage ID in motorsport, provided by SofaScores. Parameters: {\"stage_id\": {\"description\": \"Unique identifier of the stage\", \"type\": \"float\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1.",
+    "The first one should have a quarterly plan with a start date of 2021-11-01 and customer ID 987654321, while the second and third should start on the same date but with monthly and yearly plans, respectively.",
+    "Parameters: {\"seasonId\": {\"description\": \"The ID of the season for which you want to retrieve the away standings.\", \"type\": \"float\", \"default\": \"\"}, \"tournamentId\": {\"description\": \"The unique ID of the tournament for which you want to retrieve the away standings.\", \"type\": \"float\", \"default\": \"\"}}\n2.",
+    "The \"getEtchRate\" function deals solely with retrieving etch rates of materials in semiconductor fabrication. Therefore, this question cannot be addressed with the available functions. </response>",
+    "Parameters: {\"is_id\": {\"description\": \"The unique identifier of the patient.\", \"type\": \"str\", \"default\": \"me duele la cabeza\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Name: series_get_news\nDescription: Retrieves news articles for a specified cricket series. Parameters: {\"seriesid\": {\"description\": \"The unique identifier for the cricket series.\", \"type\": \"int\", \"default\": \"3636\"}}\n4.",
+    "Should be set to 'snippet'.\", \"type\": \"str\", \"default\": \"snippet\"}, \"hl\": {\"description\": \"Specifies the language that should be used for text values in the API response. Defaults to 'en_US'.\", \"type\": \"str, optional\", \"default\": \"en_US\"}}\n\n**Steps for Each Turn**\n1.",
+    "Name: x2y2 GET API\nDescription: Retrieve data from x2y2 API endpoint (https://api.x2y2.io). This API allows making over 1000 requests per minute. The x2y2_path header is required."
+  ],
+  "explanation": "This feature represents the concept of identifying and retrieving information using unique identifiers.",
+  "harmful": false,
+  "harmful_reason": "The examples provided demonstrate common data retrieval practices and do not inherently suggest harmful intent.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

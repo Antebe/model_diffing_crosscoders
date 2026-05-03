@@ -1,0 +1,37 @@
+{
+  "feat_idx": 173,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.78125,
+    8.484375,
+    8.3828125,
+    7.98828125,
+    7.3203125,
+    6.9296875,
+    6.75390625,
+    6.62890625,
+    6.625,
+    6.36328125
+  ],
+  "top_texts": [
+    "**Dialogue Records History**\n<user> I need to retrieve the first page of my image upload history, each page containing 50 images. Also, can you help me fetch the information of the file with the id '123xyz'?",
+    "**Nature and Authenticity**: Names that imply natural ingredients or traditional methods, such as \"Organic\", \"Homemade\", \"Pure\", or \"Artisan\". 2. **Nostalgia**: Names that evoke a sense of nostalgia, possibly using words like \"Grandma's\", \"Old-Fashioned\", or \"Heritage\". 3.",
+    "**Dialogue Records History**\n<user> Can you help me to expand the names \"Giorgio\", \"Antoine\", and \"Mikhail\" considering their common usage in Italy, France, and Russia, respectively? I would also like to know their formal and academic styles.",
+    "**Dialogue Records History**\n<user> I would like to send our new intern an SMS OTP for login purposes. Can you help me with this? </user>\n\n<think> I should directly respond to the user's need.",
+    "Cookies form a critical part of web browsing by maintaining session information, storing user preferences, and so on. In our case, the cookie works like a ticket to gain access to the data we need from social platforms.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you help me find the current trending topics for today?",
+    "Could you help me fetch the Skype details of my business partner with the email 'partner.business@gmail.com'? Also, can you retrieve the answers to a posted question on our business platform with the ID number 5467?",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I'm working on a report for an influencer marketing campaign. Could you help me scrap the posts from the Instagram account @awesomecontentcreator?",
+    "Defaults to 'gaming'.\", \"type\": \"str\", \"default\": \"gaming\"}, \"Av0DwVkd\": {\"description\": \"The ISO 3166 country code specifying the region. Defaults to 'US'.\", \"type\": \"str\", \"default\": \"US\"}}\n3. Name: lC5b6AyJxjB\nDescription: Fetches a randomly selected sticker from Giphy's sticker collection.",
+    "Can you assist me with this? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need. </think>\n<tool_call>\n{\"name\": \"get_teams_and_players\", \"parameters\": {\"name\": \"Fnatic\"}}\n{\"name\": \"user_friends_list\", \"parameters\": {\"is_id\": \"77788899900011122\"}}\n</tool_call>"
+  ],
+  "explanation": "This feature is activated by requests for information from previous turns in a conversation or requests to access stored data.",
+  "harmful": false,
+  "harmful_reason": "Accessing past dialogue for context is a common and generally harmless function of conversational AI.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

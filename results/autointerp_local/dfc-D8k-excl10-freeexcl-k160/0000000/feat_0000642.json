@@ -1,0 +1,37 @@
+{
+  "feat_idx": 642,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    7.03515625,
+    6.15234375,
+    6.08984375,
+    5.96875,
+    5.96875,
+    5.76953125,
+    5.72265625,
+    5.5859375,
+    5.56640625,
+    5.546875
+  ],
+  "top_texts": [
+    "**Variety of Data for Extensive Testing**: Random datasets provide a wide range of data inputs for your software, ensuring it has been well-tested under different scenarios with various data types. 2.",
+    "Name: Zodiac Sign Information\nDescription: Provides in-depth information about the traits, personality, and characteristics associated with a specific zodiac sign. Parameters: {\"sign\": {\"description\": \"The zodiac sign to retrieve information about (e.g. aries, taurus, gemini, etc.).\", \"type\": \"string\", \"default\": \"\"}}\n3.",
+    "It supports various formats such as:\", \"type\": \"str\", \"default\": \"London\"}, \"TR_5sa6t9\": {\"description\": \"The date for which to retrieve the astronomical data. Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}}\n2.",
+    "If there's anything else you require or another dataset you'd like to generate, feel free to ask! </response>\n\n<user> Could you elucidate on the importance of such a randomly generated dataset in my software testing?",
+    "Research: Spend time researching various industries and positions. Understand the required skills of the jobs that interest you. 3. Use online job search platforms: Platforms such as LinkedIn, Indeed, and Glassdoor can provide you with a variety of job options.",
+    "Name: Domain Search\nDescription: Search for registered domains across multiple top-level domains (TLDs) based on a given search query. Parameters: {\"sld\": {\"description\": \"The search query to search for registered domains.\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Name: calculate_age\nDescription: Calculates the age based on the birthdate. Parameters: {\"birthdate\": {\"description\": \"The birthdate in the format 'YYYY-MM-DD'.\", \"type\": \"str\", \"default\": \"\"}}\n2. Name: count_vowels\nDescription: Counts the number of vowels in a given text.",
+    "**Geo-specific Promotions**: Advertisers can run location-specific promotions or special offers that are only applicable to certain regions, thus optimizing their marketing efforts for specific market segments. 3.",
+    "This diversity appeals to a broad audience base with varying tastes and preferences. 2. **Complex Characters**: Anime brings to life compelling characters with deep backstories, personal growth, and multidimensional personality traits.",
+    "Parameters: {\"query\": {\"description\": \"A search query for GIFs.\", \"type\": \"string\", \"default\": \"\"}, \"number\": {\"description\": \"The number of results to retrieve between 1 and 10.\", \"type\": \"int\", \"default\": 3}}\n4."
+  ],
+  "explanation": "This feature represents the concept of API parameters and descriptions.",
+  "harmful": false,
+  "harmful_reason": "API parameters and descriptions are fundamental to software development and are not inherently harmful.",
+  "detection_score": 0.55,
+  "detection_n_correct": 11,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

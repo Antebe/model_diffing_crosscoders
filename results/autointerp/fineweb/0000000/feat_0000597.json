@@ -1,0 +1,37 @@
+{
+  "feat_idx": 597,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    3.580078125,
+    3.384765625,
+    3.119140625,
+    2.740234375,
+    2.6796875,
+    2.646484375,
+    2.60546875,
+    2.53125,
+    2.43359375,
+    2.404296875
+  ],
+  "top_texts": [
+    "The higher the coil head setting (1.5) the higher the nicotine level that can be consumed (if needed) and the lower the coil head setting (0.25) than the lower the nicotine level.",
+    "Your virtual server is placed on whatever hardware and network, the public cloud provider designates for you. - Self Managed \u2013 with the high volume, utility model, self managed systems are required for this business model to make sense.",
+    "Homeowners may need new strategies for dealing with household objects and situations that never posed to a threat to the home's human residents.",
+    "Do you need marketing & promotions for your Music or Book? Let Longe assist you with getting you to the next level.",
+    "In this article I would like to discuss some of the basic strategies which could help you to search for a genuine employer. What Tools are required for searching an online job?",
+    "Join us for a half day (3 hours) or full day out on the rocks climbing and/or abseiling trip close to Melbourne.",
+    "The article suggests that much more work is needed in the area of capacity-building of local humanitarian organizations and in the coordination of NGO programmatic work.",
+    "Under Time and Task Management, choose Time Reporting Periods. Set a start date. If you want timesheets turned in weekly, the only thing you need to change under Define Bulk Period Parameters is Date the first period starts.",
+    "Winter is finally here, and it\u2019s time to start planning your ski holidays and make the most of the white gold covering the mountains across Europe - there are literally thousands of ski resorts just in Europe, so which one do you choose?",
+    "Here, the King of France ignores that desire is not logical or causal and is not subject to regal injunction. Desire cannot be systematized."
+  ],
+  "explanation": "This feature activates on instructional or advisory text that provides guidance, recommendations, or explanations about how to approach various tasks or situations.",
+  "harmful": false,
+  "harmful_reason": "The examples show benign instructional content across everyday topics like technology, job searching, outdoor activities, and general advice without any harmful themes or dangerous instructions.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

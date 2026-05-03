@@ -1,0 +1,37 @@
+{
+  "feat_idx": 63,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    18.359375,
+    18.359375,
+    18.28125,
+    18.203125,
+    17.75,
+    17.71875,
+    17.71875,
+    17.71875,
+    17.640625,
+    17.390625
+  ],
+  "top_texts": [
+    "Default is 100000.\", \"type\": \"int\", \"default\": \"100000\"}, \"filter\": {\"description\": \"The filter to apply to the results. Default is 'statuscode:200'.\", \"type\": \"str\", \"default\": \"statuscode:200\"}}\n4.",
+    "Default is 100000.\", \"type\": \"int\", \"default\": \"100000\"}, \"filter\": {\"description\": \"The filter to apply to the results. Default is 'statuscode:200'.\", \"type\": \"str\", \"default\": \"statuscode:200\"}}\n2.",
+    "The number of dimensions depends on the geometry type.\", \"type\": \"array\", \"default\": \"\"}, \"texture\": {\"description\": \"The texture to apply to the model.\", \"type\": \"string\", \"default\": \"\"}, \"creation_time\": {\"description\": \"The time when the model is created.",
+    "Defaults to 10.\", \"type\": \"float\", \"default\": 10}, \"region\": {\"description\": \"The region code (ISO 3166 alpha-2) for localized results. Defaults to US. Unsupported code will fallback to US.\", \"type\": \"string\", \"default\": \"US\"}}\n6.",
+    "Parameters: {\"country\": {\"description\": \"The country code to filter categories, obtained from the /regions/list endpoint.\", \"type\": \"str\", \"default\": \"us\"}, \"lang\": {\"description\": \"The language code to filter categories, obtained from the /regions/list endpoint.\", \"type\": \"str\", \"default\": \"en\"}}\n6.",
+    "Default is 'The Guardian'.\", \"type\": \"str, optional\", \"default\": \"The Guardian\"}, \"source\": {\"description\": \"Source to fetch articles from. Default is 'Nasa Climate'.\", \"type\": \"str, optional\", \"default\": \"Nasa Climate\"}}\n4.",
+    "Defaults to 3.\", \"type\": \"int, optional\", \"default\": \"3\"}, \"page\": {\"description\": \"The number of results to return per request. Defaults to 3.\", \"type\": \"int, optional\", \"default\": \"1\"}, \"text_format\": {\"description\": \"The format for text bodies related to the document.",
+    "Options are:\", \"type\": \"str\", \"default\": \"m\"}, \"url\": {\"description\": \"The URL from which to generate the thumbnail.\", \"type\": \"str\", \"default\": \"http://www.mashape.com/\"}}\n3. Name: rgb_to_hsv\nDescription: Converts an RGB color code to an HSV color code using the Convexity API.",
+    "Name: CreditCards\nDescription: Retrieves credit card information\nParameters: {\"_quantity\": {\"description\": \"The number of credit cards to retrieve\", \"type\": \"int\", \"default\": \"\"}, \"_locale\": {\"description\": \"The locale for the credit card information\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Name: cosine_similarity\nDescription: Calculates the cosine similarity between two vectors. Parameters: {\"vector_a\": {\"description\": \"The first vector.\", \"type\": \"List[float]\", \"default\": \"\"}, \"vector_b\": {\"description\": \"The second vector.\", \"type\": \"List[float]\", \"default\": \"\"}}\n4."
+  ],
+  "explanation": "This feature represents descriptions of parameters within a technical API or code documentation.",
+  "harmful": false,
+  "harmful_reason": "API documentation is generally not harmful in nature.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}
