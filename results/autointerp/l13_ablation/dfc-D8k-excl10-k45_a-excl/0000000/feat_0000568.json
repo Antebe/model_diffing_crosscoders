@@ -1,0 +1,37 @@
+{
+  "feat_idx": 568,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    19.53125,
+    19.515625,
+    18.671875,
+    18.3125,
+    18.21875,
+    18.03125,
+    17.984375,
+    17.921875,
+    17.34375,
+    17.265625
+  ],
+  "top_texts": [
+    "Supported fields are 'Title', 'Genre', 'Duration', 'Release Date', 'Rating'.\", \"type\": \"array\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Allowed values: \\\"copper\\\" (default) or \\\"aluminum\\\".\", \"type\": \"str, optional\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "com, de, be, etc.)\", \"type\": \"string\", \"default\": \"de\"}}\n4. Name: TeamPlaceholderImage\nDescription: Retrieves a team's placeholder image in SVG format.",
+    "It should be in the format of 'MM-DD %H:%M'.\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Supported values include Ethereum, Binance, Polygon, Solana, and their respective testnets.\", \"type\": \"string\", \"default\": \"\"}}\n5. Name: Futures OHLCV Data API\nDescription: Retrieves historical Open, High, Low, Close, and Volume (OHLCV) data for futures contracts from various cryptocurrency exchanges.",
+    "Default is '5'.\", \"type\": \"str\", \"default\": \"5\"}, \"sortby\": {\"description\": \"The field by which to sort the results. Possible values include fields on the document, e.g., 'name', 'stats'.",
+    "Defaults to 'IN'.\", \"type\": \"str, optional\", \"default\": \"IN\"}, \"country_name\": {\"description\": \"The name of the country to filter states by.\", \"type\": \"str, optional\", \"default\": \"\"}}\n2. Name: us_license_plate_to_vin\nDescription: Converts a U.S.",
+    "For example, to get the first set of items, set offset to 0. Default is 0.\", \"type\": \"int\", \"default\": \"0\"}, \"kmWCCb\": {\"description\": \"The maximum price in US dollars for the condos and townhouses.",
+    "Must be between 1 and 30. Default is 1.\", \"type\": \"float\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Possible values include 'Today', 'Yesterday', 'Tomorrow', 'Week', 'Month', 'Year'.\", \"type\": \"str\", \"default\": \"today\"}}\n3. Name: U_5DSDaEg_Qf\nDescription: Fetches a subset list of a dataset from the specified API along with its metadata."
+  ],
+  "explanation": "This feature represents the description of parameters or fields within a structured data format, likely an API.",
+  "harmful": false,
+  "harmful_reason": "Descriptions of API parameters are generally neutral and do not inherently carry harmful connotations.",
+  "detection_score": 0.6,
+  "detection_n_correct": 12,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

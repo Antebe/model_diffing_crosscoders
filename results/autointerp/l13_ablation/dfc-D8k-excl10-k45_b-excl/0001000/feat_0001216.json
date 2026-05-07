@@ -1,0 +1,37 @@
+{
+  "feat_idx": 1216,
+  "partition": "b_excl",
+  "is_dead": false,
+  "top_activations": [
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875,
+    11.296875
+  ],
+  "top_texts": [
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists)."
+  ],
+  "explanation": "This feature represents instructions or guidelines for interacting with a dialogue system, particularly focusing on handling parameters and referencing previous conversation history.",
+  "harmful": false,
+  "harmful_reason": "The provided text focuses on technical aspects of dialogue system interaction and doesn't contain any inherently harmful content.",
+  "detection_score": 0.4,
+  "detection_n_correct": 8,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

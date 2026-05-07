@@ -1,0 +1,37 @@
+{
+  "feat_idx": 5361,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    7.640625,
+    6.984375,
+    6.90625,
+    6.55859375,
+    6.48828125,
+    6.453125,
+    5.8203125,
+    5.5625,
+    5.375,
+    5.375
+  ],
+  "top_texts": [
+    "Parameters: {\"FFoiJ19u\": {\"description\": \"The year for which to retrieve the holidays.\", \"type\": \"int\", \"default\": \"\"}, \"xLa0SVf\": {\"description\": \"The two-letter ISO 3166-1 alpha-2 country code.\", \"type\": \"str\", \"default\": \"\"}}\n4.",
+    "Parameters: {\"year\": {\"description\": \"The year for which to retrieve the holidays.\", \"type\": \"int\", \"default\": \"\"}, \"country_code\": {\"description\": \"The two-letter ISO 3166-1 alpha-2 country code.\", \"type\": \"str\", \"default\": \"\"}}\n5.",
+    "Parameters: {\"Oc58SB\": {\"description\": \"Unique identifier given by Geonames for the place.\", \"type\": \"int\", \"default\": \"5391959\"}, \"dDdEGN\": {\"description\": \"Specifies a language (ISO 639-1) to get the localized name of the place. Default is None.",
+    "Name: search\nDescription: Performs a search for a company or a person using the LinkedIn Profiles API. Parameters: {\"query\": {\"description\": \"The search query term.\", \"type\": \"str\", \"default\": \"Bill Gates\"}, \"type\": {\"description\": \"The type of search to perform.",
+    "Supported values include Ethereum, Binance, Polygon, Solana, and their respective testnets.\", \"type\": \"string\", \"default\": \"\"}}\n5. Name: Futures OHLCV Data API\nDescription: Retrieves historical Open, High, Low, Close, and Volume (OHLCV) data for futures contracts from various cryptocurrency exchanges.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Produce a secure password of 14 characters, including special characters.",
+    "</think>\n<response> The PDF document named 'project_overview' has been successfully converted into a presentation format (PPTX). The converted presentation is now available as a string titled \"project_overview_pptx_string\".",
+    "Name: Register Device Information\nDescription: Registers device information for TikTok video features\nParameters: {\"aid\": {\"description\": \"Device ID\", \"type\": \"float\", \"default\": \"\"}, \"os\": {\"description\": \"Operating System version\", \"type\": \"string\", \"default\": \"7.1.2\"}, \"version\": {\"description\": \"Version code\", \"type\": \"string\", \"default\": \"250304\"}}\n4.",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I recently finished a leadership training program and I need the evaluation report for it. Can you retrieve that for me?",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I'm doing comprehensive research on various topics and need to compile some information."
+  ],
+  "explanation": "This feature represents descriptions of parameters or fields within a system or API.",
+  "harmful": false,
+  "harmful_reason": "Descriptions of parameters are generally neutral and do not inherently carry harmful content.",
+  "detection_score": 0.55,
+  "detection_n_correct": 11,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

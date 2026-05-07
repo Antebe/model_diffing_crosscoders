@@ -1,0 +1,37 @@
+{
+  "feat_idx": 1445,
+  "partition": "b_excl",
+  "is_dead": false,
+  "top_activations": [
+    18.328125,
+    17.640625,
+    17.546875,
+    17.421875,
+    17.375,
+    17.3125,
+    17.3125,
+    17.21875,
+    17.203125,
+    17.1875
+  ],
+  "top_texts": [
+    "Must be an ISO-3166 alpha-2 code (default is 'US').\", \"type\": \"str, optional\", \"default\": \"US\"}, \"max_population\": {\"description\": \"Maximum city population.\", \"type\": \"int, optional\", \"default\": \"\"}, \"min_lat\": {\"description\": \"Minimum latitude coordinate.\", \"type\": \"int, optional\", \"default\": \"\"}, \"name\": {\"description\": \"Name of the city to search for (default is 'New York').\", \"type\": \"str, optional\", \"default\": \"New York\"}, \"max_lon\": {\"description\": \"Maximum longitude coordinate.\", \"type\": \"int, optional\", \"default\": \"\"}, \"limit\": {\"description\": \"Number of results to return.",
+    "Parameters: {\"lang\": {\"description\": \"Language code obtained from the /regions/list endpoint.\", \"type\": \"str\", \"default\": \"en\"}, \"currentpage\": {\"description\": \"Page index to fetch data from, starting at 0.\", \"type\": \"int\", \"default\": \"0\"}, \"country\": {\"description\": \"Country code obtained from the /regions/list endpoint.\", \"type\": \"str\", \"default\": \"us\"}, \"pagesize\": {\"description\": \"Number of records to return per page.\", \"type\": \"int\", \"default\": \"30\"}, \"qualities\": {\"description\": \"Filter by qualities; pass multiple times for multiple qualities.\", \"type\": \"str, optional\", \"default\": \"\"}, \"fits\": {\"description\": \"Filter by fits; pass multiple times for multiple fits.\", \"type\": \"str, optional\", \"default\": \"\"}, \"categories\": {\"description\": \"Tag codes obtained from the /categories/list endpoint; pass multiple times for multiple categories.",
+    "Parameters: {\"make_model_id\": {\"description\": \"The ID of the make and model.\", \"type\": \"str, optional\", \"default\": \"\"}, \"limit\": {\"description\": \"The number of results to limit the response to.\", \"type\": \"int, optional\", \"default\": \"\"}, \"make_model_trim_id\": {\"description\": \"The ID of the make, model, and trim.\", \"type\": \"str, optional\", \"default\": \"\"}, \"trim\": {\"description\": \"The trim level of the car.\", \"type\": \"str, optional\", \"default\": \"\"}, \"json\": {\"description\": \"An array of URL encoded JSON conditions for complex queries.\", \"type\": \"str, optional\", \"default\": \"\"}, \"range_highway\": {\"description\": \"The range of highway mileage.\", \"type\": \"str, optional\", \"default\": \"\"}, \"sort\": {\"description\": \"The field to sort the results by.",
+    "Name: Timezones\nDescription: Retrieve information about time zones in different languages\nParameters: {\"offset\": {\"description\": \"Filter on non daylights savings offset in hours\", \"type\": \"string\", \"default\": \"\"}, \"name\": {\"description\": \"Filter as \\\"contains\\\" on timezone name in chosen language\", \"type\": \"string\", \"default\": \"\"}, \"code\": {\"description\": \"Filter on 3 letter non daylight savings timezone code (not unique)\", \"type\": \"string\", \"default\": \"\"}, \"timezone\": {\"description\": \"Filter on timezone name in English\", \"type\": \"string\", \"default\": \"\"}, \"daylights_offset\": {\"description\": \"Filter on daylights savings offset in hours\", \"type\": \"string\", \"default\": \"\"}, \"lang\": {\"description\": \"Language selection ISO 639-2 letter code.",
+    "Parameters: {\"dk_Zu7Qn\": {\"description\": \"Language code obtained from the /regions/list endpoint.\", \"type\": \"str\", \"default\": \"en\"}, \"fRDwQwM\": {\"description\": \"Page index to fetch data from, starting at 0.\", \"type\": \"int\", \"default\": \"0\"}, \"OfJoI\": {\"description\": \"Country code obtained from the /regions/list endpoint.\", \"type\": \"str\", \"default\": \"us\"}, \"HWtby2\": {\"description\": \"Number of records to return per page.\", \"type\": \"int\", \"default\": \"30\"}, \"Gfl5k8\": {\"description\": \"Filter by qualities; pass multiple times for multiple qualities.\", \"type\": \"str, optional\", \"default\": \"\"}, \"hjQAQP\": {\"description\": \"Filter by fits; pass multiple times for multiple fits.\", \"type\": \"str, optional\", \"default\": \"\"}, \"Zf6_t\": {\"description\": \"Tag codes obtained from the /categories/list endpoint; pass multiple times for multiple categories.",
+    "Parameters: {\"asset_contract_address\": {\"description\": \"The contract address of the NFT asset.\", \"type\": \"str\", \"default\": \"0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb\"}, \"token_id\": {\"description\": \"The unique identifier of the NFT.\", \"type\": \"str\", \"default\": \"1\"}, \"limit\": {\"description\": \"The maximum number of results to return.",
+    "Options include 'news', 'sport', 'tech', etc.\", \"type\": \"str, optional\", \"default\": \"\"}, \"from_rank\": {\"description\": \"Lower boundary of the source rank.\", \"type\": \"int, optional\", \"default\": \"\"}, \"to_rank\": {\"description\": \"Upper boundary of the source rank.\", \"type\": \"int, optional\", \"default\": \"\"}, \"page_size\": {\"description\": \"Number of articles to return per page.",
+    "Parameters: {\"creds_string\": {\"description\": \"UTC iso8601\", \"type\": \"string\", \"default\": \"\"}, \"creds_uuid\": {\"description\": \"GUID\", \"type\": \"string\", \"default\": \"\"}, \"creds_checksum\": {\"description\": \"checksum\", \"type\": \"string\", \"default\": \"\"}, \"external_user_id\": {\"description\": \"The external_user_id of the order\", \"type\": \"string\", \"default\": \"\"}, \"per_page\": {\"description\": \"The number of orders to return.",
+    "Parameters: {\"pageno\": {\"description\": \"The page number of the search results.\", \"type\": \"int\", \"default\": \"1\"}, \"country\": {\"description\": \"The country code for the search localization.\", \"type\": \"str\", \"default\": \"US\"}, \"lang\": {\"description\": \"The language code for the search localization.\", \"type\": \"str\", \"default\": \"en\"}, \"search\": {\"description\": \"The search string to query.\", \"type\": \"str\", \"default\": \"Hello\"}, \"perpage\": {\"description\": \"The number of results per page.",
+    "Defaults to 'ind'.\", \"type\": \"str, optional\", \"default\": \"ind\"}, \"subregion_id\": {\"description\": \"Filter countries by subregion ID.\", \"type\": \"str, optional\", \"default\": \"\"}, \"state_id\": {\"description\": \"Filter countries by state ID.\", \"type\": \"str, optional\", \"default\": \"\"}, \"timezone_id\": {\"description\": \"Filter countries by timezone ID.\", \"type\": \"str, optional\", \"default\": \"\"}, \"region_id\": {\"description\": \"Filter countries by subregion ID.\", \"type\": \"str, optional\", \"default\": \"\"}, \"perpage\": {\"description\": \"Number of results per page."
+  ],
+  "explanation": "This feature represents the structure and syntax of API parameter descriptions.",
+  "harmful": false,
+  "harmful_reason": "API parameter descriptions are a standard technical construct and do not inherently relate to harmful content.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

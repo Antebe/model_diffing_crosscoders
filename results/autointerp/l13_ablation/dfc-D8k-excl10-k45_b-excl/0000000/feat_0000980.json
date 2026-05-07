@@ -1,0 +1,37 @@
+{
+  "feat_idx": 980,
+  "partition": "b_excl",
+  "is_dead": false,
+  "top_activations": [
+    8.625,
+    8.0625,
+    6.56640625,
+    6.30078125,
+    6.28515625,
+    6.28125,
+    6.27734375,
+    6.2265625,
+    6.1875,
+    6.05078125
+  ],
+  "top_texts": [
+    "Portfolio ID: B456, containing 40% equity, 40% fixed income, 10% real estate, and 10% cash. 3. Portfolio ID: C789, containing 35% equity, 30% fixed income, 25% commodities, and 10% cash.",
+    "Aircraft ID 102, flying at an altitude of 12,000 feet, located at latitude 34.07 and longitude -118.25. 3. Aircraft ID 103, flying at an altitude of 13,000 feet, located at latitude 34.08 and longitude -118.26.",
+    "</think>\n<response> The tool has returned the historical data for Apple stock (AAPL) with values from one of the days as an example:\n- Date: 2025-01-01\n- Opening Price: $145.11\n- Highest Price: $147.50\n- Lowest Price: $144.90\n- Closing Price: $146.70\n- Trading Volume: 90,823,000 shares\nPlease note this is a sample of data for a single day.",
+    "The property is described as a 4-bedroom, 2-bathroom residential house with a size of 2,000 sqft. There are 2 quarter bathrooms, 1 three-quarter bathroom, 1 full bathroom, and 1 half bathroom. It was built in 1990 and has 2 stories.",
+    "The first product ID is '12345X' with sales data: [{\"date\": \"10-01-2023 12:00\", \"unitsSold\": 150}, {\"date\": \"10-15-2023 12:00\", \"unitsSold\": 180}], and the second product ID is '98765Z' with sales data: [{\"date\": \"10-03-2023 12:00\", \"unitsSold\": 200}, {\"date\": \"10-18-2023 12:00\", \"unitsSold\": 220}].",
+    "**Dialogue Records History**\n<user> Schedule four VR therapy sessions for patient ID 12345. The sessions are as follows: \n1. Physiotherapy on 08-02-2021 at 10:00 AM. 2. Psychotherapy on 08-03-2021 at 11:00 AM. 3. Cognitive Therapy on 08-04-2021 at 09:00 AM.",
+    "**Dialogue Records History**\n<user> I'm planning a promotional campaign for some luxury cars on our YouTube channel. I need details and images for the following VINs: JS1GT78A7G2105965, JS1GT78A7G2105966, JS1GT78A7G2105967.",
+    "Parameters: {\"id\": {\"description\": \"User ID or Username of the stream's user you want to show\", \"type\": \"string\", \"default\": \"\"}, \"since\": {\"description\": \"Returns results with an ID greater than (more recent than) the specified ID\", \"type\": \"int\", \"default\": \"\"}, \"max\": {\"description\": \"Returns results with an ID less than (older than) or equal to the specified ID\", \"type\": \"int\", \"default\": \"\"}, \"limit\": {\"description\": \"Default and max limit is 30.",
+    "</think>\n<response> Based on the tool's response, here are the details of your most recent image uploads:\n- Image ID: img001, URL: [http://example.com/image01.jpg](http://example.com/image01.jpg), Upload Time: 26th February 2023, 16:20:37\n- Image ID: img002, URL: [http://example.com/image02.jpg](http://example.com/image02.jpg), Upload Time: 26th February 2023, 16:21:00\n- Image ID: img003, URL: [http://example.com/image03.jpg](http://example.com/image03.jpg), Upload Time: 26th February 2023, 16:21:30\n- Image ID: img004, URL: [http://example.com/image04.jpg](http://example.com/image04.jpg), Upload Time: 26th February 2023, 16:22:00\n- Image ID: img005, URL: [http://example.com/image05.jpg](http://example.com/image05.jpg), Upload Time: 26th February 2023, 16:22:30\nPlease note that there are only 5 image uploads in total, not 50 as you requested.",
+    "Examples of valid IDs include `0x880fd393d427a591:0x8cba02d713a995ed` and `ChIJkaUn1JPTD4gR7ZWpE9cCuow`.\", \"type\": \"str\", \"default\": \"0x89c259b5a9bd152b:0x31453e62a3be9f76\"}, \"limit\": {\"description\": \"The maximum number of business photos to return. Acceptable values range from 1 to 10000."
+  ],
+  "explanation": "This feature represents the concept of identifying and referencing unique identifiers or codes.",
+  "harmful": false,
+  "harmful_reason": "While IDs can be misused, the feature itself is neutral and common in many contexts like data management and tracking.",
+  "detection_score": 0.55,
+  "detection_n_correct": 11,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 6863,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    22.0625,
+    22.0625,
+    21.546875,
+    21.328125,
+    21.328125,
+    21.328125,
+    21.328125,
+    20.984375,
+    20.546875,
+    20.5
+  ],
+  "top_texts": [
+    "Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}, \"aqi\": {\"description\": \"Whether to include Air Quality Index data ('yes' or 'no'). Defaults to 'yes'.\", \"type\": \"str, optional\", \"default\": \"yes\"}, \"format\": {\"description\": \"Response format (e.g., 'json' or 'xml').",
+    "Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}, \"aqi\": {\"description\": \"Whether to include Air Quality Index data ('yes' or 'no'). Defaults to 'yes'.\", \"type\": \"str, optional\", \"default\": \"yes\"}, \"format\": {\"description\": \"Response format (e.g., 'json' or 'xml').",
+    "Default is `None`.\", \"type\": \"str, optional\", \"default\": \"\"}, \"team\": {\"description\": \"The team name for which to filter articles (e.g., 'lakers'). Default is `None`.\", \"type\": \"str, optional\", \"default\": \"\"}, \"source\": {\"description\": \"The source of the articles (e.g., 'bleacher-report', 'nba', 'espn').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'ACTIVE'.\", \"type\": \"str\", \"default\": \"ACTIVE\"}, \"type\": {\"description\": \"The type of assets to return. Can be 'CRYPTO' or 'FIAT'. Defaults to None.\", \"type\": \"str\", \"default\": \"\"}, \"symbol\": {\"description\": \"The ticker symbol of the assets to return (e.g., 'BTC').",
+    "Default is `None`.\", \"type\": \"str, optional\", \"default\": \"\"}, \"vpdlq\": {\"description\": \"The team name for which to filter articles (e.g., 'lakers'). Default is `None`.\", \"type\": \"str, optional\", \"default\": \"\"}, \"jaSDcNJLo\": {\"description\": \"The source of the articles (e.g., 'bleacher-report', 'nba', 'espn').",
+    "Defaults to '6741307595983946754'.\", \"type\": \"str\", \"default\": \"6741307595983946754\"}, \"unique_id\": {\"description\": \"The unique identifier for the user, can be either a username or handle (e.g., 'voyagel' or '@voyagel')."
+  ],
+  "explanation": "This feature represents the structure of code documentation, specifically the pattern of key-value pairs with descriptions.",
+  "harmful": false,
+  "harmful_reason": "Code documentation is generally not harmful in nature.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

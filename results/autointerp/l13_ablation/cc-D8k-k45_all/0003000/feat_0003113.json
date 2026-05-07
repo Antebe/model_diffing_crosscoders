@@ -1,0 +1,37 @@
+{
+  "feat_idx": 3113,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    20.75,
+    20.5625,
+    20.234375,
+    20.15625,
+    20.15625,
+    20.03125,
+    19.984375,
+    19.953125,
+    19.890625,
+    19.890625
+  ],
+  "top_texts": [
+    "Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}, \"lang\": {\"description\": \"The 2-letter ISO language code for localizing the country name. Defaults to 'en'.\", \"type\": \"str, optional\", \"default\": \"en\"}}\n\n**Steps for Each Turn**\n1.",
+    "Comma-separated values can be used to sort by multiple fields. Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}, \"by_tag\": {\"description\": \"Filter breweries by tag. Must be one of: 'dog-friendly', 'patio', 'food-service', 'food-truck', 'tours'.",
+    "Defaults to None.\", \"type\": \"int, optional\", \"default\": \"\"}, \"country\": {\"description\": \"Sets the marketplace country, language, and currency. Allowed values are 'US', 'AU', 'BR', 'CA', 'CN', 'FR', 'DE', 'IN', 'IT', 'MX', 'NL', 'SG', 'ES', 'TR', 'AE', 'GB', 'JP'.",
+    "Multiple IDs should be separated by commas (e.g., 'L1,L2,L3,GB1,ES1,IT1').\", \"type\": \"str\", \"default\": \"L1,L2,L3,GB1,ES1,IT1,TR1,FR1,NL1,A1,C1,MLS1\"}, \"domain\": {\"description\": \"The domain for the request, which can be one of 'com', 'de', 'be', 'es', 'it', 'nl', 'pl', 'pt', 'com.tr', or 'world'.",
+    "Multiple IDs should be separated by commas (e.g., 'L1,L2,L3,GB1,ES1,IT1').\", \"type\": \"str\", \"default\": \"L1,L2,L3,GB1,ES1,IT1,TR1,FR1,NL1,A1,C1,MLS1\"}, \"domain\": {\"description\": \"The domain for the request, which can be one of 'com', 'de', 'be', 'es', 'it', 'nl', 'pl', 'pt', 'com.tr', or 'world'.",
+    "Default is 0.\", \"type\": \"int, optional\", \"default\": \"\"}, \"muscle\": {\"description\": \"Muscle group targeted by the exercise. Possible values include: 'abdominals', 'abductors', 'adductors', 'biceps', 'calves', 'chest', 'forearms', 'glutes', 'hamstrings', 'lats', 'lower_back', 'middle_back', 'neck', 'quadriceps', 'traps', 'triceps'.",
+    "Defaults to 'ACTIVE'.\", \"type\": \"str\", \"default\": \"ACTIVE\"}, \"type\": {\"description\": \"The type of assets to return. Can be 'CRYPTO' or 'FIAT'. Defaults to None.\", \"type\": \"str\", \"default\": \"\"}, \"symbol\": {\"description\": \"The ticker symbol of the assets to return (e.g., 'BTC').",
+    "Parameters: {\"keyword\": {\"description\": \"The search term to use for finding products on Zappos.\", \"type\": \"str\", \"default\": \"crocs body\"}, \"sort\": {\"description\": \"The sorting criteria for the search results. Possible values are 'best_seller', 'relevance', 'low_to_high', 'high_to_low', 'customer_rating', 'new_arrivals', and 'brand_name'.",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special').",
+    "Defaults to 'all'.\", \"type\": \"str, optional\", \"default\": \"all\"}, \"extra\": {\"description\": \"Specifies whether to include special characters in the sequence. Defaults to 'true'.\", \"type\": \"str, optional\", \"default\": \"true\"}, \"type\": {\"description\": \"Specifies the type of sequence (e.g., 'all', 'string', 'number', 'special')."
+  ],
+  "explanation": "This feature represents the structure and syntax of technical documentation, specifically API descriptions.",
+  "harmful": false,
+  "harmful_reason": "API documentation is inherently neutral and does not contain harmful content on its own.",
+  "detection_score": 0.45,
+  "detection_n_correct": 9,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

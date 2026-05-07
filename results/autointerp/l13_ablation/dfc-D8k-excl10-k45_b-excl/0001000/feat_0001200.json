@@ -1,0 +1,27 @@
+{
+  "feat_idx": 1200,
+  "partition": "b_excl",
+  "is_dead": false,
+  "top_activations": [
+    13.328125,
+    11.7265625,
+    7.29296875,
+    6.58984375,
+    6.1640625
+  ],
+  "top_texts": [
+    "</think>\n<tool_call>\n{\"name\": \"DGj5SJmfV3JON\", \"parameters\": {\"scfqkCR\": \"PPRHG\"}}\n{\"name\": \"aDs0Vs\", \"parameters\": {\"9oYS3B8BsM\": \"ANNUAL\", \"UA.QD3\": \"GOOGL\"}}\n</tool_call>",
+    "Response assistant: Communicates with the inquirer and provides answers and solutions. Historical dialog data is as follows:\nInquirer: I'd love to plan a star-gazing outing. Could you help me determine the most suitable time for the best viewing experience?",
+    "Response assistant: \nInquirer: I'm planning to go to Santa Cruz, California, on the 16th of July. Please continue your answer given the historical dialog. Your role is the Response assistant.",
+    "Name: route_information\nDescription: Fetch route information from the BART API using the given command. Parameters: {\"cmd\": {\"description\": \"The command to send to the BART API. Possible commands can be found at http://api.bart.gov/docs/overview/examples.aspx.\", \"type\": \"str\", \"default\": \"routes\"}}\n2.",
+    "**Dialogue Records History**\n<user> Hey, can you get me the most recent short volume data for the stock ticker AAPL? </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need."
+  ],
+  "explanation": "This feature represents the concept of a dialogue system or chatbot interacting with a user.",
+  "harmful": false,
+  "harmful_reason": "The examples demonstrate a system designed for helpful interactions, not harmful content generation.",
+  "detection_score": 0.8,
+  "detection_n_correct": 12,
+  "detection_n_total": 15,
+  "interpretable": true,
+  "error": ""
+}

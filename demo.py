@@ -17,8 +17,19 @@ from dfc import DFCCrossCoder
 
 # Default model path — override with command line arg or set MODEL_PATH env var
 import os
+import json
 DEFAULT_MODEL_PATH = os.environ.get("DFC_MODEL_PATH", "./checkpoints/dfc2")
-LAYER = 13
+
+
+def _resolve_layer(model_path: str, default: int = 13) -> int:
+    """Read training layer from a checkpoint's hparams.json (written by run_sweep.sh)."""
+    hp = Path(model_path) / "hparams.json"
+    if hp.exists():
+        try:
+            return int(json.loads(hp.read_text()).get("layer", default))
+        except Exception:
+            pass
+    return default
 
 
 def quick_demo(model_path: str = DEFAULT_MODEL_PATH):
@@ -86,19 +97,21 @@ def extract_real_activations(model_path: str = DEFAULT_MODEL_PATH):
 
     # Load CrossCoder
     dfc = DFCCrossCoder.load(model_path, device=device)
+    layer = _resolve_layer(model_path)
+    print(f"Using layer {layer} (from {model_path}/hparams.json)")
 
-    # Extract real activations from layer 13
+    # Extract real activations from `layer`
     text = "Use the calculator to compute 15% tip on $45.50"
     tokens = tokenizer(text, return_tensors="pt").to(device)
 
     with torch.no_grad():
         # hidden_states[0] = embeddings, hidden_states[i] = output of layer i-1
-        # so layer 13 activations are at index LAYER + 1
+        # so layer N activations are at index N + 1
         outputs_a = model_a(**tokens, output_hidden_states=True)
         outputs_b = model_b(**tokens, output_hidden_states=True)
 
-        hidden_a = outputs_a.hidden_states[LAYER + 1][0, -1]  # (hidden_dim,)
-        hidden_b = outputs_b.hidden_states[LAYER + 1][0, -1]  # (hidden_dim,)
+        hidden_a = outputs_a.hidden_states[layer + 1][0, -1]  # (hidden_dim,)
+        hidden_b = outputs_b.hidden_states[layer + 1][0, -1]  # (hidden_dim,)
 
         # Stack for CrossCoder: (1, 2, hidden_dim)
         activations = torch.stack([hidden_a, hidden_b], dim=0).unsqueeze(0)

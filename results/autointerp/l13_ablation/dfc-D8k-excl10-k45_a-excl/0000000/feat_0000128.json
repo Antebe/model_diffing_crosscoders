@@ -1,0 +1,37 @@
+{
+  "feat_idx": 128,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    22.515625,
+    22.515625,
+    22.515625,
+    22.515625,
+    22.515625,
+    22.515625,
+    22.359375,
+    22.359375,
+    22.359375,
+    22.359375
+  ],
+  "top_texts": [
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "</tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`. Decide whether to use `<tool_call>` (possibly multiple times), `<response>`, or both.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`.",
+    "...\", \"parameters\": {\"... ...\": \"... ...\", \"... ...\": \"... ...\"}}\n... </tool_call>\n<response> AI's final response </response>\n```\n\n**Important Notes**\n1. You must always include the `<think>` field to outline your reasoning. Provide at least one of `<tool_call>` or `<response>`."
+  ],
+  "explanation": "This feature represents the structure of a dialogue system, specifically the interaction between a tool call and a subsequent response.",
+  "harmful": false,
+  "harmful_reason": "The pattern itself is descriptive of a common conversational flow and doesn't inherently carry harmful connotations.",
+  "detection_score": 0.5,
+  "detection_n_correct": 10,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

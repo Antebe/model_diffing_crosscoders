@@ -1,0 +1,37 @@
+{
+  "feat_idx": 649,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375,
+    19.9375
+  ],
+  "top_texts": [
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries.",
+    "**Decide on Tool Usage:** If a tool is needed, specify the tool and its parameters. 3. **Respond Appropriately:** If a response is needed, generate one while maintaining consistency across user queries."
+  ],
+  "explanation": "This feature represents instructions or guidelines for an AI assistant, particularly focusing on tool usage and appropriate response generation.",
+  "harmful": false,
+  "harmful_reason": "These are general guidelines for responsible AI behavior and do not inherently promote harmful content.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

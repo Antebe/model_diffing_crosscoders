@@ -1,13 +1,40 @@
 # run_autointerp_exclusive.py
+#
+# Runs autointerp against a (crosscoder, dataset) feature cache.
+# Defaults are derived from --crosscoder + --dataset + --layer via the
+# layer-aware path helpers in config.py:
+#   FEAT_CACHE   = cache/{crosscoder_short}_features_{dataset}/
+#   SOURCE_CACHE = cache/{dataset}_l{layer}/
+import argparse
 import json
 from pathlib import Path
 
 from tqdm import tqdm
 from autointerp import AutoInterpPipeline, TopKFinder
+from config import feature_cache_path, raw_cache_path, layer_from_hparams
 
-FEAT_CACHE   = "./cache/toolrl_features"
-SOURCE_CACHE = "./cache/toolrl"
-RESULTS_DIR  = "./results/autointerp/toolrl"
+_p = argparse.ArgumentParser()
+_p.add_argument("--crosscoder-short", default="dfc2",
+                help="Crosscoder short name (used to locate the feature cache)")
+_p.add_argument("--dataset", default="toolrl")
+_p.add_argument("--layer", type=int, default=None,
+                help="Override the layer (default: read from <feat_cache>/hparams.json or fall back to 13)")
+_p.add_argument("--feat-cache", default=None, help="Override feature cache path")
+_p.add_argument("--source-cache", default=None, help="Override raw cache path")
+_p.add_argument("--results-dir", default=None)
+_args, _ = _p.parse_known_args()
+
+FEAT_CACHE = _args.feat_cache or feature_cache_path(_args.dataset, _args.crosscoder_short)
+# Resolve layer: explicit > feature-cache hparams sidecar > default 13
+if _args.layer is not None:
+    LAYER = _args.layer
+else:
+    try:
+        LAYER = layer_from_hparams(Path(FEAT_CACHE) / "hparams.json")
+    except Exception:
+        LAYER = 13
+SOURCE_CACHE = _args.source_cache or raw_cache_path(_args.dataset, LAYER)
+RESULTS_DIR = _args.results_dir or f"./results/autointerp/{_args.dataset}"
 
 # ── 1. Find non-dead features via TopKFinder ──────────────────────────────
 meta = json.loads((Path(FEAT_CACHE) / "meta.json").read_text())

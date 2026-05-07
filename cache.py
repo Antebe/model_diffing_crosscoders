@@ -52,7 +52,32 @@ def extract_last_token_acts(
 
     Returns: (N, hidden_dim) float32 CPU tensor.
     """
-    all_acts = []
+    return extract_last_token_acts_multi(
+        model, tokenizer, texts, [layer_idx], device, batch_size,
+    )[layer_idx]
+
+
+@torch.no_grad()
+def extract_last_token_acts_multi(
+    model,
+    tokenizer,
+    texts: list[str],
+    layer_indices: list[int],
+    device: str,
+    batch_size: int = 8,
+) -> dict[int, torch.Tensor]:
+    """
+    Forward `texts` through `model` ONCE and return the final real token's
+    hidden state at *each* requested layer.
+
+    Causal-LM hidden_states are computed top-to-bottom in a single forward
+    pass; pulling N layers costs the same as pulling 1 (just N more index
+    lookups + .cpu() copies).
+
+    Returns: ``{layer_idx: (N, hidden_dim) float32 CPU tensor}`` keyed by
+    the original ``layer_indices``.
+    """
+    per_layer: dict[int, list[torch.Tensor]] = {L: [] for L in layer_indices}
     for i in tqdm(range(0, len(texts), batch_size)):
         batch = texts[i : i + batch_size]
         enc = tokenizer(
@@ -70,13 +95,15 @@ def extract_last_token_acts(
             attention_mask=attn_mask,
             output_hidden_states=True,
         )
-        # hidden_states[0] = embedding, [i+1] = after layer i
-        hidden = out.hidden_states[layer_idx + 1]        # (B, seq, d)
-        last_idx = attn_mask.sum(dim=1) - 1              # (B,)
-        acts = hidden[torch.arange(len(batch)), last_idx] # (B, d)
-        all_acts.append(acts.float().cpu())
+        last_idx = attn_mask.sum(dim=1) - 1               # (B,)
+        arange = torch.arange(len(batch), device=last_idx.device)
+        for L in layer_indices:
+            # hidden_states[0] = embedding, [i+1] = after layer i
+            hidden = out.hidden_states[L + 1]             # (B, seq, d)
+            acts = hidden[arange, last_idx]               # (B, d)
+            per_layer[L].append(acts.float().cpu())
 
-    return torch.cat(all_acts, dim=0)
+    return {L: torch.cat(per_layer[L], dim=0) for L in layer_indices}
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -97,45 +124,109 @@ def cache_activations(
     max_samples: int | None = None,
     min_text_len: int = 30,
 ) -> str:
-    """
-    Run both models over `data_iter` once. Saves (N, 2, d) fp16 shards and corresponding text.
+    """Single-layer wrapper around ``cache_activations_multi``.
 
-    Returns `cache_dir` for chaining into CachedActivationDataset.
+    Kept for backward compatibility. New callers should use
+    ``cache_activations_multi`` directly to amortize the LLM forward pass
+    across multiple layers.
     """
-    cache_path = Path(cache_dir)
-    cache_path.mkdir(parents=True, exist_ok=True)
-    
-    # Create texts subdirectory
-    texts_dir = cache_path / "texts"
-    texts_dir.mkdir(exist_ok=True)
+    cache_activations_multi(
+        model_a=model_a,
+        model_b=model_b,
+        tokenizer=tokenizer,
+        data_iter=data_iter,
+        layer_indices=[layer_idx],
+        cache_dirs={layer_idx: cache_dir},
+        device_a=device_a,
+        device_b=device_b,
+        extract_batch=extract_batch,
+        shard_size=shard_size,
+        max_samples=max_samples,
+        min_text_len=min_text_len,
+    )
+    return cache_dir
+
+
+def cache_activations_multi(
+    model_a,
+    model_b,
+    tokenizer,
+    data_iter: Iterator[str],
+    layer_indices: list[int],
+    cache_dirs: dict[int, str],
+    device_a: str = "cuda:0",
+    device_b: str = "cuda:1",
+    extract_batch: int = 8,
+    shard_size: int = 2_048,
+    max_samples: int | None = None,
+    min_text_len: int = 30,
+) -> dict[int, str]:
+    """
+    Run both models over ``data_iter`` ONCE and write one cache per layer.
+
+    For each shard-sized buffer of texts, performs *one* forward pass per
+    model and snapshots ``hidden_states[L+1]`` for every ``L`` in
+    ``layer_indices`` — so 9 layers cost the same forward time as 1, plus
+    a small cost for the extra index/copy/save ops.
+
+    Each layer ``L`` gets its own cache directory at ``cache_dirs[L]`` with
+    the same on-disk layout as the single-layer ``cache_activations``:
+    ``shard_NNNNN.pt`` (N, 2, d) fp16 + ``texts/shard_NNNNN.jsonl`` +
+    ``meta.json``.
+
+    Returns ``cache_dirs`` for chaining.
+    """
+    if set(layer_indices) != set(cache_dirs.keys()):
+        raise ValueError(
+            f"layer_indices ({layer_indices}) and cache_dirs.keys "
+            f"({list(cache_dirs.keys())}) must match"
+        )
+
+    # Per-layer paths and shard bookkeeping.
+    paths: dict[int, Path] = {}
+    texts_dirs: dict[int, Path] = {}
+    shards_written: dict[int, list[str]] = {L: [] for L in layer_indices}
+    text_shards_written: dict[int, list[str]] = {L: [] for L in layer_indices}
+    for L in layer_indices:
+        p = Path(cache_dirs[L])
+        p.mkdir(parents=True, exist_ok=True)
+        td = p / "texts"
+        td.mkdir(exist_ok=True)
+        paths[L] = p
+        texts_dirs[L] = td
 
     buf: list[str] = []
     shard_idx = 0
     total = 0
-    shards_written: list[str] = []
-    text_shards_written: list[str] = []
 
-    pbar = tqdm(desc=f"Caching → {cache_dir}", unit="sample", dynamic_ncols=True)
+    pbar = tqdm(
+        desc=f"Caching {len(layer_indices)}L → {[cache_dirs[L] for L in layer_indices]}",
+        unit="sample",
+        dynamic_ncols=True,
+    )
 
     def _flush(texts: list[str]) -> None:
         nonlocal shard_idx, total
-        a = extract_last_token_acts(model_a, tokenizer, texts, layer_idx, device_a, extract_batch)
-        b = extract_last_token_acts(model_b, tokenizer, texts, layer_idx, device_b, extract_batch)
-        shard = torch.stack([a, b], dim=1).half()   # (N, 2, d) — fp16
-        
-        # Save activations
-        act_fname = f"shard_{shard_idx:05d}.pt"
-        torch.save(shard, cache_path / act_fname)
-        shards_written.append(act_fname)
-        
-        # Save corresponding text
-        text_fname = f"shard_{shard_idx:05d}.jsonl"
-        text_path = texts_dir / text_fname
-        with open(text_path, 'w') as f:
-            for text in texts:
-                f.write(json.dumps({"text": text}) + "\n")
-        text_shards_written.append(text_fname)
-        
+        # Two forward passes total (one per model), N layers extracted from each.
+        acts_a = extract_last_token_acts_multi(
+            model_a, tokenizer, texts, layer_indices, device_a, extract_batch,
+        )
+        acts_b = extract_last_token_acts_multi(
+            model_b, tokenizer, texts, layer_indices, device_b, extract_batch,
+        )
+        for L in layer_indices:
+            shard = torch.stack([acts_a[L], acts_b[L]], dim=1).half()  # (N, 2, d)
+            act_fname = f"shard_{shard_idx:05d}.pt"
+            torch.save(shard, paths[L] / act_fname)
+            shards_written[L].append(act_fname)
+
+            text_fname = f"shard_{shard_idx:05d}.jsonl"
+            text_path = texts_dirs[L] / text_fname
+            with open(text_path, "w") as f:
+                for text in texts:
+                    f.write(json.dumps({"text": text}) + "\n")
+            text_shards_written[L].append(text_fname)
+
         shard_idx += 1
         total += len(texts)
         pbar.update(len(texts))
@@ -155,16 +246,18 @@ def cache_activations(
 
     pbar.close()
 
-    meta = dict(
-        layer_idx=layer_idx,
-        shard_size=shard_size,
-        total_samples=total,
-        shards=shards_written,
-        text_shards=text_shards_written,
-    )
-    json.dump(meta, open(cache_path / "meta.json", "w"), indent=2)
-    print(f"[Cache] {total:,} samples → {shard_idx} shards in {cache_dir}")
-    return cache_dir
+    for L in layer_indices:
+        meta = dict(
+            layer_idx=L,
+            shard_size=shard_size,
+            total_samples=total,
+            shards=shards_written[L],
+            text_shards=text_shards_written[L],
+        )
+        json.dump(meta, open(paths[L] / "meta.json", "w"), indent=2)
+        print(f"[Cache] L={L}: {total:,} samples → {shard_idx} shards in {cache_dirs[L]}")
+
+    return cache_dirs
 
 
 def cache_exists(cache_dir: str) -> bool:

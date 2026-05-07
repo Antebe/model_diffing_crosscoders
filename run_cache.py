@@ -1,11 +1,19 @@
 """
 run_cache.py — Extract and cache activations from FineWeb and ToolRL datasets.
 
-Run this once before training. LLMs are unloaded after caching.
+Run this once (or once per layer-set) before training. LLMs are unloaded
+after caching.
 
 Usage:
-    python run_cache.py
-    python run_cache.py --layer 20 --fineweb_samples 100000
+    python run_cache.py                                          # default cfg.layer
+    python run_cache.py --layer 20 --fineweb_samples 100000      # single layer
+    python run_cache.py --layers 1,5,9,14,18,20,24,28,32         # multi-layer
+                                                                 # one forward pass total
+
+Multi-layer mode amortizes the LLM forward pass across all requested layers
+(causal-LM hidden_states are computed top-to-bottom in a single pass; pulling
+N layers costs the same forward time as pulling 1). Each layer's cache is
+written to ``cache/{dataset}_l{L}/`` exactly as the single-layer mode would.
 """
 
 import argparse
@@ -13,8 +21,8 @@ from itertools import islice
 
 from datasets import load_dataset
 
-from cache import cache_activations, cache_exists
-from config import Config
+from cache import cache_activations_multi, cache_exists
+from config import Config, raw_cache_path
 from models import load_both_models, unload_models
 
 
@@ -126,51 +134,57 @@ def get_toolrl_iter(n: int):
                 count += 1
 
 
-def main(cfg: Config):
+def _cache_dataset(
+    cfg: Config,
+    name: str,
+    samples: int,
+    iter_fn,
+    layers: list[int],
+    model_a,
+    model_b,
+    tokenizer,
+) -> None:
+    """Cache one dataset across all `layers` in a single forward pass."""
+    cache_dirs = {L: raw_cache_path(name, L, root=cfg.cache_dir) for L in layers}
+
+    # Skip layers whose meta.json already exists; only run if at least one is missing.
+    pending = [L for L in layers if not cache_exists(cache_dirs[L])]
+    skipped = [L for L in layers if L not in pending]
+    if skipped:
+        print(f"\n[Cache] {name}: skipping {len(skipped)} layer(s) already on disk: {skipped}")
+    if not pending:
+        print(f"[Cache] {name}: nothing to do.")
+        return
+
+    print(f"\n[Cache] {name}: caching {samples:,} samples × {len(pending)} layer(s) {pending} "
+          f"(one forward pass per shard) …")
+    cache_activations_multi(
+        model_a=model_a,
+        model_b=model_b,
+        tokenizer=tokenizer,
+        data_iter=iter_fn(samples),
+        layer_indices=pending,
+        cache_dirs={L: cache_dirs[L] for L in pending},
+        device_a=cfg.device_a,
+        device_b=cfg.device_b,
+        extract_batch=cfg.extract_batch,
+        shard_size=cfg.shard_size,
+        min_text_len=cfg.min_text_len,
+    )
+
+
+def main(cfg: Config, layers: list[int]):
     print("=" * 60)
-    print("  DFC Activation Caching")
+    print(f"  DFC Activation Caching — layers {layers}")
     print("=" * 60)
 
     # ── Load models ──────────────────────────────────────────────────
     model_a, model_b, tokenizer = load_both_models(cfg)
 
-    # ── FineWeb ──────────────────────────────────────────────────────
-    if cache_exists(cfg.fineweb_cache):
-        print(f"\n[Cache] FineWeb cache found at {cfg.fineweb_cache} — skipping.")
-    else:
-        print(f"\n[Cache] Caching {cfg.fineweb_samples:,} FineWeb samples …")
-        cache_activations(
-            model_a=model_a,
-            model_b=model_b,
-            tokenizer=tokenizer,
-            data_iter=get_fineweb_iter(cfg.fineweb_samples),
-            layer_idx=cfg.layer,
-            cache_dir=cfg.fineweb_cache,
-            device_a=cfg.device_a,
-            device_b=cfg.device_b,
-            extract_batch=cfg.extract_batch,
-            shard_size=cfg.shard_size,
-            min_text_len=cfg.min_text_len,
-        )
-
-    # ── ToolRL ───────────────────────────────────────────────────────
-    if cache_exists(cfg.toolrl_cache):
-        print(f"\n[Cache] ToolRL cache found at {cfg.toolrl_cache} — skipping.")
-    else:
-        print(f"\n[Cache] Caching {cfg.toolrl_samples:,} ToolRL samples …")
-        cache_activations(
-            model_a=model_a,
-            model_b=model_b,
-            tokenizer=tokenizer,
-            data_iter=get_toolrl_iter(cfg.toolrl_samples),
-            layer_idx=cfg.layer,
-            cache_dir=cfg.toolrl_cache,
-            device_a=cfg.device_a,
-            device_b=cfg.device_b,
-            extract_batch=cfg.extract_batch,
-            shard_size=cfg.shard_size,
-            min_text_len=cfg.min_text_len,
-        )
+    _cache_dataset(cfg, "fineweb", cfg.fineweb_samples, get_fineweb_iter, layers,
+                   model_a, model_b, tokenizer)
+    _cache_dataset(cfg, "toolrl",  cfg.toolrl_samples,  get_toolrl_iter,  layers,
+                   model_a, model_b, tokenizer)
 
     # ── Unload LLMs ──────────────────────────────────────────────────
     unload_models(model_a, model_b)
@@ -179,7 +193,12 @@ def main(cfg: Config):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--layer",            type=int, default=None)
+    g = parser.add_mutually_exclusive_group()
+    g.add_argument("--layer",  type=int, default=None,
+                   help="Single transformer layer to cache (sets cfg.layer)")
+    g.add_argument("--layers", type=str, default=None,
+                   help="Comma-separated list of layers (e.g. '1,5,9,14,18,20,24,28,32') "
+                        "— extracted in a single forward pass per shard")
     parser.add_argument("--fineweb_samples",  type=int, default=None)
     parser.add_argument("--toolrl_samples",   type=int, default=None)
     parser.add_argument("--shard_size",       type=int, default=None)
@@ -197,4 +216,11 @@ if __name__ == "__main__":
     if args.device_a        is not None: cfg.device_a          = args.device_a
     if args.device_b        is not None: cfg.device_b          = args.device_b
 
-    main(cfg)
+    if args.layers is not None:
+        layers = sorted({int(x) for x in args.layers.split(",") if x.strip()})
+        if not layers:
+            raise SystemExit("--layers parsed to an empty list")
+    else:
+        layers = [cfg.layer]
+
+    main(cfg, layers)

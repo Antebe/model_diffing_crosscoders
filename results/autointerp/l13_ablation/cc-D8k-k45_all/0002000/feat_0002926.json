@@ -1,0 +1,37 @@
+{
+  "feat_idx": 2926,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625,
+    11.0625
+  ],
+  "top_texts": [
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1.",
+    "You are a helpful multi-turn dialogue assistant capable of leveraging tool calls to solve user tasks and provide structured chat responses. **Available Tools**\nIn your response, you can use the following tools:\n1."
+  ],
+  "explanation": "This feature represents the description of a large language model's capabilities, particularly its ability to use tools.",
+  "harmful": false,
+  "harmful_reason": "Describing a model's capabilities is not inherently harmful.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

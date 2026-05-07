@@ -1,0 +1,37 @@
+{
+  "feat_idx": 4648,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    10.0390625,
+    10.0078125,
+    8.1171875,
+    8.0703125,
+    7.96875,
+    7.43359375,
+    7.36328125,
+    7.234375,
+    7.140625,
+    7.0546875
+  ],
+  "top_texts": [
+    "Also, I'd like detailed information about a specific Guinness World Record for the largest pizza, and get the listening habits for the username 'sarah_jazz' from the Music Lovers API.",
+    "This can be 'regression', 'classification', 'clustering', etc.\", \"type\": \"string\", \"default\": \"\"}, \"parameters\": {\"description\": \"Parameters for the analysis method.",
+    "Also, get user information from SoundCloud using the profile URL 'https://soundcloud.com/user123'. </user>\n\n<think> I should use the appropriate tool with proper parameters to respond to the user's need.",
+    "Refer to `rangeFilters/market_cap/steps` for available values.\", \"type\": \"int, optional\", \"default\": \"\"}, \"chg_24h_max\": {\"description\": \"Maximum 24-hour change value for the cryptocurrency. Refer to `rangeFilters/chg_24h/steps` for available values.\", \"type\": \"int, optional\", \"default\": \"\"}, \"volume_24h_max\": {\"description\": \"Maximum 24-hour trading volume for the cryptocurrency.",
+    "Example: '87_1357-87_710,87_1352'.\", \"type\": \"str, optional\", \"default\": \"\"}, \"bmiXc\": {\"description\": \"The sorting option for the results. Options include:\", \"type\": \"int, optional\", \"default\": \"7\"}, \"yPdR.V_cs\": {\"description\": \"A 2-letter language code.",
+    "Example: '87_1357-87_710,87_1352'.\", \"type\": \"str, optional\", \"default\": \"\"}, \"yB7AH\": {\"description\": \"The sorting option for the results. Options include:\", \"type\": \"int, optional\", \"default\": \"7\"}, \"c24YEs\": {\"description\": \"A 2-letter language code.",
+    "Set to an empty string if no filtering by keyword is needed.\", \"type\": \"str\", \"default\": \"a\"}, \"genre_id\": {\"description\": \"Filter channels by genre ID. Default is None.\", \"type\": \"int, optional\", \"default\": \"\"}, \"city_id\": {\"description\": \"Filter channels by city ID.",
+    "Parameters: {\"q\": {\"description\": \"The query string representing names of countries, cities, districts, places, etc.\", \"type\": \"str\", \"default\": \"new york\"}, \"langid\": {\"description\": \"The language identifier. Default is 1033.\", \"type\": \"int, optional\", \"default\": \"1033\"}, \"siteid\": {\"description\": \"The site identifier.",
+    "Defaults to None.\", \"type\": \"int, optional\", \"default\": \"\"}, \"Hsmrh6H\": {\"description\": \"The name of the car make to filter results. Defaults to None.\", \"type\": \"str, optional\", \"default\": \"\"}, \"s4xlZkQ_e\": {\"description\": \"The year of the car make to filter results.",
+    "Parameters: {\"cpf\": {\"description\": \"The CPF number of the partner or administrator.\", \"type\": \"str\", \"default\": \"09336443291\"}, \"nome\": {\"description\": \"The name of the partner or administrator."
+  ],
+  "explanation": "This feature represents the structure and syntax of API parameter definitions.",
+  "harmful": false,
+  "harmful_reason": "API parameter definitions are a standard part of software development and do not inherently relate to harmful content.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

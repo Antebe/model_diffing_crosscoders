@@ -826,10 +826,15 @@ def main():
     parser = argparse.ArgumentParser(description="ToolRL Neuron Evolution Analysis")
     parser.add_argument("--checkpoint", default="./checkpoints/dfc2",
                         help="Path to DFC checkpoint directory")
-    parser.add_argument("--toolrl_features", default="./cache/toolrl_features",
-                        help="Path to cached ToolRL feature vectors")
-    parser.add_argument("--fineweb_features", default="./cache/fineweb_features",
-                        help="Path to cached FineWeb feature vectors")
+    # Feature cache defaults follow the model-tagged convention
+    # (cache/{checkpoint_name}_features_{dataset}/) — overridable for legacy
+    # unnamed feature caches like cache/toolrl_features/.
+    parser.add_argument("--toolrl_features", default=None,
+                        help="Path to cached ToolRL feature vectors "
+                             "(default: cache/{checkpoint_name}_features_toolrl)")
+    parser.add_argument("--fineweb_features", default=None,
+                        help="Path to cached FineWeb feature vectors "
+                             "(default: cache/{checkpoint_name}_features_fineweb)")
     parser.add_argument("--autointerp_dir", default="./results/autointerp",
                         help="Path to autointerp results (optional)")
     parser.add_argument("--out_dir", default="./results/evolution",
@@ -839,6 +844,15 @@ def main():
     parser.add_argument("--n_coact", type=int, default=10,
                         help="Number of co-activating shared features per anchor")
     args = parser.parse_args()
+
+    # Resolve default feature-cache paths from the checkpoint name
+    if args.toolrl_features is None or args.fineweb_features is None:
+        from config import feature_cache_path
+        short = Path(args.checkpoint).name
+        if args.toolrl_features is None:
+            args.toolrl_features = feature_cache_path("toolrl", short)
+        if args.fineweb_features is None:
+            args.fineweb_features = feature_cache_path("fineweb", short)
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)

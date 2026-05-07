@@ -1,0 +1,37 @@
+{
+  "feat_idx": 6081,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    26.25,
+    26.25,
+    26.25,
+    26.25,
+    26.25,
+    26.25,
+    26.25,
+    26.25,
+    26.25,
+    9.4375
+  ],
+  "top_texts": [
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What are the ISO codes for Japan?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Fetch 8 profiles in Portuguese and then 5 in Chinese.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> What is the metadata information for the TikTok user 'nike'?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Could you provide the revenue estimate for Facebook Inc.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Can you provide the latest topics from cricket news?",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Role definition:\n Inquirer: A user who raises an inquiry.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I want to plan a skiing trip.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> I need to clean up outdated emails.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Retrieve details about Emirates Airlines using its ICAO code.",
+    "If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3. Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists)."
+  ],
+  "explanation": "This feature represents the concept of referencing or instructing the model to consider past interactions in a conversation.",
+  "harmful": false,
+  "harmful_reason": "Referring to past context is a fundamental aspect of natural conversation and is not inherently harmful.",
+  "detection_score": 0.85,
+  "detection_n_correct": 17,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

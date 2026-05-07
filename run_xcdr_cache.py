@@ -219,9 +219,14 @@ def main():
     log.info(f"  dict_size={dfc.dict_size}  k={dfc.k}  "
              f"n_a={dfc.n_a}  n_b={dfc.n_b}  n_shared={dfc.n_shared}")
 
+    # Feature caches use the model-tagged convention:
+    # cache/{checkpoint_name}_features_{dataset}/. Raw caches are layered
+    # via cfg.fineweb_cache / cfg.toolrl_cache (cache/{dataset}_l{layer}/).
+    from config import feature_cache_path
+    short = Path(cfg.save_path).name
     datasets = [
-        ("FineWeb", cfg.fineweb_cache, cfg.fineweb_cache + "_features"),
-        ("ToolRL",  cfg.toolrl_cache,  cfg.toolrl_cache  + "_features"),
+        ("FineWeb", cfg.fineweb_cache, feature_cache_path("fineweb", short, root=cfg.cache_dir)),
+        ("ToolRL",  cfg.toolrl_cache,  feature_cache_path("toolrl",  short, root=cfg.cache_dir)),
     ]
 
     for name, llm_cache, feat_cache in datasets:

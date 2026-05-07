@@ -1,0 +1,37 @@
+{
+  "feat_idx": 320,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    15.4921875,
+    15.3046875,
+    15.296875,
+    15.28125,
+    15.15625,
+    15.0390625,
+    15.03125,
+    15.0078125,
+    14.953125,
+    14.9375
+  ],
+  "top_texts": [
+    "This value can be obtained from various Shazam API endpoints, such as 'artist->adamid' from /search, /songs/v2/detect, or /songs/get-details, or 'artists->id' from /shazam-songs/get-details, /albums/get-details, or /albums/get-related-artist.\", \"type\": \"str\", \"default\": \"567072\"}, \"l\": {\"description\": \"The language code for the response.",
+    "Defaults to `false`.\", \"type\": \"boolean\", \"default\": \"\"}, \"duration\": {\"description\": \"* `all` - **No duration limit** (default value)\\n* `short` - **Under 4 minutes**\\n* `medium` - **4 - 20 minutes**\\n* `long` - **Over 20 minutes**\", \"type\": \"string\", \"default\": \"\"}, \"sortBy\": {\"description\": \"Sorting metrics.",
+    "The default value is 1\", \"type\": \"int\", \"default\": \"\"}, \"number\": {\"description\": \"The grammatical number to search for\", \"type\": \"string\", \"default\": \"\"}, \"monosemous\": {\"description\": \"Whether to only return monosemous entries\", \"type\": \"boolean\", \"default\": \"\"}, \"language\": {\"description\": \"The language code of the entry's language.",
+    "This value can be obtained from various Shazam API endpoints, such as 'artist->adamid' from /search, /songs/v2/detect, or /songs/get-details, or 'artists->id' from /shazam-songs/get-details, /albums/get-details, or /albums/get-related-artist.\", \"type\": \"str\", \"default\": \"567072\"}, \"eBW4QsRu\": {\"description\": \"The language code for the response.",
+    "Parameters: {\"sort\": {\"description\": \"Optional createdAt sort direction ASC or DESC\", \"type\": \"string\", \"default\": \"\"}, \"page\": {\"description\": \"Optional page index in list pagination\", \"type\": \"float\", \"default\": \"\"}, \"before\": {\"description\": \"Optional filter by created before given string time\", \"type\": \"string\", \"default\": \"\"}, \"domainId\": {\"description\": \"Optional domain ID filter\", \"type\": \"string\", \"default\": \"\"}, \"since\": {\"description\": \"Optional filter by created after given string time\", \"type\": \"string\", \"default\": \"\"}, \"size\": {\"description\": \"Optional page size in list pagination\", \"type\": \"float\", \"default\": \"\"}, \"tag\": {\"description\": \"Optionally filter by tags.",
+    "Name: Timezones\nDescription: Retrieve information about time zones in different languages\nParameters: {\"offset\": {\"description\": \"Filter on non daylights savings offset in hours\", \"type\": \"string\", \"default\": \"\"}, \"name\": {\"description\": \"Filter as \\\"contains\\\" on timezone name in chosen language\", \"type\": \"string\", \"default\": \"\"}, \"code\": {\"description\": \"Filter on 3 letter non daylight savings timezone code (not unique)\", \"type\": \"string\", \"default\": \"\"}, \"timezone\": {\"description\": \"Filter on timezone name in English\", \"type\": \"string\", \"default\": \"\"}, \"daylights_offset\": {\"description\": \"Filter on daylights savings offset in hours\", \"type\": \"string\", \"default\": \"\"}, \"lang\": {\"description\": \"Language selection ISO 639-2 letter code.",
+    "Parameters: {\"nelat\": {\"description\": \"North East latitude of the boundary.\", \"type\": \"int\", \"default\": \"40.95240778688068\"}, \"nelon\": {\"description\": \"North East longitude of the boundary.\", \"type\": \"int\", \"default\": \"-73.43762621283531\"}, \"swlat\": {\"description\": \"South West latitude of the boundary.\", \"type\": \"int\", \"default\": \"40.43539120253853\"}, \"swlon\": {\"description\": \"South West longitude of the boundary.\", \"type\": \"int\", \"default\": \"-74.41956583410503\"}, \"x_user_lang\": {\"description\": \"Language for the response.",
+    "Default is '8Lh4p'.\", \"type\": \"str, optional\", \"default\": \"8Lh4p\"}, \"tiB.FHi\": {\"description\": \"The sorting criterion. Options are '19AMa', 'name', 'funds_raised', or 'completed'. Default is '19AMa'.\", \"type\": \"str, optional\", \"default\": \"19AMa\"}, \"JkU7Y1Zi4M\": {\"description\": \"Language ID for the response.",
+    "Parameters: {\"input\": {\"description\": \"The text string on which to search, for example: \\\"london\\\" or \\\"123 Cross Road\\\".\", \"type\": \"string\", \"default\": \"\"}, \"language\": {\"description\": \"The language code, using ISO 3166-1 Alpha-2 country codes, indicating in which language the results should be returned, if possible.\", \"type\": \"string\", \"default\": \"\"}, \"extended\": {\"description\": \"If set, this parameter allows a refined search over locality names that bear the same postal code.\", \"type\": \"string\", \"default\": \"\"}, \"data\": {\"description\": \"The type of data to return.",
+    "Values can be 'auto' (default), 'metric', 'us', 'uk', 'ca'. Defaults to 'auto'.\", \"type\": \"str, optional\", \"default\": \"auto\"}, \"Z4xIq\": {\"description\": \"Longitude of the location. Specify in formats like '12E', '12.3E', '12.3', or '-13.4'."
+  ],
+  "explanation": "This feature represents the description of parameters and their properties within an API documentation.",
+  "harmful": false,
+  "harmful_reason": "API documentation is inherently neutral and does not contain harmful content on its own.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

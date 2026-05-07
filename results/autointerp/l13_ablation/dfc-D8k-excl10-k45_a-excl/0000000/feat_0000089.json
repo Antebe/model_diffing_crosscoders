@@ -1,0 +1,37 @@
+{
+  "feat_idx": 89,
+  "partition": "a_excl",
+  "is_dead": false,
+  "top_activations": [
+    7.75390625,
+    7.328125,
+    7.30078125,
+    7.24609375,
+    7.0390625,
+    6.9609375,
+    6.93359375,
+    6.890625,
+    6.8515625,
+    6.75390625
+  ],
+  "top_texts": [
+    "Parameters: {\"id\": {\"description\": \"User ID or Username of the stream's user you want to show\", \"type\": \"string\", \"default\": \"\"}, \"since\": {\"description\": \"Returns results with an ID greater than (more recent than) the specified ID\", \"type\": \"int\", \"default\": \"\"}, \"max\": {\"description\": \"Returns results with an ID less than (older than) or equal to the specified ID\", \"type\": \"int\", \"default\": \"\"}, \"limit\": {\"description\": \"Default and max limit is 30.",
+    "Post ID: post2\n   Message: \"Join us for a virtual gardening event this weekend.\"\n   URL: [https://www.facebook.com/mygardeningpage/posts/3](https://www.facebook.com/mygardeningpage/posts/3)\nYou can view more posts on their Facebook page using the nextUrl: [https://www.facebook.com/mygardeningpage/posts/page2](https://www.facebook.com/mygardeningpage/posts/page2) </response>\n\n<user> I've been meaning to get some plants for my home, but it's not super bright inside.",
+    "Inquirer: I'd like to simulate a large room for the reverb effects. For the frequency bands, adjust 1000 Hz with 3 dB gain and 1 octave bandwidth. Please continue your answer given the historical dialog.",
+    "**Dialogue Records History**\n<user> I'm traveling to Toronto, Canada and need to locate EV charging stations near the latitude 43.6532 and longitude -79.3832. Could you help me find the nearest ones within 1 km?",
+    "Name: Balance Sheet\nDescription: Returns a company's most recent balance sheet summarizing their liabilities, assets and shareholders' equity\nParameters: {\"ticker\": {\"description\": \"Publicly traded company's stock symbol\", \"type\": \"string\", \"default\": \"msft\"}, \"formtype\": {\"description\": \"10-K = Annual Report (default) | 10-Q = Quarterly Report\", \"type\": \"string\", \"default\": \"10-k\"}, \"filingorder\": {\"description\": \"Retrieve an older financial statement by specifying number of filings to go back.",
+    "**Dialogue Records History**\n<user> I'm working on a project about semiconductors and I need the mask layouts for a transistor and a capacitor. For the transistor, I require a 7nm technology node with a nominal process variation.",
+    "**Dialogue Records History**\n<user> I was reviewing my insurance plans and noticed I have an outdated auto policy. I'd like to cancel my current auto policy and then have you create a new health insurance policy for me.",
+    "I can barely keep up. Data science utilities today, who knows what tomorrow! But you know what, that's just the thrill of cloud services; it changes more frequently than fashion trends!",
+    "Oum El Bouaghi, with the capital city being Oum El Bouaghi. 5. Batna, with the capital city being Batna. This information was obtained from the \"Wilaya_Informations\" tool. </response>\n\n<user> Wow, Algeria sure has some unique provinces.",
+    "Parameters: {\"From\": {\"description\": \"3-letter IATA code for the departure airport\", \"type\": \"string\", \"default\": \"\"}, \"Date\": {\"description\": \"Departure string in YYYYMMDD format\", \"type\": \"string\", \"default\": \"\"}, \"To\": {\"description\": \"3-letter IATA code for the destination airport\", \"type\": \"string\", \"default\": \"\"}, \"Time\": {\"description\": \"Return flights that happen during the specified time period\", \"type\": \"string\", \"default\": \"\"}, \"Compression\": {\"description\": \"Displays non-stops, directs, and logical single and multiple connections\", \"type\": \"string\", \"default\": \"\"}, \"7Day\": {\"description\": \"Setting to \\\"N\\\" results in 1 day of results, setting to \\\"Y\\\" results in 7 days of results\", \"type\": \"string\", \"default\": \"\"}, \"Interline\": {\"description\": \"Please see documentation\", \"type\": \"string\", \"default\": \"\"}, \"Results\": {\"description\": \"Maximum number of results to return\", \"type\": \"string\", \"default\": \"\"}, \"Connection\": {\"description\": \"Displays non-stops, directs, and logical single and multiple connections\", \"type\": \"string\", \"default\": \"\"}, \"Sort\": {\"description\": \"Specify the sort order for the results\", \"type\": \"string\", \"default\": \"\"}, \"MaxConnect\": {\"description\": \"Maximum time between flights in minutes\", \"type\": \"string\", \"default\": \"\"}, \"Max_Results\": {\"description\": \"Override the results count\", \"type\": \"string\", \"default\": \"\"}, \"NoFilter\": {\"description\": \"Disable Traffic Restriction Code Filters\", \"type\": \"string\", \"default\": \"\"}, \"Airline\": {\"description\": \"Restrict by specific airline 2 or 3-letter airline IATA code\", \"type\": \"string\", \"default\": \"\"}, \"FlightNumber\": {\"description\": \"Restrict by specific flight number, must be used with Airline\", \"type\": \"string\", \"default\": \"\"}, \"ExpandResults\": {\"description\": \"Y = Override the flight efficiency filter, showing more results."
+  ],
+  "explanation": "This feature represents descriptions of parameters or fields within a structured data format, likely an API or configuration system.",
+  "harmful": false,
+  "harmful_reason": "Descriptions of parameters are generally neutral and do not inherently relate to harmful content.",
+  "detection_score": 0.2,
+  "detection_n_correct": 4,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

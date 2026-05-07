@@ -81,9 +81,14 @@ def main() -> None:
     else:
         print("[cache] WARNING: source has no texts/ subdir; autointerp will use placeholders")
 
+    # Record the source cache's layer in our meta so downstream consumers
+    # (autointerp, etc.) can recover it without re-loading the crosscoder.
+    src_meta = json.loads((src / "meta.json").read_text())
+    layer = src_meta.get("layer_idx", getattr(cc, "layer", None))
     meta = {
         "source_cache": str(src),
         "crosscoder": args.crosscoder,
+        "layer": layer,
         "total_samples": total,
         "dict_size": int(cc.dict_size),
         "n_a": n_a,

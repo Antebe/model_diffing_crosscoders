@@ -1,0 +1,37 @@
+{
+  "feat_idx": 3566,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625,
+    34.40625
+  ],
+  "top_texts": [
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists). **Dialogue Records History**\n<user> Get compact market data for currencies 'EUR/USD', 'GBP/USD', and 'USD/JPY'.",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists).",
+    "Refer to the previous dialogue records in the history, including the user's queries, previous `<tool_call>`, `<response>`, and any tool feedback noted as `<obs>` (if exists)."
+  ],
+  "explanation": "This feature represents instructions or prompts related to accessing and utilizing a history of dialogue interactions.",
+  "harmful": false,
+  "harmful_reason": "Accessing past dialogue is a common function in conversational AI and not inherently harmful.",
+  "detection_score": 0.9,
+  "detection_n_correct": 18,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

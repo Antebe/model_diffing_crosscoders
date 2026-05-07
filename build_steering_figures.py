@@ -24,11 +24,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy import stats as _scipy_stats
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -36,7 +38,13 @@ import numpy as np
 # ──────────────────────────────────────────────────────────────────────────────
 
 def aggregate_model_dir(model_dir: Path) -> list[dict]:
-    """One row per (k_pct, alpha) with mean clean / recon / steered scores."""
+    """One row per (k_pct, alpha) with mean clean / recon / steered scores.
+
+    Also accumulates per-prompt paired diffs for tool-correctness so each row
+    carries a 95% paired-t CI on `d_steered_clean_tool` (in %-points):
+        - d_tool_ci_lo / d_tool_ci_hi : CI bounds (% points)
+        - d_tool_sem                  : standard error of the mean (% points)
+    """
     cells: dict[tuple[float, float], dict] = {}
     for p in sorted(model_dir.glob("k*_a*.jsonl")):
         with p.open() as f:
@@ -57,6 +65,8 @@ def aggregate_model_dir(model_dir: Path) -> list[dict]:
                     "clean_tool": 0,    "recon_tool": 0,    "steered_tool": 0,
                     "clean_format": 0,  "recon_format": 0,  "steered_format": 0,
                     "clean_overall": 0.0, "recon_overall": 0.0, "steered_overall": 0.0,
+                    "diff_tool": [],
+                    "diff_overall": [],
                 })
                 c["n"] += 1
                 for tag in ("clean", "recon", "steered"):
@@ -64,6 +74,14 @@ def aggregate_model_dir(model_dir: Path) -> list[dict]:
                     c[f"{tag}_tool"]    += int(bool(s["tool_correctness"]))
                     c[f"{tag}_format"]  += int(bool(s["format_accuracy"]))
                     c[f"{tag}_overall"] += float(s["overall_score"])
+                # Paired per-prompt diffs for CI.
+                steer_t = int(bool(r["steered_score"]["tool_correctness"]))
+                clean_t = int(bool(r["clean_score"]["tool_correctness"]))
+                c["diff_tool"].append(steer_t - clean_t)
+                c["diff_overall"].append(
+                    float(r["steered_score"]["overall_score"])
+                    - float(r["clean_score"]["overall_score"])
+                )
     rows = []
     for (k_pct, alpha), c in sorted(cells.items()):
         n = max(c["n"], 1)
@@ -75,6 +93,35 @@ def aggregate_model_dir(model_dir: Path) -> list[dict]:
         row["d_steered_clean_tool"]   = row["steered_tool_pct"]    - row["clean_tool_pct"]
         row["d_steered_recon_tool"]   = row["steered_tool_pct"]    - row["recon_tool_pct"]
         row["d_steered_clean_overall"] = row["steered_overall_avg"] - row["clean_overall_avg"]
+
+        # 95% paired-t CI on the per-prompt tool diff (× 100 for %-points).
+        diffs = np.asarray(c["diff_tool"], dtype=np.float64)
+        if diffs.size >= 2:
+            mean_pct = float(diffs.mean()) * 100.0
+            sem_pct = float(diffs.std(ddof=1) / math.sqrt(diffs.size)) * 100.0
+            t_crit = float(_scipy_stats.t.ppf(0.975, df=diffs.size - 1))
+            row["d_tool_sem"]   = sem_pct
+            row["d_tool_ci_lo"] = mean_pct - t_crit * sem_pct
+            row["d_tool_ci_hi"] = mean_pct + t_crit * sem_pct
+        else:
+            row["d_tool_sem"]   = float("nan")
+            row["d_tool_ci_lo"] = float("nan")
+            row["d_tool_ci_hi"] = float("nan")
+
+        # Same for overall_score (continuous, but same form).
+        diffs_o = np.asarray(c["diff_overall"], dtype=np.float64)
+        if diffs_o.size >= 2:
+            sem_o = float(diffs_o.std(ddof=1) / math.sqrt(diffs_o.size))
+            t_crit_o = float(_scipy_stats.t.ppf(0.975, df=diffs_o.size - 1))
+            mean_o = float(diffs_o.mean())
+            row["d_overall_sem"]   = sem_o
+            row["d_overall_ci_lo"] = mean_o - t_crit_o * sem_o
+            row["d_overall_ci_hi"] = mean_o + t_crit_o * sem_o
+        else:
+            row["d_overall_sem"]   = float("nan")
+            row["d_overall_ci_lo"] = float("nan")
+            row["d_overall_ci_hi"] = float("nan")
+
         rows.append(row)
     return rows
 
@@ -109,21 +156,32 @@ def heatmap(
     cmap: str = "RdBu_r",
     fmt: str = "{:+.1f}",
     centre_zero: bool = True,
+    ylabel: str = "k% of A-excl ranked subset",
+    yticklabel_fmt: str = "{:g}%",
 ) -> None:
+    """Heatmap with NaN cells rendered as a clear gap (no fill, no text)."""
     fig, ax = plt.subplots(figsize=(7.5, 5.5), dpi=150)
     if centre_zero and np.isfinite(grid).any():
         m = float(np.nanmax(np.abs(grid)))
         vmin, vmax = -m, m
     else:
         vmin, vmax = None, None
-    im = ax.imshow(grid, aspect="auto", cmap=cmap, vmin=vmin, vmax=vmax)
+    # Mask NaN cells so they render as background (no fill).
+    masked = np.ma.masked_invalid(grid)
+    cm = plt.get_cmap(cmap).copy()
+    cm.set_bad(color="white", alpha=0.0)
+    ax.set_facecolor("#f0f0f0")
+    im = ax.imshow(masked, aspect="auto", cmap=cm, vmin=vmin, vmax=vmax)
     ax.set_xticks(range(len(alphas)))
     ax.set_xticklabels([f"{a:g}" for a in alphas])
     ax.set_yticks(range(len(k_pcts)))
-    ax.set_yticklabels([f"{k:g}%" for k in k_pcts])
+    ax.set_yticklabels([yticklabel_fmt.format(k) for k in k_pcts])
     ax.set_xlabel("alpha")
-    ax.set_ylabel("k% of A-excl ranked subset")
+    ax.set_ylabel(ylabel)
     ax.set_title(title)
+    # Mark missing cells with a light dashed border + diagonal hatch so the
+    # gap is unambiguous (vs. the row/col scaffold).
+    from matplotlib.patches import Rectangle
     for i in range(grid.shape[0]):
         for j in range(grid.shape[1]):
             v = grid[i, j]
@@ -131,6 +189,12 @@ def heatmap(
                 color = "white" if abs(v) > (vmax or 1) * 0.55 else "black"
                 ax.text(j, i, fmt.format(v), ha="center", va="center",
                         color=color, fontsize=8)
+            else:
+                ax.add_patch(Rectangle(
+                    (j - 0.5, i - 0.5), 1, 1,
+                    facecolor="#ffffff", edgecolor="#cccccc",
+                    hatch="//", linewidth=0.4, alpha=0.65, zorder=2,
+                ))
     fig.colorbar(im, ax=ax, fraction=0.04, pad=0.02, label="Δ")
     fig.tight_layout()
     fig.savefig(out_path)

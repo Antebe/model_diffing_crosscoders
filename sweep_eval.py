@@ -58,10 +58,20 @@ MODEL_A_ID     = "chengq9/ToolRL-Qwen2.5-3B"
 MODEL_B_ID     = "Qwen/Qwen2.5-3B"
 DATASET_ID     = "emrecanacikgoz/ToolRL"
 
-# hidden_states[14] = output of transformer layer 13.
-# Index 0 is embeddings, so layer N output is at index N+1.
-# Empirically verified: hidden_states[14] gives cosine ~0.43 vs ~0.33 for [13].
-HIDDEN_STATES_IDX = 14
+# Default layer used when callers don't pass one explicitly. New code should
+# read the layer off the loaded crosscoder (cc.layer, set by load_crosscoder)
+# and pass it through. hidden_states[i] is the output of transformer layer
+# (i-1); index 0 is the embedding output, so layer N → hidden_states[N+1].
+DEFAULT_LAYER = 13
+
+
+def hidden_states_idx_for(layer: int) -> int:
+    """Map transformer layer index to its hidden_states index (output of that layer).
+
+    hidden_states[0] is the embedding output, so layer N's residual-stream
+    output is at hidden_states[N + 1].
+    """
+    return layer + 1
 
 MAX_NEW_TOKENS  = 200
 MAX_LENGTH      = 2048
@@ -213,28 +223,64 @@ class DFCCrossCoder(nn.Module):
 # CROSSCODER LOADER
 # ──────────────────────────────────────────────────────────────────────────────
 
+def _try_download(repo_id: str, filename: str):
+    """Best-effort fetch: try local cache, fall back to network. Return path or None."""
+    try:
+        return hf_hub_download(repo_id=repo_id, filename=filename, local_files_only=True)
+    except Exception:
+        try:
+            return hf_hub_download(repo_id=repo_id, filename=filename)
+        except Exception:
+            return None
+
+
+def _resolve_layer(repo_id: str, hp: dict, default: int = 13) -> int:
+    """Resolve the training layer for a crosscoder.
+
+    Order of precedence:
+      1. ``hparams.json`` shipped with the repo (the run_sweep.sh format).
+      2. ``layer`` field in the model_entry hyperparameters block.
+      3. ``default`` (legacy fallback for pre-layer-aware crosscoders).
+    """
+    hparams_pt = _try_download(repo_id, "hparams.json")
+    if hparams_pt is not None:
+        try:
+            with open(hparams_pt) as f:
+                hparams = json.load(f)
+            if "layer" in hparams:
+                return int(hparams["layer"])
+        except Exception:
+            pass
+    if "layer" in hp:
+        return int(hp["layer"])
+    return default
+
+
 def load_crosscoder(model_entry, device="cuda"):
     """
     Download and instantiate a crosscoder from HuggingFace.
-    Reads config.json to get architecture params, falling back to
-    hyperparameters from the JSONL entry if config fields are missing.
+    Reads config.json for architecture params, falling back to
+    ``model_entry["hyperparameters"]`` if config fields are missing, and
+    reads ``hparams.json`` for the training layer (attached to ``cc.layer``).
+
     Returns None if download or instantiation fails.
+
+    Attributes attached to the returned object:
+      - ``cc.layer`` (int): which transformer layer this crosscoder was
+        trained on. Used by callers to route to the right raw-cache and
+        patch the right ``model.model.layers[L]`` during steering.
+      - ``cc.short`` (str): bare repo name, e.g. ``"dfc-D8k-excl10-k45-l9"``.
     """
     name = model_entry["name"]
     hp   = model_entry["hyperparameters"]
+    short = name.split("/", 1)[-1] if "/" in name else name
 
     print(f"  ⟳ Loading: {name}")
 
-    try:
-        # Try local cache first — avoids the network HEAD request that can hang.
-        try:
-            model_pt    = hf_hub_download(repo_id=name, filename="model.pt",    local_files_only=True)
-            config_json = hf_hub_download(repo_id=name, filename="config.json", local_files_only=True)
-        except Exception:
-            model_pt    = hf_hub_download(repo_id=name, filename="model.pt")
-            config_json = hf_hub_download(repo_id=name, filename="config.json")
-    except Exception as e:
-        print(f"  ⚠️  Download failed: {e}")
+    model_pt    = _try_download(name, "model.pt")
+    config_json = _try_download(name, "config.json")
+    if model_pt is None or config_json is None:
+        print(f"  ⚠️  Download failed for {name}")
         return None
 
     cc_dir = str(Path(model_pt).parent)
@@ -248,6 +294,8 @@ def load_crosscoder(model_entry, device="cuda"):
     n_a = cfg.get("n_a", int(dict_size * hp["model_a_exclusive_pct"]))
     n_b = cfg.get("n_b", int(dict_size * hp["model_b_exclusive_pct"]))
     arch = hp.get("architecture", "CrossCoder")
+
+    layer = _resolve_layer(name, hp)
 
     # weights_only=False for compatibility across PyTorch versions
     state_dict = torch.load(
@@ -272,8 +320,10 @@ def load_crosscoder(model_entry, device="cuda"):
 
     cc.load_state_dict(state_dict)
     cc = cc.to(device).eval()
+    cc.layer = layer
+    cc.short = short
 
-    print(f"     arch={arch}  dict={dict_size}  k={k}  n_a={n_a}  n_b={n_b}")
+    print(f"     arch={arch}  dict={dict_size}  k={k}  n_a={n_a}  n_b={n_b}  layer={layer}")
     return cc
 
 
@@ -281,26 +331,26 @@ def load_crosscoder(model_entry, device="cuda"):
 # LLM HELPERS
 # ──────────────────────────────────────────────────────────────────────────────
 
-def get_last_token_activation(model, input_ids, device):
+def get_last_token_activation(model, input_ids, device, layer: int = DEFAULT_LAYER):
     """
-    Extract last-token residual stream activation at layer 13.
+    Extract last-token residual stream activation at the given layer.
 
-    Uses hidden_states[14]: index 0 is embedding output, so layer N
-    output is at index N+1. Layer 13 -> index 14.
+    hidden_states[layer + 1]: index 0 is embedding output, so layer N's
+    residual-stream output is at index N+1.
 
     LLM runs in float16; activation cast to float32 for crosscoder.
     The float16->float32 cast is consistent across clean and patched
     conditions so delta metrics are unaffected.
 
-    Returns: (2048,) float32
+    Returns: (hidden_dim,) float32
     """
     with torch.no_grad():
         out = model(
             input_ids=input_ids.to(device),
             output_hidden_states=True
         )
-    hidden = out.hidden_states[HIDDEN_STATES_IDX]  # (1, T, 2048)
-    return hidden[0, -1, :].float()                 # last token, fp32
+    hidden = out.hidden_states[hidden_states_idx_for(layer)]  # (1, T, hidden_dim)
+    return hidden[0, -1, :].float()                            # last token, fp32
 
 
 def generate_clean(model, input_ids, tokenizer, device,
@@ -320,7 +370,7 @@ def generate_clean(model, input_ids, tokenizer, device,
 
 
 def generate_with_patch(model, input_ids, patch_vector, tokenizer, device,
-                        layer=13, max_new_tokens=MAX_NEW_TOKENS):
+                        layer=DEFAULT_LAYER, max_new_tokens=MAX_NEW_TOKENS):
     """
     Generate text with the last-token activation at `layer` replaced by
     patch_vector during the prefill pass only.
@@ -361,7 +411,7 @@ def generate_with_patch(model, input_ids, patch_vector, tokenizer, device,
 
 def generate_with_steer(model, input_ids, crosscoder, h_a, h_b,
                         tokenizer, device, scale_factor=2.0,
-                        neuron_indices=None, layer=13,
+                        neuron_indices=None, layer=DEFAULT_LAYER,
                         max_new_tokens=MAX_NEW_TOKENS):
     """
     Steering experiment: amplify A-exclusive features before decoding into
@@ -508,6 +558,10 @@ def eval_crosscoder(crosscoder, examples, tokenizer, model_a, model_b, device,
 
     Returns: dict of aggregated metrics ready to merge into JSONL entry.
     """
+    # Per-crosscoder layer (set by load_crosscoder); falls back to default for
+    # crosscoders that lacked an hparams.json entirely.
+    layer = int(getattr(crosscoder, "layer", DEFAULT_LAYER))
+
     results_a_clean   = []
     results_a_patched = []
     results_b_clean   = []
@@ -528,8 +582,8 @@ def eval_crosscoder(crosscoder, examples, tokenizer, model_a, model_b, device,
                 max_length=MAX_LENGTH
             ).input_ids
 
-            h_a = get_last_token_activation(model_a, input_ids, device)
-            h_b = get_last_token_activation(model_b, input_ids, device)
+            h_a = get_last_token_activation(model_a, input_ids, device, layer=layer)
+            h_b = get_last_token_activation(model_b, input_ids, device, layer=layer)
             x   = torch.stack([h_a, h_b], dim=0).unsqueeze(0).to(device)
 
             with torch.no_grad():
@@ -540,11 +594,11 @@ def eval_crosscoder(crosscoder, examples, tokenizer, model_a, model_b, device,
             if mode == "reconstruction":
                 resp_a_clean   = generate_clean(model_a, input_ids, tokenizer, device)
                 resp_a_patched = generate_with_patch(
-                    model_a, input_ids, recon_a, tokenizer, device
+                    model_a, input_ids, recon_a, tokenizer, device, layer=layer
                 )
                 resp_b_clean   = generate_clean(model_b, input_ids, tokenizer, device)
                 resp_b_patched = generate_with_patch(
-                    model_b, input_ids, recon_b, tokenizer, device
+                    model_b, input_ids, recon_b, tokenizer, device, layer=layer
                 )
                 results_a_clean.append(score_response(resp_a_clean,   prompt))
                 results_a_patched.append(score_response(resp_a_patched, prompt))
@@ -557,7 +611,8 @@ def eval_crosscoder(crosscoder, examples, tokenizer, model_a, model_b, device,
                     model_b, input_ids, crosscoder, h_a, h_b,
                     tokenizer, device,
                     scale_factor=steer_scale,
-                    neuron_indices=steer_neurons
+                    neuron_indices=steer_neurons,
+                    layer=layer,
                 )
                 results_b_clean.append(score_response(resp_b_clean,   prompt))
                 results_b_patched.append(score_response(resp_b_steered, prompt))

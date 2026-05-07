@@ -186,17 +186,22 @@ def collect_features(
     model_a,
     model_b,
     device: str,
+    layer: int,
     desc: str = "Encoding",
 ) -> np.ndarray:
     """Encode each prompt's last-token (h_a, h_b) through the crosscoder; stack
-    sparse top-k feature rows. Returns (len(prompts), dict_size) float32 numpy."""
+    sparse top-k feature rows. Returns (len(prompts), dict_size) float32 numpy.
+
+    ``layer`` is the transformer layer to read activations from — must match
+    the layer the crosscoder was trained on (typically ``crosscoder.layer``).
+    """
     rows = []
     for p in tqdm(prompts, desc=desc, unit="prompt"):
         ids = tokenizer(
             p, return_tensors="pt", truncation=True, max_length=MAX_LENGTH,
         ).input_ids
-        h_a = get_last_token_activation(model_a, ids, device)
-        h_b = get_last_token_activation(model_b, ids, device)
+        h_a = get_last_token_activation(model_a, ids, device, layer=layer)
+        h_b = get_last_token_activation(model_b, ids, device, layer=layer)
         x = torch.stack([h_a, h_b], dim=0).unsqueeze(0).to(device)
         feats = crosscoder.encode(x)  # (1, dict_size)
         rows.append(feats.float().cpu().numpy()[0])
@@ -217,6 +222,15 @@ def main() -> None:
     parser.add_argument("--n-nontool", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument(
+        "--rank-all-features",
+        action="store_true",
+        help=(
+            "For DFC variants, rank ALL dict features (A-excl ∪ B-excl ∪ "
+            "shared) instead of just A-excl. Required for partition "
+            "ablations downstream of run_steering_eval --partition."
+        ),
+    )
     args = parser.parse_args()
 
     out_path = Path(args.out)
@@ -246,6 +260,8 @@ def main() -> None:
     cc = load_crosscoder(entry, device=args.device)
     if cc is None:
         raise SystemExit(f"failed to load crosscoder {args.crosscoder}")
+    layer = int(getattr(cc, "layer"))
+    print(f"  layer={layer}")
 
     print(f"Sampling {args.n_tool} tool prompts …")
     tool_prompts = _sample_prompts(DATASET_ID, None, args.n_tool, args.seed)
@@ -258,20 +274,20 @@ def main() -> None:
 
     t0 = time.time()
     tool_feats = collect_features(
-        cc, tool_prompts, tokenizer, model_a, model_b, args.device,
+        cc, tool_prompts, tokenizer, model_a, model_b, args.device, layer=layer,
         desc="Encoding tool prompts",
     )
     print(f"  shape={tool_feats.shape}  ({time.time()-t0:.0f}s)")
 
     t0 = time.time()
     nontool_feats = collect_features(
-        cc, nontool_prompts, tokenizer, model_a, model_b, args.device,
+        cc, nontool_prompts, tokenizer, model_a, model_b, args.device, layer=layer,
         desc="Encoding nontool prompts",
     )
     print(f"  shape={nontool_feats.shape}  ({time.time()-t0:.0f}s)")
 
     n_a = int(getattr(cc, "a_end", 0))
-    if n_a > 0:
+    if n_a > 0 and not args.rank_all_features:
         feat_indices = list(range(n_a))
         tool_feats = tool_feats[:, :n_a]
         nontool_feats = nontool_feats[:, :n_a]

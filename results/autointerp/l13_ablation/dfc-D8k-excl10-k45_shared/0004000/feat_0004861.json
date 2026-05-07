@@ -1,0 +1,37 @@
+{
+  "feat_idx": 4861,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    9.265625,
+    8.671875,
+    8.5625,
+    8.4609375,
+    8.375,
+    7.9296875,
+    7.765625,
+    7.59765625,
+    7.58203125,
+    7.55859375
+  ],
+  "top_texts": [
+    "Parameters: {\"matrix_a\": {\"description\": \"The first matrix.\", \"type\": \"List[List[float]]\", \"default\": \"\"}, \"matrix_b\": {\"description\": \"The second matrix.\", \"type\": \"List[List[float]]\", \"default\": \"\"}}\n7. Name: density\nDescription: Calculates the density of an object given its mass and volume.",
+    "Name: get_followers_by_username\nDescription: Retrieves the information of 12 followers for a given Instagram username using the RapidAPI service. Parameters: {\"username\": {\"description\": \"The Instagram username for which to fetch followers information.\", \"type\": \"str\", \"default\": \"therock\"}}\n2.",
+    "Parameters: {\"species\": {\"description\": \"The species that the evolution rate will be predicted for.\", \"type\": \"str\", \"default\": \"Darwin\"}, \"years\": {\"description\": \"Number of years for the prediction.\", \"type\": \"int\", \"default\": \"Darwin\"}, \"model\": {\"description\": \"The model used to make the prediction, options: 'Darwin', 'Lamarck', default is 'Darwin'.\", \"type\": \"str\", \"default\": \"\"}}\n2.",
+    "Returns the censored version (bad words replaced with asterisks) of any given text and whether the text contains profanity. Parameters: {\"text\": {\"description\": \"Input text. Maximum 1000 characters.\", \"type\": \"string\", \"default\": \"\"}}\n3.",
+    "Parameters: {\"colorname\": {\"description\": \"The name of the base color to generate a set of colors from (e.g., \\\"yellow\\\", \\\"red\\\").\", \"type\": \"str\", \"default\": \"yellow\"}}\n2.",
+    "Name: GET Instagram Prostring\nDescription: Retrieve basic prostring information of an Instagram user\nParameters: {\"username\": {\"description\": \"The username of the Instagram user\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Parameters: {\"start_string\": {\"description\": \"The start string of the period to retrieve data for (format: YYYY-MM-DD)\", \"type\": \"string\", \"default\": \"\"}, \"end_string\": {\"description\": \"The end string of the period to retrieve data for (format: YYYY-MM-DD)\", \"type\": \"string\", \"default\": \"\"}}\n2.",
+    "Default is 10.\", \"type\": \"int, optional\", \"default\": 10}, \"name\": {\"description\": \"Search all platform names. Wildcard searches can be performed using the * character (e.g., name=*platform). Multiple items can be searched at once by sending a comma-separated list (e.g., name=ethereum,*token).",
+    "Parameters: {\"is_id\": {\"description\": \"The IMDb ID of the specific movie to fetch.\", \"type\": \"str\", \"default\": \"top13\"}}\n4. Name: get_movies_by_year\nDescription: Fetches a list of movies released in a specified year from the IMDb API.",
+    "Default is '90002'.\", \"type\": \"str, optional\", \"default\": \"90002\"}, \"latitude\": {\"description\": \"The GEO latitude to search for theaters.\", \"type\": \"int, optional\", \"default\": \"\"}, \"radius\": {\"description\": \"The radius (in miles) around the specified location to search for theaters."
+  ],
+  "explanation": "This feature represents descriptions of parameters for functions or APIs.",
+  "harmful": false,
+  "harmful_reason": "Descriptions of parameters are generally neutral and do not inherently relate to harmful content.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

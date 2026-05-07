@@ -1,0 +1,37 @@
+{
+  "feat_idx": 3700,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375,
+    17.234375
+  ],
+  "top_texts": [
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3.",
+    "Each tool call should be a JSON object with a \"name\" field and an \"parameters\" field containing a dictionary of parameters. If no parameters are needed, leave the \"parameters\" field an empty dictionary. 3."
+  ],
+  "explanation": "This feature represents the structure and syntax of a specific technical instruction regarding JSON objects and their fields.",
+  "harmful": false,
+  "harmful_reason": "The provided text describes a technical standard for data formatting and does not contain harmful or offensive content.",
+  "detection_score": 0.8,
+  "detection_n_correct": 16,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

@@ -1,0 +1,37 @@
+{
+  "feat_idx": 3377,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    12.6796875,
+    12.6484375,
+    12.6484375,
+    12.6484375,
+    12.640625,
+    12.5703125,
+    12.5546875,
+    12.546875,
+    12.515625,
+    12.5078125
+  ],
+  "top_texts": [
+    "Parameters: {\"mass\": {\"description\": \"The mass of the object.\", \"type\": \"float\", \"default\": \"\"}, \"volume\": {\"description\": \"The volume of the object.\", \"type\": \"float\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Format: HH:MM\", \"type\": \"string\", \"default\": \"\"}, \"number_of_tickets\": {\"description\": \"The number of tickets to book.\", \"type\": \"int\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"XB5K2_xFw\": {\"description\": \"The start of the range.\", \"type\": \"int\", \"default\": \"\"}, \"_O0G\": {\"description\": \"The end of the range.\", \"type\": \"int\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"pool_name\": {\"description\": \"Name of the proxy pool\", \"type\": \"string\", \"default\": \"\"}, \"proxy_type\": {\"description\": \"Type of proxy (e.g., HTTP, SOCKS5, etc.)\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Parameters: {\"crusher_model\": {\"description\": \"The model of the industrial crusher.\", \"type\": \"string\", \"default\": \"\"}, \"last_maintenance_date\": {\"description\": \"The date of the last maintenance.\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Parameters: {\"days\": {\"description\": \"The number of days for the trip\", \"type\": \"int\", \"default\": \"\"}, \"destination\": {\"description\": \"The destination for the trip\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Parameters: {\"species_profiles\": {\"description\": \"\", \"type\": \"array\", \"default\": \"\"}, \"environmental_factors\": {\"description\": \"List of environmental factors that may have influenced the species' evolution.\", \"type\": \"array\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Parameters: {\"intervals\": {\"description\": \"A list of meeting time intervals, where each interval is represented as [start_time, end_time].\", \"type\": \"List[List[int]]\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"chart_string\": {\"description\": \"The string of the chart (YYYY-MM-DD)\", \"type\": \"string\", \"default\": \"\"}, \"artist_name\": {\"description\": \"The name of the artist (optional)\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Parameters: {\"profile_url\": {\"description\": \"The URL of the user's SoundCloud profile.\", \"type\": \"str\", \"default\": \"https://soundcloud.com/user-977421934\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2."
+  ],
+  "explanation": "This feature represents the structure of a system or process with defined steps.",
+  "harmful": false,
+  "harmful_reason": "The pattern simply describes a common organizational structure and doesn't inherently relate to harmful content.",
+  "detection_score": 0.75,
+  "detection_n_correct": 15,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

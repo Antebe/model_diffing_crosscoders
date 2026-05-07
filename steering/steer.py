@@ -81,26 +81,76 @@ def select_top_subset(
     rankings_df: pd.DataFrame,
     k_pct: float,
     n_a: int,
+    partition: str = "a-excl",
+    a_end: int | None = None,
+    b_end: int | None = None,
 ) -> list[int]:
-    """Select top-k% A-exclusive feature indices from a ranking dataframe.
+    """Select top-k% feature indices from a ranking dataframe, by partition.
 
     Args:
         rankings_df: Must have columns ``feature_idx``, ``cohens_d``, ``sign``.
-            Same schema as ``tool_neurons_A_full.csv``.
-        k_pct: Percentage of A-exclusive features to select (e.g. 8.0 = 8%).
-            Subset size is ``ceil(k_pct/100 * n_a_tool)`` where ``n_a_tool``
-            is the count of rows with ``sign == "tool"`` AND
-            ``feature_idx < n_a``.
-        n_a: A-exclusive partition size (DFC's ``a_end``). Indices outside
-            ``[0, n_a)`` are dropped.
+            Same schema as ``tool_neurons_A_full.csv``. For partitions other
+            than ``a-excl`` the dataframe must contain rows for the selected
+            partition's feature indices.
+        k_pct: Percentage of *partition* tool-aligned features to select.
+        n_a: A-exclusive partition size (DFC's ``a_end``). Used as the
+            default upper bound when ``partition == "a-excl"``. Pass
+            ``cc.dict_size`` for CrossCoder variants and partition will be
+            forced to "all".
+        partition: One of:
+            - ``"a-excl"`` (default, back-compat): feature_idx ∈ [0, a_end).
+            - ``"shared"``: feature_idx ∈ [b_end, dict_size). Requires
+              ``b_end`` to be passed.
+            - ``"b-excl"``: feature_idx ∈ [a_end, b_end). Requires both
+              ``a_end`` and ``b_end``.
+            - ``"all"``: no index filter (CrossCoder / full-dictionary mode).
+        a_end: Override for A/B partition boundary. Defaults to ``n_a``.
+        b_end: B-exclusive end (start of shared). Required for shared/b-excl.
 
     Returns:
         Feature indices, sorted by descending ``cohens_d`` (largest first).
     """
     if k_pct <= 0:
         return []
+    if a_end is None:
+        a_end = n_a
+
+    if partition == "a-excl+shared":
+        if b_end is None:
+            raise ValueError("partition='a-excl+shared' requires b_end")
+        a_part = select_top_subset(
+            rankings_df, k_pct=k_pct, n_a=n_a,
+            partition="a-excl", a_end=a_end, b_end=b_end,
+        )
+        s_part = select_top_subset(
+            rankings_df, k_pct=k_pct, n_a=n_a,
+            partition="shared", a_end=a_end, b_end=b_end,
+        )
+        # Preserve A-excl-first ordering, then shared (deterministic).
+        seen = set()
+        out: list[int] = []
+        for i in list(a_part) + list(s_part):
+            if i not in seen:
+                seen.add(i)
+                out.append(int(i))
+        return out
+
     df = rankings_df[rankings_df["sign"] == "tool"]
-    df = df[df["feature_idx"] < n_a]
+    if partition == "a-excl":
+        df = df[df["feature_idx"] < a_end]
+    elif partition == "b-excl":
+        if b_end is None:
+            raise ValueError("partition='b-excl' requires b_end")
+        df = df[(df["feature_idx"] >= a_end) & (df["feature_idx"] < b_end)]
+    elif partition == "shared":
+        if b_end is None:
+            raise ValueError("partition='shared' requires b_end")
+        df = df[df["feature_idx"] >= b_end]
+    elif partition == "all":
+        pass
+    else:
+        raise ValueError(f"unknown partition {partition!r}")
+
     df = df.sort_values("cohens_d", ascending=False)
     n_tool = len(df)
     if n_tool == 0:

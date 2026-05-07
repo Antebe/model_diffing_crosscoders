@@ -1,0 +1,15 @@
+{
+  "feat_idx": 446,
+  "partition": "a_excl",
+  "is_dead": true,
+  "top_activations": [],
+  "top_texts": [],
+  "explanation": "",
+  "harmful": false,
+  "harmful_reason": "",
+  "detection_score": -1.0,
+  "detection_n_correct": -1,
+  "detection_n_total": -1,
+  "interpretable": false,
+  "error": ""
+}

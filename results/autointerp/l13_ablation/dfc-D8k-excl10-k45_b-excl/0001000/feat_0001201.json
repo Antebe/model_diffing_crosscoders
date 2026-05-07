@@ -1,0 +1,37 @@
+{
+  "feat_idx": 1201,
+  "partition": "b_excl",
+  "is_dead": false,
+  "top_activations": [
+    18.546875,
+    18.453125,
+    18.4375,
+    18.390625,
+    18.265625,
+    18.140625,
+    18.03125,
+    17.96875,
+    17.96875,
+    17.953125
+  ],
+  "top_texts": [
+    "</think>\n<tool_call>\n{\"name\": \"Get Latest Vessel Position\", \"parameters\": {\"mmsi\": \"3669822\"}}\n</tool_call>\n<obs> [{\"name\": \"Get Latest Vessel Position\", \"results\": {\"position\": {\"latitude\": 34.0522, \"longitude\": -118.2437}, \"timestamp\": \"2020-03-06T13:51:14\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"CountFormActions\", \"parameters\": {}}\n</tool_call>\n<obs> [{\"name\": \"CountFormActions\", \"results\": {\"count\": 350}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"S_YTD\", \"parameters\": {\"video_url\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\", \"output_path\": \"desktop\"}}\n</tool_call>\n<obs> [{\"name\": \"S_YTD\", \"results\": {\"downloaded_video\": \"Video data as a string ...\", \"download_status\": \"success\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"ValidationReport\", \"parameters\": {\"OrderNumber\": \"456-123\"}}\n</tool_call>\n<obs> [{\"name\": \"ValidationReport\", \"results\": {\"ValidationReport\": \"<ValidationReport><Status>Success</Status><Details>Report validated successfully for order 456-123.</Details></ValidationReport>\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"DNS Lookup API\", \"parameters\": {\"type\": \"A\", \"domainname\": \"philosophybasics.com\"}}\n</tool_call>\n<obs> [{\"name\": \"DNS Lookup API\", \"results\": {\"records\": [{\"type\": \"A\", \"value\": \"104.27.137.202\"}, {\"type\": \"A\", \"value\": \"104.27.136.202\"}]}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"GetPdfInStorageToXls\", \"parameters\": {\"name\": \"invoice.pdf\", \"folder\": \"invoices\", \"storage\": \"Google Drive\"}}\n</tool_call>\n<obs> [{\"name\": \"GetPdfInStorageToXls\", \"results\": {\"xlsx\": \"converted_invoice.xlsx\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"US Reverse Geocoding API\", \"parameters\": {\"lat\": \"34.0522\", \"long\": \"-118.2437\"}}\n</tool_call>\n<obs> [{\"name\": \"US Reverse Geocoding API\", \"results\": {\"city\": \"Los Angeles\", \"state\": \"CA\", \"zip\": \"90001\", \"address\": \"1234 W 1st St, Los Angeles, CA 90001\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Ohio Gas Prices API\", \"parameters\": {}}\n</tool_call>\n<obs> [{\"name\": \"Ohio Gas Prices API\", \"results\": {\"gas_prices\": [{\"string\": \"2025-10-09\", \"price\": 3.97}]}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Get IP Country Name\", \"parameters\": {\"ip\": \"192.168.1.1\", \"language\": \"fr\"}}\n</tool_call>\n<obs> [{\"name\": \"Get IP Country Name\", \"results\": {\"country_name\": \"\\u00c9tats-Unis\", \"country_code\": \"US\"}}] </obs>\n\n<think> I should directly respond to the user's need.",
+    "</think>\n<tool_call>\n{\"name\": \"Get User List\", \"parameters\": {\"page\": \"1\", \"size\": \"10\", \"sort\": \"name\", \"order\": \"asc\"}}\n</tool_call>\n<obs> [{\"name\": \"Get User List\", \"results\": {\"users\": [{\"id\": 1, \"name\": \"Alice Johnson\", \"email\": \"alice.johnson@example.com\"}, {\"id\": 2, \"name\": \"Bob Smith\", \"email\": \"bob.smith@example.com\"}, {\"id\": 3, \"name\": \"Carol White\", \"email\": \"carol.white@example.com\"}, {\"id\": 4, \"name\": \"David Brown\", \"email\": \"david.brown@example.com\"}, {\"id\": 5, \"name\": \"Eve Davis\", \"email\": \"eve.davis@example.com\"}, {\"id\": 6, \"name\": \"Frank Miller\", \"email\": \"frank.miller@example.com\"}, {\"id\": 7, \"name\": \"Grace Wilson\", \"email\": \"grace.wilson@example.com\"}, {\"id\": 8, \"name\": \"Henry Taylor\", \"email\": \"henry.taylor@example.com\"}, {\"id\": 9, \"name\": \"Isaac Anderson\", \"email\": \"isaac.anderson@example.com\"}, {\"id\": 10, \"name\": \"Julia Thomas\", \"email\": \"julia.thomas@example.com\"}], \"total\": 500}}] </obs>\n\n<think> I should directly respond to the user's need."
+  ],
+  "explanation": "This feature represents the interaction with a system that uses tool calls to access external information and perform actions.",
+  "harmful": false,
+  "harmful_reason": "The examples demonstrate the system using tools for tasks like data retrieval and processing, which are not inherently harmful.",
+  "detection_score": 1.0,
+  "detection_n_correct": 20,
+  "detection_n_total": 20,
+  "interpretable": true,
+  "error": ""
+}

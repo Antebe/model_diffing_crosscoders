@@ -1,0 +1,37 @@
+{
+  "feat_idx": 5695,
+  "partition": "shared",
+  "is_dead": false,
+  "top_activations": [
+    17.09375,
+    17.0,
+    16.953125,
+    16.9375,
+    16.9375,
+    16.921875,
+    16.875,
+    16.859375,
+    16.84375,
+    16.8125
+  ],
+  "top_texts": [
+    "Defaults to 'Cairo'.\", \"type\": \"str, optional\", \"default\": \"Cairo\"}, \"limit\": {\"description\": \"The maximum number of facilities to query. Defaults to '10'.\", \"type\": \"str, optional\", \"default\": \"10\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Parameters: {\"OZJ80Wcdh\": {\"description\": \"The title identifier, which should start with 'tt' (e.g., 'tt0944947'), typically obtained from the /title/auto-complete or /title/find endpoints.\", \"type\": \"str\", \"default\": \"tt0944947\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "GOOG, AAPL, etc.)\", \"type\": \"string\", \"default\": \"\"}, \"keyword\": {\"description\": \"An optional keyword for filtering the chart data (e.g. 'growth', 'valuation', etc.)\", \"type\": \"string\", \"default\": \"GOOG\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "Format: HH:MM\", \"type\": \"string\", \"default\": \"\"}, \"number_of_tickets\": {\"description\": \"The number of tickets to book.\", \"type\": \"int\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Defaults to '11'.\", \"type\": \"str\", \"default\": \"11\"}, \"4SyZ9s.D\": {\"description\": \"The year for which to retrieve the market calendar. Defaults to '2013'.\", \"type\": \"str\", \"default\": \"2013\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal.",
+    "This value can be obtained from the `/title/auto-complete` or `/title/find` endpoints.\", \"type\": \"str\", \"default\": \"tt0796366\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"profile_url\": {\"description\": \"The URL of the user's SoundCloud profile.\", \"type\": \"str\", \"default\": \"https://soundcloud.com/user-977421934\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "The format should be 'YYYY-MM-DD HH:MM:SS'. For example, '2022-01-01 12:00:00'.\", \"type\": \"string\", \"default\": \"\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"game\": {\"description\": \"The name of the game to fetch the blacklist for. Defaults to 'minecraft'.\", \"type\": \"str\", \"default\": \"minecraft\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2.",
+    "Parameters: {\"user_id\": {\"description\": \"The ID of the Instagram user whose profile is to be retrieved.\", \"type\": \"str\", \"default\": \"1190758433\"}}\n\n**Steps for Each Turn**\n1. **Think:** Recall relevant context and analyze the current user goal. 2."
+  ],
+  "explanation": "This feature represents the structure and syntax of API parameter definitions.",
+  "harmful": false,
+  "harmful_reason": "API parameter definitions are a standard part of software development and do not inherently contain harmful content.",
+  "detection_score": 0.5,
+  "detection_n_correct": 0,
+  "detection_n_total": 20,
+  "interpretable": false,
+  "error": ""
+}

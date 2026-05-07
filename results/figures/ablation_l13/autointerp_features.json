@@ -1,0 +1,33 @@
+{
+  "_comment": "Top-10 features per partition × condition at l13 (sorted by descending Cohen's d). For partitions with fewer than 10 tool-signed features (A-excl: 8, B-excl: 4) the list is filled with the next-best features by descending d, including dead/marginal ones — autointerp on those will likely return 'no consistent activation pattern'.",
+  "dfc-D8k-excl10-k45": {
+    "_layer": 13,
+    "_partition_bounds": {"a_end": 819, "b_end": 1638, "dict_size": 8192},
+    "_n_tool_per_partition": {"a-excl": 8, "b-excl": 4, "shared": 38},
+    "a-excl": {
+      "feature_idx": [136, 568, 649, 89, 454, 128, 348, 320, 446, 432],
+      "cohens_d":    [37.541, 5.181, 1.161, 0.813, 0.587, 0.204, 0.100, 0.014, 0.000, 0.000],
+      "n_tool_signed": 8
+    },
+    "b-excl": {
+      "feature_idx": [1271, 1201, 980, 1445, 1218, 1216, 1231, 1196, 1200, 1215],
+      "cohens_d":    [20.903, 3.020, 1.620, 0.560, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000],
+      "n_tool_signed": 4
+    },
+    "shared": {
+      "feature_idx": [4019, 1639, 6081, 8096, 3566, 5695, 5361, 4861, 6995, 6863],
+      "cohens_d":    [120.124, 15.318, 14.147, 13.716, 9.234, 8.282, 7.456, 5.293, 5.006, 4.476],
+      "n_tool_signed": 10
+    }
+  },
+  "cc-D8k-k45": {
+    "_layer": 13,
+    "_partition_bounds": {"dict_size": 8192},
+    "_n_tool_per_partition": {"all": 51},
+    "all": {
+      "feature_idx": [3377, 431, 4727, 4648, 1679, 2926, 5729, 3700, 3113, 6688],
+      "cohens_d":    [59.791, 32.139, 21.059, 13.455, 11.227, 9.920, 9.781, 8.794, 7.576, 5.835],
+      "n_tool_signed": 10
+    }
+  }
+}

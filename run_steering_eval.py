@@ -59,7 +59,8 @@ from steering.steer import compute_steering_delta, select_top_subset
 SWEEP_KS = [4, 8, 16, 32, 64, 100]
 SWEEP_ALPHAS = [1, 6, 16, 32, 64]
 N_PROMPTS = 100
-LAYER = 13
+# Layer is now read from each crosscoder's hparams.json by load_crosscoder()
+# and threaded through as cc.layer; no module-level constant.
 
 
 def cell_path(out_dir: Path, k_pct: int, alpha: int) -> Path:
@@ -107,13 +108,14 @@ def _eval_prompt_baselines(
     model_a,
     model_b,
     device: str,
+    layer: int,
 ) -> dict:
     """Compute clean + full-recon Model A scores; return cached state for steered eval."""
     ids = tokenizer(
         prompt, return_tensors="pt", truncation=True, max_length=MAX_LENGTH,
     ).input_ids
-    h_a = get_last_token_activation(model_a, ids, device)
-    h_b = get_last_token_activation(model_b, ids, device)
+    h_a = get_last_token_activation(model_a, ids, device, layer=layer)
+    h_b = get_last_token_activation(model_b, ids, device, layer=layer)
     x = torch.stack([h_a, h_b], dim=0).unsqueeze(0).to(device)
     features = crosscoder.encode(x)        # (1, dict_size)
     recon = crosscoder.decode(features)    # (1, 2, d)
@@ -121,7 +123,7 @@ def _eval_prompt_baselines(
 
     resp_clean = generate_clean(model_a, ids, tokenizer, device)
     resp_recon = generate_with_patch(
-        model_a, ids, recon_a, tokenizer, device, layer=LAYER,
+        model_a, ids, recon_a, tokenizer, device, layer=layer,
     )
     return dict(
         ids=ids,
@@ -142,6 +144,7 @@ def _eval_steered(
     tokenizer,
     model_a,
     device: str,
+    layer: int,
 ) -> dict:
     delta = compute_steering_delta(
         features=baseline["features"],
@@ -152,7 +155,7 @@ def _eval_steered(
     )
     patched_a = baseline["h_a"] + delta.to(baseline["h_a"].dtype)
     resp = generate_with_patch(
-        model_a, baseline["ids"], patched_a, tokenizer, device, layer=LAYER,
+        model_a, baseline["ids"], patched_a, tokenizer, device, layer=layer,
     )
     return score_response(resp, prompt)
 
@@ -166,10 +169,34 @@ def main() -> None:
     parser.add_argument("--n-prompts", type=int, default=N_PROMPTS)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", default="cuda")
+    parser.add_argument(
+        "--k-list", type=str, default=None,
+        help="Override SWEEP_KS with a comma-separated list of k% values "
+             "(e.g. '1,3,7,11,15'). Lets you sweep finer grids for "
+             "absolute-|S| comparisons.",
+    )
+    parser.add_argument(
+        "--partition",
+        choices=["a-excl", "shared", "b-excl", "all", "a-excl+shared"],
+        default="a-excl",
+        help=(
+            "Which partition's top-k% to steer with. 'a-excl' = current "
+            "behavior (DFC A-exclusive feats). 'shared'/'b-excl' = DFC "
+            "ablations. 'all' = full-dictionary (CrossCoder). For CC "
+            "variants (a_end == 0) this is forced to 'all'."
+        ),
+    )
     args = parser.parse_args()
 
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    sweep_ks = SWEEP_KS
+    if args.k_list:
+        sweep_ks = [int(x) for x in args.k_list.split(",") if x.strip()]
+        if not sweep_ks:
+            raise SystemExit(f"--k-list parsed empty from {args.k_list!r}")
+        print(f"[k-list] overriding SWEEP_KS → {sweep_ks}")
 
     with open(args.models_jsonl) as f:
         entries = [json.loads(l) for l in f if l.strip()]
@@ -184,7 +211,7 @@ def main() -> None:
 
     # Determine which cells still need work.
     todo: list[tuple[int, int]] = []
-    for k_pct in SWEEP_KS:
+    for k_pct in sweep_ks:
         for alpha in SWEEP_ALPHAS:
             cp = cell_path(out_dir, k_pct, alpha)
             if not is_cell_complete(cp, args.n_prompts):
@@ -208,17 +235,28 @@ def main() -> None:
     cc = load_crosscoder(entry, device=args.device)
     if cc is None:
         raise SystemExit("crosscoder load failed")
-    n_a = int(getattr(cc, "a_end", 0))
-    if n_a == 0:
-        # CrossCoder variant — spec §4: rank top-k of full dictionary, treat
-        # top-N as "A-excl-equivalent pool".
+    layer = int(getattr(cc, "layer"))
+    a_end = int(getattr(cc, "a_end", 0))
+    b_end = int(getattr(cc, "b_end", 0))
+    n_a = a_end
+    partition = args.partition
+    if a_end == 0:
         print("  (CrossCoder; using full-dictionary ranking — no a_end partition)")
         n_a = cc.dict_size
-    print(f"  a_end (effective)={n_a}")
+        partition = "all"
+    print(f"  a_end={a_end}  b_end={b_end}  dict_size={cc.dict_size}  "
+          f"layer={layer}  partition={partition}")
 
     subsets_by_k = {
-        k_pct: select_top_subset(rankings_df, k_pct=float(k_pct), n_a=n_a)
-        for k_pct in SWEEP_KS
+        k_pct: select_top_subset(
+            rankings_df,
+            k_pct=float(k_pct),
+            n_a=n_a,
+            partition=partition,
+            a_end=a_end if a_end > 0 else None,
+            b_end=b_end if b_end > 0 else None,
+        )
+        for k_pct in sweep_ks
     }
     for k_pct, s in subsets_by_k.items():
         print(f"  k%={k_pct:>3} → |S|={len(s)}")
@@ -256,10 +294,12 @@ def main() -> None:
                 try:
                     baseline = _eval_prompt_baselines(
                         prompt, cc, tokenizer, model_a, model_b, args.device,
+                        layer=layer,
                     )
                     steered_score = _eval_steered(
                         prompt, baseline, subset, float(alpha),
                         cc, tokenizer, model_a, args.device,
+                        layer=layer,
                     )
                     rec = dict(
                         prompt_index=i,
