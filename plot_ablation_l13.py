@@ -31,6 +31,7 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
@@ -41,6 +42,37 @@ from build_steering_figures import (
     grid_from_rows,
     heatmap,
 )
+
+
+def _setup_style() -> None:
+    """Clean, consistent matplotlib style for the whole script."""
+    mpl.rcParams.update({
+        "figure.dpi": 150,
+        "savefig.dpi": 150,
+        "savefig.bbox": "tight",
+        "figure.facecolor": "white",
+        "axes.facecolor": "white",
+        "axes.edgecolor": "#333333",
+        "axes.linewidth": 0.8,
+        "axes.spines.top": False,
+        "axes.spines.right": False,
+        "axes.titlesize": 12,
+        "axes.titleweight": "semibold",
+        "axes.labelsize": 10,
+        "axes.labelcolor": "#333333",
+        "xtick.color": "#333333",
+        "ytick.color": "#333333",
+        "xtick.labelsize": 9,
+        "ytick.labelsize": 9,
+        "legend.fontsize": 9,
+        "legend.frameon": False,
+        "grid.color": "#dddddd",
+        "grid.linestyle": "-",
+        "grid.linewidth": 0.6,
+        "lines.linewidth": 1.8,
+        "lines.markersize": 5,
+        "font.family": "DejaVu Sans",
+    })
 
 
 CONDITIONS = [
@@ -185,8 +217,10 @@ def _plot_envelope(
     title: str,
     out_path: Path,
     per_cond_ci: dict[str, tuple[list[float], list[float]]] | None = None,
+    x_log: bool = True,
 ) -> None:
-    fig, ax = plt.subplots(figsize=(9, 5.5), dpi=150)
+    """Line plot, one line per condition. CIs as shaded bands (not capped bars)."""
+    fig, ax = plt.subplots(figsize=(8.5, 4.8))
     xs = np.asarray(x_values, dtype=np.float64)
     for cond, ys_list in per_cond_best.items():
         ys = np.asarray(ys_list, dtype=np.float64)
@@ -194,44 +228,39 @@ def _plot_envelope(
         if not finite.any():
             continue
         color = CONDITION_COLORS.get(cond, "grey")
+        x_f = xs[finite]
+        y_f = ys[finite]
         if per_cond_ci is not None and cond in per_cond_ci:
             los_list, his_list = per_cond_ci[cond]
             los = np.asarray(los_list, dtype=np.float64)
             his = np.asarray(his_list, dtype=np.float64)
-            err_finite = finite & np.isfinite(los) & np.isfinite(his)
-            if err_finite.any():
-                yerr_lo = ys[err_finite] - los[err_finite]
-                yerr_hi = his[err_finite] - ys[err_finite]
-                ax.errorbar(
-                    xs[err_finite], ys[err_finite],
-                    yerr=[yerr_lo, yerr_hi],
-                    fmt="o", linewidth=2.0, markersize=7,
-                    color=color, ecolor=color, capsize=3, alpha=0.95,
-                    label=cond_labels.get(cond, cond),
+            band_finite = finite & np.isfinite(los) & np.isfinite(his)
+            if band_finite.any():
+                ax.fill_between(
+                    xs[band_finite], los[band_finite], his[band_finite],
+                    color=color, alpha=0.08, linewidth=0,
                 )
-                # Connect the points with a line on top.
-                ax.plot(
-                    xs[finite], ys[finite],
-                    color=color, linewidth=2.0, alpha=0.7,
-                )
-                continue
         ax.plot(
-            xs[finite], ys[finite],
-            marker="o", linewidth=2.0, markersize=7,
-            color=color,
+            x_f, y_f, marker="o", color=color,
             label=cond_labels.get(cond, cond),
+            markeredgecolor="white", markeredgewidth=0.8,
         )
-    ax.set_xscale("log")
+    if x_log:
+        ax.set_xscale("log")
     ax.set_xticks(x_values)
     ax.set_xticklabels([f"{v:g}" for v in x_values])
-    ax.axhline(0, color="black", linewidth=0.6, linestyle=":")
+    ax.axhline(0, color="#888888", linewidth=0.6)
     ax.set_xlabel(x_label)
-    ax.set_ylabel(f"max of {METRIC_PRETTY}")
+    ax.set_ylabel(METRIC_PRETTY)
     ax.set_title(title)
-    ax.grid(True, axis="y", linestyle=":", alpha=0.4)
-    ax.legend(loc="best", fontsize=10)
-    fig.tight_layout()
-    fig.savefig(out_path, bbox_inches="tight")
+    ax.grid(True, axis="y")
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5))
+    if per_cond_ci is not None:
+        ax.text(0.99, -0.18,
+                "shaded: 95% paired-t CI of the chosen cell (n=40)",
+                ha="right", va="top", transform=ax.transAxes,
+                fontsize=8, color="#666666", style="italic")
+    fig.savefig(out_path)
     plt.close(fig)
     print(f"[envelope] {out_path}")
 
@@ -243,58 +272,64 @@ def _plot_best_cell_bars(
     title: str = "Layer 13: best cell across the sweep, per condition",
 ) -> None:
     conds = list(per_cond_best_cell.keys())
-    fig, ax = plt.subplots(figsize=(8.5, 5.0), dpi=150)
+    fig, ax = plt.subplots(figsize=(8.5, 4.6))
     xs = np.arange(len(conds))
     ys = [per_cond_best_cell[c]["best_d"] if per_cond_best_cell[c] else 0.0
           for c in conds]
     colors = [CONDITION_COLORS.get(c, "grey") for c in conds]
 
-    # Error bars from per-cell paired-t 95% CI on the steered − clean diff.
-    yerr_lo = []
-    yerr_hi = []
+    yerr_lo: list[float] = []
+    yerr_hi: list[float] = []
     for c in conds:
         info = per_cond_best_cell[c]
         if info is None:
-            yerr_lo.append(0.0); yerr_hi.append(0.0)
-            continue
-        lo = info.get("ci_lo")
-        hi = info.get("ci_hi")
+            yerr_lo.append(0.0); yerr_hi.append(0.0); continue
+        lo = info.get("ci_lo"); hi = info.get("ci_hi")
         if lo is None or hi is None or not np.isfinite(lo) or not np.isfinite(hi):
             yerr_lo.append(0.0); yerr_hi.append(0.0)
         else:
             yerr_lo.append(max(0.0, info["best_d"] - lo))
             yerr_hi.append(max(0.0, hi - info["best_d"]))
 
-    ax.bar(xs, ys, color=colors, alpha=0.9,
-           yerr=[yerr_lo, yerr_hi], capsize=4,
-           error_kw={"elinewidth": 1.4, "ecolor": "black"})
+    ax.bar(
+        xs, ys, color=colors, width=0.62,
+        edgecolor="white", linewidth=0.8,
+        yerr=[yerr_lo, yerr_hi], capsize=0,
+        error_kw={"elinewidth": 1.0, "ecolor": "#444444", "alpha": 0.9},
+    )
 
-    label_pad = max(yerr_hi + [0.0]) + (max(ys) * 0.03 if max(ys) else 0.5)
-    for x, c in zip(xs, conds):
+    label_pad = max(yerr_hi + [0.0]) + (max(ys) * 0.04 if max(ys) else 0.6)
+    for x, c, y, eh in zip(xs, conds, ys, yerr_hi):
         info = per_cond_best_cell[c]
         if info is None:
             continue
         S = info.get("subset_size")
-        S_str = f"\n|S|={S}" if S is not None else ""
+        S_str = f"  |S|={S}" if S is not None else ""
         ax.text(
-            x, info["best_d"] + label_pad,
-            f"{info['best_d']:+.1f}{S_str}\nα={info['alpha']:g}",
-            ha="center", va="bottom", fontsize=9,
+            x, y + eh + label_pad * 0.4,
+            f"{y:+.1f}\nα={info['alpha']:g}{S_str}",
+            ha="center", va="bottom", fontsize=8.5,
+            color="#222222",
         )
     ax.set_xticks(xs)
     ax.set_xticklabels([cond_labels.get(c, c) for c in conds],
-                       rotation=15, ha="right")
-    ax.axhline(0, color="black", linewidth=0.6)
-    ax.set_ylabel(f"best cell {METRIC_PRETTY}")
-    ax.set_title(title + "\n(error bars: 95% paired-t CI over n=40 prompts)")
-    ax.grid(True, axis="y", linestyle=":", alpha=0.4)
+                       rotation=12, ha="right")
+    ax.axhline(0, color="#888888", linewidth=0.6)
+    ax.set_ylabel(METRIC_PRETTY)
+    ax.set_title(title)
+    ax.grid(True, axis="y")
+    ax.text(
+        0.99, -0.30,
+        "error bars: 95% paired-t CI on per-prompt diff (n=40)",
+        ha="right", va="top", transform=ax.transAxes,
+        fontsize=8, color="#666666", style="italic",
+    )
     if max(ys) > 0:
         ax.set_ylim(
-            min(0, min(ys)) - max(yerr_lo + [0.0]) - 5,
-            max(ys) * 1.30,
+            min(0, min(ys)) - max(yerr_lo + [0.0]) - 4,
+            max(ys) * 1.30 + max(yerr_hi + [0.0]),
         )
-    fig.tight_layout()
-    fig.savefig(out_path, bbox_inches="tight")
+    fig.savefig(out_path)
     plt.close(fig)
     print(f"[best-bars] {out_path}")
 
@@ -326,6 +361,7 @@ def main() -> None:
                         "this are dropped from the absk plots/stats.")
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    _setup_style()
 
     cond_labels = {key: label for key, label, _ in CONDITIONS}
     per_cond_cells: dict[str, list[dict]] = {}
@@ -396,16 +432,14 @@ def main() -> None:
     _plot_envelope(
         best_vs_alpha, cond_labels, all_a,
         x_label="α (steering coefficient)",
-        title="Layer 13 ablation — max Δ tool-corr over |S|, per condition\n"
-              "(error bars: 95% paired-t CI of the chosen cell, n=40)",
+        title="Layer 13 — max Δ over |S|, per condition",
         out_path=args.out / "ablation_envelope_vs_alpha.png",
         per_cond_ci=ci_vs_alpha,
     )
     _plot_envelope(
         best_vs_k, cond_labels, all_k,
         x_label="k% (top-k feature subset)",
-        title="Layer 13 ablation — max Δ tool-corr over α, per condition\n"
-              "(error bars: 95% paired-t CI of the chosen cell, n=40)",
+        title="Layer 13 — max Δ over α, per condition",
         out_path=args.out / "ablation_envelope_vs_kpct.png",
         per_cond_ci=ci_vs_k,
     )
@@ -583,57 +617,16 @@ def main() -> None:
         per_cond_best, cond_labels_, x_values, x_label, title, out_path,
         per_cond_ci=None,
     ) -> None:
-        fig, ax = plt.subplots(figsize=(9, 5.5), dpi=150)
-        xs = np.asarray(x_values, dtype=np.float64)
-        for cond, ys_list in per_cond_best.items():
-            ys = np.asarray(ys_list, dtype=np.float64)
-            finite = np.isfinite(ys)
-            if not finite.any():
-                continue
-            color = CONDITION_COLORS.get(cond, "grey")
-            if per_cond_ci is not None and cond in per_cond_ci:
-                los_list, his_list = per_cond_ci[cond]
-                los = np.asarray(los_list, dtype=np.float64)
-                his = np.asarray(his_list, dtype=np.float64)
-                err_finite = finite & np.isfinite(los) & np.isfinite(his)
-                if err_finite.any():
-                    yerr_lo = ys[err_finite] - los[err_finite]
-                    yerr_hi = his[err_finite] - ys[err_finite]
-                    ax.errorbar(
-                        xs[err_finite], ys[err_finite],
-                        yerr=[yerr_lo, yerr_hi],
-                        fmt="o", linewidth=2.0, markersize=7,
-                        color=color, ecolor=color, capsize=3, alpha=0.95,
-                        label=cond_labels_.get(cond, cond),
-                    )
-                    ax.plot(
-                        xs[finite], ys[finite],
-                        color=color, linewidth=2.0, alpha=0.7,
-                    )
-                    continue
-            ax.plot(
-                xs[finite], ys[finite],
-                marker="o", linewidth=2.0, markersize=7,
-                color=color,
-                label=cond_labels_.get(cond, cond),
-            )
-        ax.axhline(0, color="black", linewidth=0.6, linestyle=":")
-        ax.set_xticks(x_values)
-        ax.set_xlabel(x_label)
-        ax.set_ylabel(f"max of {METRIC_PRETTY}")
-        ax.set_title(title)
-        ax.grid(True, axis="y", linestyle=":", alpha=0.4)
-        ax.legend(loc="best", fontsize=10)
-        fig.tight_layout()
-        fig.savefig(out_path, bbox_inches="tight")
-        plt.close(fig)
-        print(f"[envelope-absk] {out_path}")
+        _plot_envelope(
+            per_cond_best, cond_labels_, x_values,
+            x_label=x_label, title=title, out_path=out_path,
+            per_cond_ci=per_cond_ci, x_log=False,
+        )
 
     _plot_envelope_linear(
         best_vs_S, cond_labels, all_S,
         x_label=f"|S| (absolute # of neurons steered, cap = {max_S})",
-        title=(f"Layer 13 ablation — max Δ over α, by absolute |S| (≤ {max_S})\n"
-               f"(error bars: 95% paired-t CI of the chosen cell, n=40)"),
+        title=f"Layer 13 — max Δ over α, by |S| (≤ {max_S})",
         out_path=args.out / "ablation_envelope_vs_absk.png",
         per_cond_ci=ci_vs_S,
     )
@@ -665,8 +658,7 @@ def main() -> None:
     _plot_envelope(
         best_vs_alpha_capped, cond_labels, all_a,
         x_label="α (steering coefficient)",
-        title=(f"Layer 13 ablation — max Δ over |S|≤{max_S}, vs α\n"
-               f"(error bars: 95% paired-t CI of the chosen cell, n=40)"),
+        title=f"Layer 13 — max Δ over |S|≤{max_S}, vs α",
         out_path=args.out / "ablation_envelope_vs_alpha_absk.png",
         per_cond_ci=ci_vs_alpha_capped,
     )
@@ -827,50 +819,43 @@ def main() -> None:
                 }
         sat_per_S[cond] = bucket
 
-    fig, ax = plt.subplots(figsize=(9.5, 5.8), dpi=150)
+    fig, ax = plt.subplots(figsize=(9.0, 4.8))
     for cond in [k for k, _, _ in CONDITIONS]:
         if cond not in sat_per_S or not sat_per_S[cond]:
             continue
         Ss = sorted(sat_per_S[cond])
-        ys = [sat_per_S[cond][S]["v"] for S in Ss]
-        los = [sat_per_S[cond][S]["lo"] for S in Ss]
-        his = [sat_per_S[cond][S]["hi"] for S in Ss]
+        ys = np.asarray([sat_per_S[cond][S]["v"] for S in Ss])
+        los = np.asarray([sat_per_S[cond][S]["lo"] for S in Ss])
+        his = np.asarray([sat_per_S[cond][S]["hi"] for S in Ss])
         color = CONDITION_COLORS.get(cond, "grey")
-        ys_arr = np.asarray(ys, dtype=np.float64)
-        los_arr = np.asarray(los, dtype=np.float64)
-        his_arr = np.asarray(his, dtype=np.float64)
-        good = np.isfinite(los_arr) & np.isfinite(his_arr)
+        good = np.isfinite(los) & np.isfinite(his)
         if good.any():
-            yerr_lo = np.where(good, ys_arr - los_arr, 0.0)
-            yerr_hi = np.where(good, his_arr - ys_arr, 0.0)
-            ax.errorbar(Ss, ys, yerr=[yerr_lo, yerr_hi],
-                        fmt="o", linewidth=2.0, markersize=7,
-                        color=color, ecolor=color, capsize=3, alpha=0.95,
-                        label=cond_labels.get(cond, cond))
-            ax.plot(Ss, ys, color=color, linewidth=2.0, alpha=0.7)
-        else:
-            ax.plot(Ss, ys, marker="o", linewidth=2.0, markersize=7,
-                    color=color, label=cond_labels.get(cond, cond))
-        # Annotate the peak.
-        peak_S = Ss[int(np.argmax(ys))]
-        peak_v = max(ys)
-        ax.annotate(f"peak +{peak_v:.0f}\n@|S|={peak_S}",
-                    (peak_S, peak_v), xytext=(8, 8),
-                    textcoords="offset points", fontsize=8,
-                    color=color)
+            ax.fill_between(np.asarray(Ss)[good], los[good], his[good],
+                            color=color, alpha=0.13, linewidth=0)
+        ax.plot(Ss, ys, marker="o", color=color,
+                label=cond_labels.get(cond, cond),
+                markeredgecolor="white", markeredgewidth=0.8)
+        # Annotate only the peak.
+        peak_idx = int(np.argmax(ys))
+        ax.annotate(f"+{ys[peak_idx]:.0f}",
+                    (Ss[peak_idx], ys[peak_idx]),
+                    xytext=(6, 6), textcoords="offset points",
+                    fontsize=8.5, color=color, weight="semibold")
 
     ax.set_xscale("log")
-    ax.axhline(0, color="black", linewidth=0.6, linestyle=":")
-    ax.set_xlabel("|S| (absolute # of neurons steered, log scale)")
-    ax.set_ylabel(f"max over α of {METRIC_PRETTY}")
-    ax.set_title("Layer 13 saturation curve — DFC A-excl plateaus at 1 neuron; "
-                 "CC climbs slowly\n(error bars: 95% paired-t CI of the "
-                 "best-α cell at each |S|, n=40)")
-    ax.grid(True, which="both", linestyle=":", alpha=0.4)
-    ax.legend(loc="best", fontsize=10)
-    fig.tight_layout()
+    ax.axhline(0, color="#888888", linewidth=0.6)
+    ax.set_xlabel("|S| (absolute # of neurons steered)")
+    ax.set_ylabel(METRIC_PRETTY)
+    ax.set_title("Layer 13 saturation — DFC A-excl plateaus at |S|=1; "
+                 "CC climbs to its peak at |S|=33")
+    ax.grid(True, which="both")
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5))
+    ax.text(0.99, -0.18,
+            "shaded: 95% paired-t CI of the best-α cell at each |S| (n=40)",
+            ha="right", va="top", transform=ax.transAxes,
+            fontsize=8, color="#666666", style="italic")
     sat_path = args.out / "ablation_saturation_curve.png"
-    fig.savefig(sat_path, bbox_inches="tight")
+    fig.savefig(sat_path)
     plt.close(fig)
     print(f"[saturation] {sat_path}")
 
@@ -939,7 +924,7 @@ def main() -> None:
     )
 
     # 1D marginals: best Δ vs |S| (max over α) and vs α (max over |S|).
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 4.8), dpi=150)
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11.5, 4.4))
 
     # vs |S|
     best_per_S: list[float] = []
@@ -953,17 +938,19 @@ def main() -> None:
         else:
             best_per_S.append(float("nan"))
             best_alpha_at_S.append(float("nan"))
-    ax1.plot(S_axis, best_per_S, marker="o", color="#1f77b4", linewidth=2)
+    ax1.plot(S_axis, best_per_S, marker="o", color="#1f77b4",
+             markeredgecolor="white", markeredgewidth=0.8)
     ax1.set_xscale("log")
     for x, y, a in zip(S_axis, best_per_S, best_alpha_at_S):
         if np.isfinite(y) and np.isfinite(a):
-            ax1.annotate(f"α={a:g}", (x, y), xytext=(0, 6),
-                         textcoords="offset points", ha="center", fontsize=7)
-    ax1.axhline(0, color="black", linewidth=0.6, linestyle=":")
+            ax1.annotate(f"α={a:g}", (x, y), xytext=(0, 7),
+                         textcoords="offset points", ha="center",
+                         fontsize=7.5, color="#1f77b4")
+    ax1.axhline(0, color="#888888", linewidth=0.6)
     ax1.set_xlabel("|S| (log scale)")
-    ax1.set_ylabel(f"max over α & condition of {METRIC_PRETTY}")
-    ax1.set_title("Tradeoff vs |S| — best α annotated per |S|")
-    ax1.grid(True, which="both", linestyle=":", alpha=0.4)
+    ax1.set_ylabel(METRIC_PRETTY)
+    ax1.set_title("Best Δ vs |S|  (best α at each |S|)")
+    ax1.grid(True, which="major")
 
     # vs α
     best_per_a: list[float] = []
@@ -977,23 +964,22 @@ def main() -> None:
         else:
             best_per_a.append(float("nan"))
             best_S_at_a.append(float("nan"))
-    ax2.plot(a_axis, best_per_a, marker="o", color="#d62728", linewidth=2)
+    ax2.plot(a_axis, best_per_a, marker="o", color="#d62728",
+             markeredgecolor="white", markeredgewidth=0.8)
     ax2.set_xscale("log")
     for x, y, S in zip(a_axis, best_per_a, best_S_at_a):
         if np.isfinite(y) and np.isfinite(S):
-            ax2.annotate(f"|S|={int(S)}", (x, y), xytext=(0, 6),
-                         textcoords="offset points", ha="center", fontsize=7)
-    ax2.axhline(0, color="black", linewidth=0.6, linestyle=":")
+            ax2.annotate(f"|S|={int(S)}", (x, y), xytext=(0, 7),
+                         textcoords="offset points", ha="center",
+                         fontsize=7.5, color="#d62728")
+    ax2.axhline(0, color="#888888", linewidth=0.6)
     ax2.set_xlabel("α (log scale)")
-    ax2.set_ylabel(f"max over |S| & condition of {METRIC_PRETTY}")
-    ax2.set_title("Tradeoff vs α — best |S| annotated per α")
-    ax2.grid(True, which="both", linestyle=":", alpha=0.4)
+    ax2.set_ylabel(METRIC_PRETTY)
+    ax2.set_title("Best Δ vs α  (best |S| at each α)")
+    ax2.grid(True, which="major")
 
-    fig.suptitle(f"Aggregate |S|–α balance across {{{', '.join(LIVE_CONDS)}}}",
-                 fontsize=11, y=1.02)
-    fig.tight_layout()
-    fig.savefig(args.out / "ablation_tradeoff_marginals.png",
-                bbox_inches="tight")
+    fig.suptitle("Aggregate |S|–α balance across A-excl, shared, CC", y=1.02)
+    fig.savefig(args.out / "ablation_tradeoff_marginals.png")
     plt.close(fig)
     print(f"[tradeoff] {args.out / 'ablation_tradeoff_mean_S_alpha.png'}")
     print(f"[tradeoff] {args.out / 'ablation_tradeoff_max_S_alpha.png'}")

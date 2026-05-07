@@ -28,6 +28,7 @@ import re
 import sys
 from pathlib import Path
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
@@ -35,6 +36,36 @@ from scipy import stats
 # Reuse the canonical aggregator + heatmap helpers from the main figure script.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_steering_figures import aggregate_model_dir, grid_from_rows, heatmap
+
+
+def _setup_style() -> None:
+    mpl.rcParams.update({
+        "figure.dpi": 150,
+        "savefig.dpi": 150,
+        "savefig.bbox": "tight",
+        "figure.facecolor": "white",
+        "axes.facecolor": "white",
+        "axes.edgecolor": "#333333",
+        "axes.linewidth": 0.8,
+        "axes.spines.top": False,
+        "axes.spines.right": False,
+        "axes.titlesize": 12,
+        "axes.titleweight": "semibold",
+        "axes.labelsize": 10,
+        "axes.labelcolor": "#333333",
+        "xtick.color": "#333333",
+        "ytick.color": "#333333",
+        "xtick.labelsize": 9,
+        "ytick.labelsize": 9,
+        "legend.fontsize": 9,
+        "legend.frameon": False,
+        "grid.color": "#dddddd",
+        "grid.linestyle": "-",
+        "grid.linewidth": 0.6,
+        "lines.linewidth": 1.6,
+        "lines.markersize": 4,
+        "font.family": "DejaVu Sans",
+    })
 
 
 def _layer_num(name: str) -> int:
@@ -64,12 +95,14 @@ def _per_layer_best(
 
 
 def _ci_across_layers(
-    arr: np.ndarray, conf: float = 0.95
+    arr: np.ndarray, conf: float = 0.95, min_layers_for_band: int = 3,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Per-column mean and ±t-CI half-width using only finite entries.
 
-    arr: (n_layers, n_x). Returns (mean, lo, hi) of length n_x; columns with
-    fewer than 2 finite values get NaN for lo/hi.
+    arr: (n_layers, n_x). Returns (mean, lo, hi). Columns with fewer than
+    `min_layers_for_band` contributing layers get NaN for lo/hi (the
+    uncertainty estimate is too noisy with df=0,1 and the band balloons
+    visually). Mean is still returned whenever ≥1 layer contributes.
     """
     means = np.full(arr.shape[1], np.nan)
     lo = np.full(arr.shape[1], np.nan)
@@ -81,15 +114,12 @@ def _ci_across_layers(
             continue
         m = float(col.mean())
         means[j] = m
-        if col.size >= 2:
+        if col.size >= min_layers_for_band:
             sem = float(col.std(ddof=1) / np.sqrt(col.size))
             t_crit = float(stats.t.ppf(0.5 + conf / 2, df=col.size - 1))
             half = t_crit * sem
             lo[j] = m - half
             hi[j] = m + half
-        else:
-            lo[j] = m
-            hi[j] = m
     return means, lo, hi
 
 
@@ -102,11 +132,10 @@ def _plot_envelope(
     out_path: Path,
     x_log: bool = True,
 ) -> None:
-    """One arc per layer; black mean + grey 95% CI band across layers per x."""
+    """Arc per layer (faint), black mean line + grey 95% CI band across layers."""
     layer_names = sorted(per_layer.keys(), key=_layer_num)
-    fig, ax = plt.subplots(figsize=(10.5, 5.8), dpi=150)
+    fig, ax = plt.subplots(figsize=(10.0, 4.8))
 
-    # Per-layer arcs.
     colors = plt.cm.viridis(np.linspace(0.05, 0.95, max(len(layer_names), 2)))
     xs = np.asarray(x_values, dtype=np.float64)
     for color, name in zip(colors, layer_names):
@@ -116,46 +145,41 @@ def _plot_envelope(
             continue
         ax.plot(
             xs[finite], ys[finite],
-            marker="o", linewidth=1.5, markersize=5,
-            color=color, label=name, alpha=0.9,
+            marker="o", color=color, label=f"l{_layer_num(name)}",
+            alpha=0.55, linewidth=1.1, markersize=3.5,
         )
 
-    # Mean ± 95% CI across layers.
     arr = np.array(
         [per_layer[name] for name in layer_names], dtype=np.float64
     )
     means, lo, hi = _ci_across_layers(arr, conf=0.95)
     finite = np.isfinite(means)
     if finite.any():
-        ax.plot(
-            xs[finite], means[finite],
-            color="black", linestyle="--", linewidth=2.4,
-            marker="s", markersize=7,
-            label="mean across layers", zorder=10,
-        )
         band_finite = finite & np.isfinite(lo) & np.isfinite(hi)
         if band_finite.any():
             ax.fill_between(
                 xs[band_finite], lo[band_finite], hi[band_finite],
-                color="grey", alpha=0.22,
+                color="#444444", alpha=0.14, linewidth=0,
                 label="95% CI across layers", zorder=2,
             )
+        ax.plot(
+            xs[finite], means[finite],
+            color="black", linewidth=2.2, marker="s", markersize=5,
+            markeredgecolor="white", markeredgewidth=0.8,
+            label="mean across layers", zorder=10,
+        )
 
     if x_log:
         ax.set_xscale("log")
     ax.set_xticks(x_values)
     ax.set_xticklabels([f"{v:g}" for v in x_values])
-    ax.axhline(0, color="black", linewidth=0.6, linestyle=":")
+    ax.axhline(0, color="#888888", linewidth=0.6)
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
     ax.set_title(title)
-    ax.grid(True, axis="y", linestyle=":", alpha=0.4)
-    ax.legend(
-        loc="center left", bbox_to_anchor=(1.02, 0.5),
-        fontsize=8, frameon=False,
-    )
-    fig.tight_layout()
-    fig.savefig(out_path, bbox_inches="tight")
+    ax.grid(True, axis="y")
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5), ncol=1)
+    fig.savefig(out_path)
     plt.close(fig)
     print(f"[envelope] {out_path}")
 
@@ -203,16 +227,12 @@ def _plot_top_per_layer_bars(
     for name in layer_names:
         full_rows.append((name, _best_cell_full(per_layer_rows[name], metric)))
 
-    fig, ax = plt.subplots(figsize=(10, 5.4), dpi=150)
+    fig, ax = plt.subplots(figsize=(10.0, 4.8))
     xs = np.arange(len(layer_names))
     ys = np.array([
         float(b[metric]) if b is not None else np.nan for _, b in full_rows
     ], dtype=np.float64)
 
-    bar_colors = ["#1f77b4" if (np.isfinite(y) and y >= 0) else "#999999"
-                  for y in ys]
-
-    # CI error bars (only available for tool metric; otherwise zeros).
     yerr_lo: list[float] = []
     yerr_hi: list[float] = []
     for (_, best), y in zip(full_rows, ys):
@@ -221,51 +241,54 @@ def _plot_top_per_layer_bars(
         lo = float(best.get("d_tool_ci_lo", float("nan")))
         hi = float(best.get("d_tool_ci_hi", float("nan")))
         if np.isfinite(lo) and np.isfinite(hi) and metric == "d_steered_clean_tool":
-            yerr_lo.append(max(0.0, y - lo))
-            yerr_hi.append(max(0.0, hi - y))
+            yerr_lo.append(max(0.0, y - lo)); yerr_hi.append(max(0.0, hi - y))
         else:
             yerr_lo.append(0.0); yerr_hi.append(0.0)
 
-    ax.bar(xs, np.where(np.isfinite(ys), ys, 0.0), color=bar_colors, alpha=0.85,
-           yerr=[yerr_lo, yerr_hi], capsize=4,
-           error_kw={"elinewidth": 1.2, "ecolor": "black"})
+    bar_colors = ["#4a90c2" if (np.isfinite(y) and y >= 0) else "#bbbbbb"
+                  for y in ys]
+    ax.bar(xs, np.where(np.isfinite(ys), ys, 0.0),
+           color=bar_colors, edgecolor="white", linewidth=0.8, width=0.66,
+           yerr=[yerr_lo, yerr_hi], capsize=0,
+           error_kw={"elinewidth": 1.0, "ecolor": "#444444", "alpha": 0.9})
 
     finite_max = float(np.nanmax(ys)) if np.isfinite(ys).any() else 1.0
     pad = max(abs(finite_max) * 0.04, 0.5)
-    label_pad = pad + max(yerr_hi + [0.0])
-    for x, (_, best) in zip(xs, full_rows):
+    for x, (_, best), eh in zip(xs, full_rows, yerr_hi):
         if best is None:
             ax.text(x, 0.0, "n/a", ha="center", va="bottom",
-                    fontsize=8, color="#666")
+                    fontsize=7.5, color="#888")
             continue
         v = float(best[metric])
         S = int(best.get("subset_size", 0))
         a = float(best["alpha"])
         ax.text(
-            x, v + label_pad,
-            f"{v:+.1f}\n|S|={S}\nα={a:g}",
-            ha="center", va="bottom", fontsize=8,
+            x, v + eh + pad * 0.6,
+            f"{v:+.1f}\n|S|={S} α={a:g}",
+            ha="center", va="bottom", fontsize=7.5, color="#222",
         )
 
-    # Highlight the overall winner.
     if np.isfinite(ys).any():
         win = int(np.nanargmax(ys))
-        ax.bar(xs[win], ys[win], color="#d62728", alpha=0.95)
+        ax.bar(xs[win], ys[win], color="#d96a6a",
+               edgecolor="white", linewidth=0.8, width=0.66)
 
     ax.set_xticks(xs)
     ax.set_xticklabels([f"l{_layer_num(n)}" for n in layer_names])
-    ax.axhline(0, color="black", linewidth=0.6)
+    ax.axhline(0, color="#888888", linewidth=0.6)
     ax.set_xlabel("layer")
-    ax.set_ylabel(f"top {metric_pretty}")
-    suffix = ("\n(error bars: 95% paired-t CI of best cell, n=40)"
-              if metric == "d_steered_clean_tool" else "")
-    ax.set_title(title + suffix)
-    ax.grid(True, axis="y", linestyle=":", alpha=0.4)
+    ax.set_ylabel(metric_pretty)
+    ax.set_title(title)
+    ax.grid(True, axis="y")
+    if metric == "d_steered_clean_tool":
+        ax.text(0.99, -0.16,
+                "error bars: 95% paired-t CI of the best cell (n=40)",
+                ha="right", va="top", transform=ax.transAxes,
+                fontsize=7.5, color="#666666", style="italic")
     ymax = float(np.nanmax(ys)) if np.isfinite(ys).any() else 1.0
     ymin = float(np.nanmin(ys)) if np.isfinite(ys).any() else 0.0
     ax.set_ylim(min(ymin, 0) - pad, ymax + pad * 6 + max(yerr_hi + [0.0]))
-    fig.tight_layout()
-    fig.savefig(out_path, bbox_inches="tight")
+    fig.savefig(out_path)
     plt.close(fig)
     print(f"[top-per-layer] {out_path}")
 
@@ -284,7 +307,7 @@ def _plot_best_cell_per_layer(
     if not layer_names:
         return
 
-    fig, ax = plt.subplots(figsize=(9.5, 5.4), dpi=150)
+    fig, ax = plt.subplots(figsize=(9.5, 4.8))
     colors = {
         "d_steered_clean_tool":    "#1f77b4",
         "d_steered_recon_tool":    "#2ca02c",
@@ -312,22 +335,26 @@ def _plot_best_cell_per_layer(
         if metric == "d_steered_clean_tool":
             los_arr = np.asarray(los, dtype=np.float64)
             his_arr = np.asarray(his, dtype=np.float64)
-            good = np.isfinite(ys_arr) & np.isfinite(los_arr) & np.isfinite(his_arr)
-            yerr_lo = np.where(good, ys_arr - los_arr, 0.0)
-            yerr_hi = np.where(good, his_arr - ys_arr, 0.0)
-            ax.errorbar(layer_idx, ys_arr, yerr=[yerr_lo, yerr_hi],
-                        fmt="o", linewidth=1.8, color=c, ecolor=c, capsize=3,
-                        label=metric_pretty.get(metric, metric))
-            ax.plot(layer_idx, ys_arr, color=c, linewidth=1.5, alpha=0.6)
+            band = np.isfinite(ys_arr) & np.isfinite(los_arr) & np.isfinite(his_arr)
+            if band.any():
+                ax.fill_between(np.asarray(layer_idx)[band],
+                                los_arr[band], his_arr[band],
+                                color=c, alpha=0.13, linewidth=0)
+            ax.plot(layer_idx, ys_arr, marker="o", color=c,
+                    label=metric_pretty.get(metric, metric),
+                    markeredgecolor="white", markeredgewidth=0.8)
         else:
-            ax.plot(layer_idx, ys_arr, marker="o", linewidth=1.8,
-                    color=c, label=metric_pretty.get(metric, metric))
-        # Annotate (|S|, α) achieving the best for the primary metric.
-        if metric == "d_steered_clean_tool":
-            for x, y, S, a in zip(layer_idx, ys, Ss, alphas):
+            ax.plot(layer_idx, ys_arr, marker="o", color=c,
+                    label=metric_pretty.get(metric, metric),
+                    markeredgecolor="white", markeredgewidth=0.8)
+        # Annotate (|S|, α) for the primary metric only on top-3 layers.
+        if metric == "d_steered_clean_tool" and any(np.isfinite(ys_arr)):
+            top3 = np.argsort(-ys_arr)[:3]
+            for k in top3:
+                x = layer_idx[k]; y = ys[k]; S = Ss[k]; a = alphas[k]
                 if np.isfinite(y):
                     ax.annotate(
-                        f"|S|={S}\nα={a:g}",
+                        f"|S|={S} α={a:g}",
                         (x, y), xytext=(0, 8),
                         textcoords="offset points",
                         ha="center", fontsize=7, color=c,
@@ -335,14 +362,13 @@ def _plot_best_cell_per_layer(
 
     ax.set_xticks(layer_idx)
     ax.set_xticklabels([f"l{i}" for i in layer_idx])
-    ax.axhline(0, color="black", linewidth=0.6, linestyle=":")
+    ax.axhline(0, color="#888888", linewidth=0.6)
     ax.set_xlabel("layer")
-    ax.set_ylabel("best Δ across the (k%, α) grid")
+    ax.set_ylabel("best Δ across the sweep grid")
     ax.set_title(title)
-    ax.grid(True, axis="y", linestyle=":", alpha=0.4)
-    ax.legend(loc="best", fontsize=8)
-    fig.tight_layout()
-    fig.savefig(out_path, bbox_inches="tight")
+    ax.grid(True, axis="y")
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5))
+    fig.savefig(out_path)
     plt.close(fig)
     print(f"[best-cell] {out_path}")
 
@@ -369,6 +395,7 @@ def main() -> None:
                         "are dropped from the absk plots.")
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    _setup_style()
 
     layer_dirs = sorted(
         [d for d in args.steering_root.iterdir()
