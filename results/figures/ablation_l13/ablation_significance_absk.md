@@ -7,7 +7,7 @@ Same data as `ablation_significance.md`, re-keyed by absolute number of neurons 
 | condition | |S| values present | n cells kept |
 |-----------|---------------------|-------------:|
 | DFC · A-exclusive | [1, 2, 3, 4, 5, 6, 7] | 40 |
-| DFC · shared | [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] | 49 |
+| DFC · shared | [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] | 50 |
 | DFC · B-exclusive | [1, 2, 3, 4] | 30 |
 | DFC · A-excl ∪ shared | [3, 5, 9] | 15 |
 | CrossCoder · all | [1, 2, 3, 4, 5, 6, 8, 9] | 40 |
@@ -17,7 +17,7 @@ Same data as `ablation_significance.md`, re-keyed by absolute number of neurons 
 | condition | best Δ (%) | 95% CI | |S| | α | n_prompts |
 |-----------|-----------:|--------|----:|--:|----------:|
 | DFC · A-exclusive | +65.0 | [+47.9, +82.1] | 1 | 32 | 40 |
-| DFC · shared | +50.0 | [+22.2, +77.8] | 10 | 32 | 24 |
+| DFC · shared | +47.5 | [+27.0, +68.0] | 5 | 16 | 40 |
 | DFC · B-exclusive | +0.0 | [+0.0, +0.0] | 1 | 1 | 40 |
 | DFC · A-excl ∪ shared | +35.0 | [+17.9, +52.1] | 9 | 16 | 40 |
 | CrossCoder · all | +57.5 | [+41.5, +73.5] | 2 | 32 | 40 |
@@ -123,7 +123,8 @@ Same data as `ablation_significance.md`, re-keyed by absolute number of neurons 
 | 10 | 1 | +0.0 | [+0.0, +0.0] |
 | 10 | 6 | +5.0 | [-14.1, +24.1] |
 | 10 | 16 | +27.5 | [+8.4, +46.6] |
-| 10 | 32 | +50.0 | [+22.2, +77.8] |
+| 10 | 32 | +30.0 | [+8.0, +52.0] |
+| 10 | 64 | +22.5 | [+2.7, +42.3] |
 
 ### DFC · B-exclusive
 

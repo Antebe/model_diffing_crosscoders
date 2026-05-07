@@ -1,6 +1,6 @@
 # Targeted-Steering Ablation Report — DFC vs CrossCoder at L13
 
-**Status:** Draft. Data refreshed 2026-05-07. The DFC-shared fine sweep is still finishing its final k=25% column on GPU 1 (4 α-values pending → fills \|S\|=10 with α∈{6,16,32,64}; α=1 partial at 18/40 prompts). All other sweeps complete. All point estimates carry **95% paired-t CIs** from per-prompt steered − clean diffs across n=40 prompts (n=18 for the in-flight \|S\|=10/α=1 cell); CIs appear as error bars on every quantitative plot below.
+**Status:** Final draft. All sweeps complete. Data refreshed 2026-05-07. All point estimates carry **95% paired-t CIs** from per-prompt steered − clean diffs across n=40 prompts; CIs appear as shaded bands / error bars on every quantitative plot below.
 
 > **Note on coverage gaps in \|S\|∈{1..10}.** Some \|S\| values are structurally unreachable for some conditions: DFC B-excl has only 4 tool-signed features, so it can't reach \|S\|>4. DFC A-excl has 8 tool-signed features (the in-place sweep used a 7-feature ranking; \|S\|=8 would need a re-run with the full-dict ranking at k=100%). The combo (A-excl ∪ shared) sums the two partitions' top-k for matched k%, so it lands on a sparse grid {3, 5, 9, 16, 31, 46}. CC's k% grid skips \|S\|=7, 10. These are not "missing data" — they're either hard caps or grid choices.
 
@@ -120,7 +120,7 @@ Best Δ (max over α) at each \|S\|, with 95% paired-t CIs:
 | 7 | +47.5 [+29.8, +65.2] | +27.5 [+7.0, +48.0] | (—) | — |
 | 8 | (—) | +42.5 [+23.5, +61.5] | +37.5 [+15.0, +60.0] | — |
 | 9 | (—) | +45.0 [+24.6, +65.4] | +47.5 [+25.8, +69.2] | — |
-| 10 | (—) | +0.0 [+0.0, +0.0] | (—) | — |
+| 10 | (—) | +30.0 [+8.0, +52.0] | (—) | — |
 | 33 | (—) | (—) | **+70.0** [+53.5, +86.5] | — |
 | 38 | (—) | +62.5 [+43.8, +81.2] | (—) | — |
 
